@@ -94,31 +94,33 @@
     });
   }
 
-  /* ---------- About photo: hover-to-reveal color ---------- */
+  /* ---------- Hover-to-reveal color (photo + work thumbnails) ---------- */
 
   function initPhotoReveal() {
-    var el = document.getElementById("photoReveal");
-    if (!el) return;
+    var items = document.querySelectorAll(".photo-reveal");
+    if (!items.length) return;
 
-    function setPos(clientX, clientY) {
-      var rect = el.getBoundingClientRect();
-      var x = ((clientX - rect.left) / rect.width) * 100;
-      var y = ((clientY - rect.top) / rect.height) * 100;
-      x = Math.max(0, Math.min(100, x));
-      y = Math.max(0, Math.min(100, y));
-      el.style.setProperty("--mx", x + "%");
-      el.style.setProperty("--my", y + "%");
-    }
+    items.forEach(function (el) {
+      function setPos(clientX, clientY) {
+        var rect = el.getBoundingClientRect();
+        var x = ((clientX - rect.left) / rect.width) * 100;
+        var y = ((clientY - rect.top) / rect.height) * 100;
+        x = Math.max(0, Math.min(100, x));
+        y = Math.max(0, Math.min(100, y));
+        el.style.setProperty("--mx", x + "%");
+        el.style.setProperty("--my", y + "%");
+      }
 
-    el.addEventListener("pointerenter", function (e) {
-      el.classList.add("is-active");
-      setPos(e.clientX, e.clientY);
-    });
-    el.addEventListener("pointermove", function (e) {
-      setPos(e.clientX, e.clientY);
-    });
-    el.addEventListener("pointerleave", function () {
-      el.classList.remove("is-active");
+      el.addEventListener("pointerenter", function (e) {
+        el.classList.add("is-active");
+        setPos(e.clientX, e.clientY);
+      });
+      el.addEventListener("pointermove", function (e) {
+        setPos(e.clientX, e.clientY);
+      });
+      el.addEventListener("pointerleave", function () {
+        el.classList.remove("is-active");
+      });
     });
   }
 
@@ -129,6 +131,52 @@
     if (el) el.textContent = new Date().getFullYear();
   }
 
+  /* ---------- PDF download ----------
+     On the real deployed site, the plain <a download> works natively,
+     so this only steps in when running inside the claude.ai Artifact
+     preview (where window.claude.use("downloads") exists) — plain
+     download links do nothing there.
+  */
+
+  function initPdfDownload() {
+    var links = document.querySelectorAll(".cs-pdf-download");
+    if (!links.length) return;
+    if (!window.claude || typeof window.claude.use !== "function") return;
+
+    links.forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (link.classList.contains("is-downloading")) return;
+        link.classList.add("is-downloading");
+
+        window.claude
+          .use("downloads")
+          .then(function (downloads) {
+            if (!downloads) {
+              window.open(link.getAttribute("href"), "_blank");
+              return null;
+            }
+            return fetch(link.getAttribute("href"))
+              .then(function (resp) { return resp.blob(); })
+              .then(function (blob) {
+                var filename = link.getAttribute("data-filename") ||
+                  link.getAttribute("href").split("/").pop();
+                return downloads.save({ filename: filename, data: blob });
+              });
+          })
+          .catch(function (err) {
+            /* declined / rate_limited / unavailable: no retry, no loop */
+            if (window.console && console.warn) {
+              console.warn("PDF download unavailable:", err && err.code ? err.code : err);
+            }
+          })
+          .then(function () {
+            link.classList.remove("is-downloading");
+          });
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initLang();
     initReveal();
@@ -136,5 +184,6 @@
     initMobileNav();
     initPhotoReveal();
     initYear();
+    initPdfDownload();
   });
 })();

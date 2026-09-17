@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Design System &amp; Token Architecture — Case Study | Supalerk Chaonchom</title>
+<meta name="description" content="A three-layer design token architecture (Primitive → Semantic → Component) that themes across multiple products through collection mapping, without touching components." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23111111'/%3E%3Ctext x='50' y='68' font-size='60' font-family='Arial, sans-serif' font-weight='700' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="../css/case-study.css" />
+</head>
+<body class="cs-body">
+
+<div class="grain-layer" aria-hidden="true"></div>
+
+<nav class="cs-nav">
+  <div class="cs-nav-inner">
+    <a href="../index.html#work" class="cs-back">
+      <span class="arrow-left">&#8592;</span>
+      <span data-en="Back to portfolio" data-th="กลับหน้าพอร์ตโฟลิโอ">Back to portfolio</span>
+    </a>
+    <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+      <span class="lang-opt active" data-lang-btn="en">EN</span>
+      <span class="lang-sep">/</span>
+      <span class="lang-opt" data-lang-btn="th">TH</span>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="section cs-hero">
+    <div class="card cs-hero-card reveal">
+      <p class="cs-eyebrow" data-en="Design System · UX/UI Case Study" data-th="DESIGN SYSTEM · UX/UI CASE STUDY">Design System · UX/UI Case Study</p>
+
+      <h1 class="cs-title" data-en="One Token Structure, Scalable Across Every Product" data-th="โครงสร้าง Token เดียว ขยายได้ทุกผลิตภัณฑ์">One Token Structure, Scalable Across Every Product</h1>
+
+      <p class="cs-tagline" data-en="Designed a design-token architecture from Primitive through Component level, with a Semantic layer that themes across products via collection mapping — without ever touching the component itself." data-th="ออกแบบสถาปัตยกรรม Design Token ตั้งแต่ระดับ Primitive จนถึง Component พร้อมวางโครงสร้าง Semantic ที่ปรับธีมข้ามผลิตภัณฑ์ได้ผ่าน Collection Mapping โดยไม่ต้องแก้ที่ตัว component">Designed a design-token architecture from Primitive through Component level, with a Semantic layer that themes across products via collection mapping — without ever touching the component itself.</p>
+
+      <div class="cs-meta-grid">
+        <div class="cs-meta-item">
+          <span class="cs-meta-label" data-en="Role" data-th="บทบาท">Role</span>
+          <span class="cs-meta-value" data-en="Design System Owner (Product Designer)" data-th="Design System Owner (Product Designer)">Design System Owner (Product Designer)</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label" data-en="Tool" data-th="เครื่องมือ">Tool</span>
+          <span class="cs-meta-value" data-en="Figma — Variables &amp; Collections" data-th="Figma — Variables &amp; Collections">Figma — Variables &amp; Collections</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label" data-en="Platform" data-th="แพลตฟอร์ม">Platform</span>
+          <span class="cs-meta-value" data-en="Web — Multi-Product" data-th="เว็บ — หลายผลิตภัณฑ์">Web — Multi-Product</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label" data-en="Scope" data-th="ขอบเขต">Scope</span>
+          <span class="cs-meta-value" data-en="Token Architecture + Core Components" data-th="Token Architecture + Core Components">Token Architecture + Core Components</span>
+        </div>
+      </div>
+
+      <p class="cs-note" data-en="This case only shows the token architecture and 3 components designed from scratch — Button, Input, and Dropdown. Every other screen, element, and remaining content from the original Figma file is organizational property and is not shown here." data-th="ตัวอย่างนี้แสดงเฉพาะสถาปัตยกรรม Token และ component ที่ออกแบบเอง 3 ตัว ได้แก่ Button, Input และ Dropdown เท่านั้น ส่วนหน้าจออื่น องค์ประกอบอื่น และเนื้อหาที่เหลือในไฟล์ Figma ต้นฉบับ เป็นทรัพย์สินขององค์กรและไม่ถูกนำมาแสดงในที่นี้">This case only shows the token architecture and 3 components designed from scratch — Button, Input, and Dropdown. Every other screen, element, and remaining content from the original Figma file is organizational property and is not shown here.</p>
+
+      <div class="cs-hero-actions">
+        <a href="../assets/pdf/design-system-case-study.pdf" class="btn btn-dark cs-pdf-download" data-filename="Design-System-Case-Study.pdf" download>
+          <span data-en="Download PDF" data-th="ดาวน์โหลด PDF">Download PDF</span>
+          <span class="arrow">&#8595;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 OVERVIEW -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="01 — Project Overview" data-th="01 — ภาพรวมโปรเจกต์">01 — Project Overview</p>
+    <h2 class="cs-h2" data-en="Reusable design tokens, across every product in the org" data-th="Design Token ที่ใช้ซ้ำได้ ทุกผลิตภัณฑ์ในองค์กร">Reusable design tokens, across every product in the org</h2>
+    <p class="cs-overview-text" data-en="This design system started by structuring Figma Variables into a three-layer token system (Primitive → Semantic → Component), grouped into collections. Whenever the design team pulls a color or value into a design, it's always pulled through collection mapping, never referencing the raw value directly — so each product's theme can be swapped at the Semantic layer, without touching the component." data-th="ระบบ Design System นี้เริ่มจากการวาง Variables ใน Figma ให้เป็น Token System 3 ชั้น (Primitive → Semantic → Component) แล้วจัดกลุ่มเป็น Collection ต่างๆ เมื่อทีมออกแบบดึงสีหรือค่าต่างๆ ไปใช้ในดีไซน์ จะดึงผ่าน Collection Mapping เสมอ ไม่อ้างอิงค่าดิบโดยตรง จึงสามารถสลับธีมของแต่ละผลิตภัณฑ์ได้จากชั้น Semantic โดยไม่ต้องแก้ที่ component">This design system started by structuring Figma Variables into a three-layer token system (Primitive → Semantic → Component), grouped into collections. Whenever the design team pulls a color or value into a design, it's always pulled through collection mapping, never referencing the raw value directly — so each product's theme can be swapped at the Semantic layer, without touching the component.</p>
+  </section>
+
+  <!-- 02 TOKEN ARCHITECTURE -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="02 — Token Architecture" data-th="02 — สถาปัตยกรรม TOKEN">02 — Token Architecture</p>
+    <h2 class="cs-h2" data-en="Three layers: Primitive → Semantic → Component" data-th="สามชั้น: Primitive → Semantic → Component">Three layers: Primitive → Semantic → Component</h2>
+    <div class="cs-shot cs-shot-full">
+      <img src="../assets/case-studies/ds-tokens.jpg" alt="Diagram of the three-layer token architecture: Primitive, Semantic, and Component" />
+    </div>
+    <p class="cs-overview-text" style="margin-top:24px;" data-en="When used in design, a value is always pulled through the Semantic layer via collection mapping — switching just the collection's mode re-themes the whole system, without editing the value at the component itself." data-th="เวลานำไปใช้ในดีไซน์ จะดึงค่าผ่านชั้น Semantic เสมอ (Collection Mapping) เปลี่ยนแค่ mode ของ Collection ก็เปลี่ยนธีมได้ทั้งระบบ โดยไม่ต้องแก้ค่าที่ตัว component">When used in design, a value is always pulled through the Semantic layer via collection mapping — switching just the collection's mode re-themes the whole system, without editing the value at the component itself.</p>
+  </section>
+
+  <!-- 03 MULTI-PRODUCT THEMING -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="03 — Supports Multiple Products" data-th="03 — รองรับหลายผลิตภัณฑ์">03 — Supports Multiple Products</p>
+    <h2 class="cs-h2" data-en="Same semantic name, different result per product" data-th="ชื่อ Semantic เดิม ผลลัพธ์เปลี่ยนตามผลิตภัณฑ์">Same semantic name, different result per product</h2>
+    <p class="cs-overview-text" data-en="The Semantic layer keeps token names fixed (e.g. button/primary/default-100), but the actual value bound to it changes by the collection's mode — so each product can have its own color theme without dev or component code ever changing. Tokens in the same group (fill vs. border, for example) can also map to independently different colors per product." data-th="ชั้น Semantic เก็บชื่อ token ไว้คงที่ (เช่น button/primary/default-100) แต่ค่าจริงที่ผูกอยู่เปลี่ยนได้ตาม mode ของ Collection แต่ละผลิตภัณฑ์จึงมีธีมสีของตัวเองได้ โดยที่ component และโค้ดฝั่ง dev ไม่ต้องเปลี่ยนเลย และแต่ละ token ในกลุ่มเดียวกัน (เช่น fill กับ border) ก็ map ไปยังสีที่ต่างกันได้อย่างอิสระตามที่ตั้งค่าไว้ในแต่ละผลิตภัณฑ์">The Semantic layer keeps token names fixed (e.g. button/primary/default-100), but the actual value bound to it changes by the collection's mode — so each product can have its own color theme without dev or component code ever changing. Tokens in the same group (fill vs. border, for example) can also map to independently different colors per product.</p>
+    <div class="cs-shot cs-shot-full" style="margin-top:24px;">
+      <img src="../assets/case-studies/ds-semantic.jpg" alt="Semantic token table showing the same token names mapped to different values for Product A and Product B" />
+    </div>
+    <p class="cs-note" style="margin-top:16px;" data-en="The colors in this table are the actual values mapped per collection mode — &quot;Product A&quot; / &quot;Product B&quot; are placeholder names, since the real product names are internal information." data-th="สีในตารางนี้คือค่าจริงที่ Mapping ไว้ในแต่ละ Collection Mode — Product A / Product B เป็นชื่อสมมติ เนื่องจากชื่อผลิตภัณฑ์จริงเป็นข้อมูลภายในองค์กร">The colors in this table are the actual values mapped per collection mode — "Product A" / "Product B" are placeholder names, since the real product names are internal information.</p>
+  </section>
+
+  <!-- 04 TYPOGRAPHY -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="04 — Typography" data-th="04 — TYPOGRAPHY">04 — Typography</p>
+    <h2 class="cs-h2" data-en="A type scale built on Prompt" data-th="Type Scale บนฟอนต์ Prompt">A type scale built on Prompt</h2>
+    <p class="cs-type-sample" style="font-family:'Prompt',sans-serif;">Aa กข 123</p>
+    <p class="cs-type-caption" data-en="Component Type Tokens — Desktop/Body/Button (Bold 16px), Desktop/Input Field/Title (Regular 14px), Desktop/Body/Body (Regular 14px), Desktop/Body/Caption (Regular 12px), and more, all set in Prompt." data-th="COMPONENT TYPE TOKENS — Desktop/Body/Button1 Bold·16px, Desktop/Input Field/Title Regular·14px, Desktop/Body/Body3 Regular·14px, Desktop/Body/Caption Regular·12px และอื่นๆ ตั้งค่าด้วยฟอนต์ Prompt ทั้งหมด">Component Type Tokens — Desktop/Body/Button (Bold 16px), Desktop/Input Field/Title (Regular 14px), Desktop/Body/Body (Regular 14px), Desktop/Body/Caption (Regular 12px), and more, all set in Prompt.</p>
+  </section>
+
+  <!-- 05 BUTTON -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="05 — Component: Button" data-th="05 — COMPONENT: BUTTON">05 — Component: Button</p>
+    <h2 class="cs-h2" data-en="Filled · Outline · Text — 3 styles, 4 states" data-th="Filled · Outline · Text — 3 สไตล์ 4 สถานะ">Filled · Outline · Text — 3 styles, 4 states</h2>
+    <p class="cs-overview-text" data-en="Comes in 5 sizes (Giant / Large / Medium / Small / Tiny) — shown below at Medium." data-th="มีให้เลือก 5 ขนาด (Giant / Large / Medium / Small / Tiny) — ตัวอย่างด้านล่างแสดงขนาด Medium">Comes in 5 sizes (Giant / Large / Medium / Small / Tiny) — shown below at Medium.</p>
+    <div class="cs-shot cs-shot-full" style="margin-top:8px;">
+      <img src="../assets/case-studies/ds-button.jpg" alt="Button component states: Filled, Outline, Text styles across Default, Hover, Focus, Disabled states" />
+    </div>
+  </section>
+
+  <!-- 06 INPUT -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="06 — Component: Input" data-th="06 — COMPONENT: INPUT">06 — Component: Input</p>
+    <h2 class="cs-h2" data-en="Label · Placeholder · Helper Text — 8 states" data-th="Label · Placeholder · Helper Text — 8 สถานะ">Label · Placeholder · Helper Text — 8 states</h2>
+    <p class="cs-overview-text" data-en="Comes in 3 sizes (Large / Medium / Small) — shown below at Medium." data-th="มีให้เลือก 3 ขนาด (Large / Medium / Small) — ตัวอย่างด้านล่างแสดงขนาด Medium">Comes in 3 sizes (Large / Medium / Small) — shown below at Medium.</p>
+    <div class="cs-shot cs-shot-full" style="margin-top:8px;">
+      <img src="../assets/case-studies/ds-input.jpg" alt="Input component states: Default, Filled, Focus, Disabled, Success, Info, Warning, Error" />
+    </div>
+  </section>
+
+  <!-- 07 DROPDOWN -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="07 — Component: Dropdown" data-th="07 — COMPONENT: DROPDOWN">07 — Component: Dropdown</p>
+    <h2 class="cs-h2" data-en="Trigger + Option List" data-th="Trigger + Option List">Trigger + Option List</h2>
+    <div class="cs-shot cs-shot-full">
+      <img src="../assets/case-studies/ds-dropdown.jpg" alt="Dropdown component: trigger states (Default, Hover, Expanded, Disabled) and option list" />
+    </div>
+  </section>
+
+  <!-- 08 RESULTS -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="08 — Results" data-th="08 — ผลลัพธ์">08 — Results</p>
+    <h2 class="cs-h2" data-en="From design files to a system that actually scales" data-th="จากไฟล์ดีไซน์ สู่ระบบที่สเกลได้จริง">From design files to a system that actually scales</h2>
+    <div class="cs-results">
+      <div class="cs-result">
+        <p class="cs-result-num">01</p>
+        <h4 data-en="Built the token architecture from scratch" data-th="ออกแบบ Token Architecture เอง">Built the token architecture from scratch</h4>
+        <p data-en="Structured Variables into 3 layers (Primitive → Semantic → Component) and grouped them into collections the team can pull from consistently, system-wide." data-th="วาง Variables เป็น 3 ชั้น (Primitive → Semantic → Component) และจัดกลุ่มเป็น Collection ให้ทีมดึงไปใช้ผ่าน Mapping ได้ตรงกันทั้งระบบ">Structured Variables into 3 layers (Primitive → Semantic → Component) and grouped them into collections the team can pull from consistently, system-wide.</p>
+      </div>
+      <div class="cs-result">
+        <p class="cs-result-num">02</p>
+        <h4 data-en="Multi-product support via semantic theming" data-th="รองรับหลายผลิตภัณฑ์ผ่าน Semantic Theming">Multi-product support via semantic theming</h4>
+        <p data-en="Token names stay fixed, but switching a collection's mode re-themes an entire product, without editing components one by one." data-th="ชื่อ token คงที่ แต่สลับ mode ของ Collection ก็เปลี่ยนธีมได้ทั้งผลิตภัณฑ์ โดยไม่ต้องแก้ component ทีละตัว">Token names stay fixed, but switching a collection's mode re-themes an entire product, without editing components one by one.</p>
+      </div>
+      <div class="cs-result">
+        <p class="cs-result-num">03</p>
+        <h4 data-en="Consistency standard &amp; faster dev handoff" data-th="มาตรฐาน Consistency &amp; ลดเวลา Dev Handoff">Consistency standard &amp; faster dev handoff</h4>
+        <p data-en="Reduced UI inconsistency between screens, and let the dev team use the same token names as design immediately, cutting back-and-forth revisions." data-th="ลดความไม่สอดคล้องของ UI ระหว่างหน้าจอ และให้ทีม dev ใช้ชื่อ token เดียวกับดีไซน์ได้ทันที ลดรอบแก้งานไปมา">Reduced UI inconsistency between screens, and let the dev team use the same token names as design immediately, cutting back-and-forth revisions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="section reveal">
+    <div class="card cs-cta-card">
+      <h2 class="cs-cta-title" data-en="Want to talk Design Systems?" data-th="สนใจร่วมงาน หรืออยากคุยเรื่อง Design System?">Want to talk Design Systems?</h2>
+      <p class="cs-cta-sub" data-en="Open to design-system and token-architecture work that needs to scale across products — feel free to reach out." data-th="เปิดรับงานออกแบบระบบดีไซน์และ Token Architecture ที่ต้องสเกลได้จริงข้ามผลิตภัณฑ์ ทักมาคุยกันได้เลย">Open to design-system and token-architecture work that needs to scale across products — feel free to reach out.</p>
+      <div class="cs-cta-actions">
+        <a href="mailto:jeenosupalerk@gmail.com" class="btn btn-dark">
+          <span data-en="Get in Touch" data-th="ติดต่อฉัน">Get in Touch</span>
+          <span class="arrow">&#8599;</span>
+        </a>
+        <a href="../index.html#work" class="btn btn-outline">
+          <span data-en="Back to Portfolio" data-th="กลับหน้าพอร์ตโฟลิโอ">Back to Portfolio</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> Supalerk Chaonchom. <span data-en="All rights reserved." data-th="สงวนลิขสิทธิ์">All rights reserved.</span></p>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

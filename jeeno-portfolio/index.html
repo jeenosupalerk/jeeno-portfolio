@@ -24,7 +24,7 @@
 
     <nav class="nav-links" id="navLinks">
       <a href="#about" data-en="About" data-th="เกี่ยวกับฉัน">About</a>
-      <a href="#services" data-en="Services" data-th="บริการ">Services</a>
+      <a href="#services" data-en="Skills" data-th="ทักษะ">Skills</a>
       <a href="#work" data-en="Work" data-th="ผลงาน">Work</a>
       <a href="#experience" data-en="Experience" data-th="ประสบการณ์">Experience</a>
       <a href="#contact" data-en="Contact" data-th="ติดต่อ">Contact</a>
@@ -135,8 +135,8 @@
   <!-- SERVICES -->
   <section id="services" class="section">
     <div class="card services-card reveal">
-      <span class="ghost-word" aria-hidden="true">SERVICES</span>
-      <p class="section-label">/ <span data-en="Services" data-th="บริการ">Services</span></p>
+      <span class="ghost-word" aria-hidden="true">SKILLS</span>
+      <p class="section-label">/ <span data-en="Skills" data-th="ทักษะ">Skills</span></p>
 
       <div class="accordion" id="servicesAccordion">
 
@@ -193,45 +193,106 @@
   </section>
 
   <!-- WORK -->
-  <section id="work" class="section">
+  <section id="work" class="section work-section">
+    <span class="ghost-word ghost-word-center" aria-hidden="true">WORK</span>
     <p class="section-label center">/ <span data-en="Selected Work" data-th="ผลงานที่คัดสรร">Selected Work</span></p>
+    <h2 class="work-heading" data-en="A closer look at how the thinking became the interface." data-th="เจาะลึกว่าแนวคิดกลายมาเป็นอินเทอร์เฟซได้อย่างไร">A closer look at how the thinking became the interface.</h2>
 
     <div class="work-grid">
 
-      <a class="work-card reveal" href="https://claude.ai/artifact/L1R8SqYfNL5a49i7xvTQ9Z" target="_blank" rel="noopener">
-        <div class="work-card-top">
-          <span class="tag" data-en="Enterprise POS · Desktop + Mobile" data-th="POS องค์กร · Desktop + Mobile">Enterprise POS · Desktop + Mobile</span>
-          <span class="arrow">↗</span>
+      <a class="work-card reveal" href="work/pos.html">
+        <div class="work-thumb photo-reveal">
+          <img class="photo-color" src="assets/work-pos.jpg" alt="Canteen &amp; Restaurant POS screens" />
+          <img class="photo-gray" src="assets/work-pos.jpg" alt="" aria-hidden="true" />
+          <span class="work-index">01</span>
         </div>
-        <h3 data-en="Canteen &amp; Restaurant POS" data-th="ระบบ POS โรงอาหาร &amp; ร้านอาหาร">Canteen &amp; Restaurant POS</h3>
-        <p data-en="Unified payment system (QR / Cash / Student Card) across Desktop and Mobile — replacing a desktop-only, payment-fragmented back office." data-th="ระบบชำระเงินรวมศูนย์ (QR / เงินสด / บัตรนักเรียน) รองรับทั้ง Desktop และ Mobile แทนที่ระบบเดิมที่ใช้ได้เฉพาะคอมพิวเตอร์และแยกเมนูตามวิธีจ่าย">
-          Unified payment system (QR / Cash / Student Card) across Desktop and Mobile — replacing a desktop-only, payment-fragmented back office.
-        </p>
-        <span class="confidential-note" data-en="Confidential client work — renamed for portfolio" data-th="งานลูกค้าที่เป็นความลับ — เปลี่ยนชื่อสำหรับพอร์ตนี้">Confidential client work — renamed for portfolio</span>
+        <div class="work-card-body">
+          <div class="work-card-top">
+            <span class="tag" data-en="Enterprise POS · Desktop + Mobile" data-th="POS องค์กร · Desktop + Mobile">Enterprise POS · Desktop + Mobile</span>
+            <span class="arrow">↗</span>
+          </div>
+          <h3 data-en="Canteen &amp; Restaurant POS" data-th="ระบบ POS โรงอาหาร &amp; ร้านอาหาร">Canteen &amp; Restaurant POS</h3>
+          <p data-en="Unified payment system (QR / Cash / Student Card) across Desktop and Mobile — replacing a desktop-only, payment-fragmented back office." data-th="ระบบชำระเงินรวมศูนย์ (QR / เงินสด / บัตรนักเรียน) รองรับทั้ง Desktop และ Mobile แทนที่ระบบเดิมที่ใช้ได้เฉพาะคอมพิวเตอร์และแยกเมนูตามวิธีจ่าย">
+            Unified payment system (QR / Cash / Student Card) across Desktop and Mobile — replacing a desktop-only, payment-fragmented back office.
+          </p>
+          <span class="confidential-note" data-en="Confidential client work — renamed for portfolio" data-th="งานลูกค้าที่เป็นความลับ — เปลี่ยนชื่อสำหรับพอร์ตนี้">Confidential client work — renamed for portfolio</span>
+        </div>
       </a>
 
-      <a class="work-card reveal" href="https://claude.ai/artifact/M7tFgPjd9aHXojKBZQxxs1" target="_blank" rel="noopener">
-        <div class="work-card-top">
-          <span class="tag" data-en="Design System · Tokens" data-th="Design System · Token">Design System · Tokens</span>
-          <span class="arrow">↗</span>
+      <a class="work-card reveal" href="work/design-system.html">
+        <div class="work-thumb photo-reveal">
+          <img class="photo-color" src="assets/work-design-system.jpg" alt="Design system token preview" />
+          <img class="photo-gray" src="assets/work-design-system.jpg" alt="" aria-hidden="true" />
+          <span class="work-index">02</span>
         </div>
-        <h3 data-en="Design System — Token Architecture" data-th="Design System — สถาปัตยกรรม Token">Design System — Token Architecture</h3>
-        <p data-en="A scalable token architecture — Primitive → Semantic → Component — powering Button, Input, and Dropdown across multiple in-house products with independent theming." data-th="สถาปัตยกรรม Design Token ที่ขยายผลได้ — Primitive → Semantic → Component — ขับเคลื่อน Button, Input และ Dropdown ในผลิตภัณฑ์ภายในหลายตัว พร้อมปรับธีมอิสระต่อกัน">
-          A scalable token architecture — Primitive → Semantic → Component — powering Button, Input, and Dropdown across multiple in-house products with independent theming.
-        </p>
-        <span class="confidential-note" data-en="Personal design system work — scoped to Button, Input &amp; Dropdown" data-th="ผลงานออกแบบระบบส่วนตัว — จำกัดเฉพาะ Button, Input และ Dropdown">Personal design system work — scoped to Button, Input &amp; Dropdown</span>
+        <div class="work-card-body">
+          <div class="work-card-top">
+            <span class="tag" data-en="Design System · Tokens" data-th="Design System · Token">Design System · Tokens</span>
+            <span class="arrow">↗</span>
+          </div>
+          <h3 data-en="Design System — Token Architecture" data-th="Design System — สถาปัตยกรรม Token">Design System — Token Architecture</h3>
+          <p data-en="A scalable token architecture — Primitive → Semantic → Component — powering Button, Input, and Dropdown across multiple in-house products with independent theming." data-th="สถาปัตยกรรม Design Token ที่ขยายผลได้ — Primitive → Semantic → Component — ขับเคลื่อน Button, Input และ Dropdown ในผลิตภัณฑ์ภายในหลายตัว พร้อมปรับธีมอิสระต่อกัน">
+            A scalable token architecture — Primitive → Semantic → Component — powering Button, Input, and Dropdown across multiple in-house products with independent theming.
+          </p>
+          <span class="confidential-note" data-en="Personal design system work — scoped to Button, Input &amp; Dropdown" data-th="ผลงานออกแบบระบบส่วนตัว — จำกัดเฉพาะ Button, Input และ Dropdown">Personal design system work — scoped to Button, Input &amp; Dropdown</span>
+        </div>
       </a>
 
-      <a class="work-card reveal" href="https://claude.ai/artifact/1xHiaksmTzVJvvyiWrGfPz" target="_blank" rel="noopener">
-        <div class="work-card-top">
-          <span class="tag" data-en="Fintech / Insurance · Internal Tool" data-th="Fintech / ประกันภัย · เครื่องมือภายใน">Fintech / Insurance · Internal Tool</span>
-          <span class="arrow">↗</span>
+      <a class="work-card reveal" href="work/insurance.html">
+        <div class="work-thumb photo-reveal">
+          <img class="photo-color" src="assets/work-insurance.jpg" alt="HR Insurance Lookup System screen" />
+          <img class="photo-gray" src="assets/work-insurance.jpg" alt="" aria-hidden="true" />
+          <span class="work-index">03</span>
         </div>
-        <h3 data-en="HR Insurance Lookup System" data-th="ระบบสืบค้นผู้เอาประกันภัยสำหรับ HR">HR Insurance Lookup System</h3>
-        <p data-en="An internal HR tool for looking up insured employees — replacing a static report with a fast, permission-aware lookup experience." data-th="เครื่องมือภายในสำหรับฝ่าย HR ในการสืบค้นข้อมูลผู้เอาประกันภัย แทนที่รายงานแบบ static ด้วยประสบการณ์การค้นหาที่รวดเร็วและควบคุมสิทธิ์การเข้าถึง">
-          An internal HR tool for looking up insured employees — replacing a static report with a fast, permission-aware lookup experience.
-        </p>
-        <span class="confidential-note" data-en="Confidential client work — renamed for portfolio" data-th="งานลูกค้าที่เป็นความลับ — เปลี่ยนชื่อสำหรับพอร์ตนี้">Confidential client work — renamed for portfolio</span>
+        <div class="work-card-body">
+          <div class="work-card-top">
+            <span class="tag" data-en="Fintech / Insurance · Internal Tool" data-th="Fintech / ประกันภัย · เครื่องมือภายใน">Fintech / Insurance · Internal Tool</span>
+            <span class="arrow">↗</span>
+          </div>
+          <h3 data-en="HR Insurance Lookup System" data-th="ระบบสืบค้นผู้เอาประกันภัยสำหรับ HR">HR Insurance Lookup System</h3>
+          <p data-en="An internal HR tool for looking up insured employees — replacing a static report with a fast, permission-aware lookup experience." data-th="เครื่องมือภายในสำหรับฝ่าย HR ในการสืบค้นข้อมูลผู้เอาประกันภัย แทนที่รายงานแบบ static ด้วยประสบการณ์การค้นหาที่รวดเร็วและควบคุมสิทธิ์การเข้าถึง">
+            An internal HR tool for looking up insured employees — replacing a static report with a fast, permission-aware lookup experience.
+          </p>
+          <span class="confidential-note" data-en="Confidential client work — renamed for portfolio" data-th="งานลูกค้าที่เป็นความลับ — เปลี่ยนชื่อสำหรับพอร์ตนี้">Confidential client work — renamed for portfolio</span>
+        </div>
+      </a>
+
+      <a class="work-card reveal" href="https://taletails-trade.com">
+        <div class="work-thumb photo-reveal">
+          <img class="photo-color" src="assets/work-taletails.jpg" alt="Taletails vault storage banner" />
+          <img class="photo-gray" src="assets/work-taletails.jpg" alt="" aria-hidden="true" />
+          <span class="work-index">04</span>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-top">
+            <span class="tag" data-en="Marketplace · Web App" data-th="มาร์เก็ตเพลส · เว็บแอป">Marketplace · Web App</span>
+            <span class="arrow">↗</span>
+          </div>
+          <h3 data-en="Taletails — Card Marketplace &amp; Auctions" data-th="Taletails — ตลาดและประมูลการ์ดสะสม">Taletails — Card Marketplace &amp; Auctions</h3>
+          <p data-en="A live trading-card marketplace with nightly auctions, verified sellers, and vault-grade authentication — designed and built solo end-to-end with Lovable.ai and a Supabase backend." data-th="แพลตฟอร์มตลาดการ์ดสะสมที่มีประมูลสดทุกคืน ผู้ขายยืนยันตัวตน และระบบตรวจสอบ/จัดเก็บแบบห้องนิรภัย ออกแบบและพัฒนาเองทั้งระบบด้วย Lovable.ai และ Supabase">
+            A live trading-card marketplace with nightly auctions, verified sellers, and vault-grade authentication — designed and built solo end-to-end with Lovable.ai and a Supabase backend.
+          </p>
+          <span class="confidential-note" data-en="Live personal project — visit taletails-trade.com" data-th="โปรเจกต์ส่วนตัวที่เปิดใช้งานจริง — เข้าชมได้ที่ taletails-trade.com">Live personal project — visit taletails-trade.com</span>
+        </div>
+      </a>
+
+      <a class="work-card reveal" href="work/easy-parking.html">
+        <div class="work-thumb photo-reveal">
+          <img class="photo-color" src="assets/work-easy-parking.jpg" alt="Easy Parking app screens" />
+          <img class="photo-gray" src="assets/work-easy-parking.jpg" alt="" aria-hidden="true" />
+          <span class="work-index">05</span>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-top">
+            <span class="tag" data-en="Mobile App · UX Research" data-th="แอปมือถือ · UX Research">Mobile App · UX Research</span>
+            <span class="arrow">↗</span>
+          </div>
+          <h3 data-en="Easy Parking — Book Before You Park" data-th="Easy Parking — จองก่อนจอด">Easy Parking — Book Before You Park</h3>
+          <p data-en="A parking-reservation app concept built from real user research — quantitative surveys and interviews shaped a booking, payment, and live-tracking flow end to end." data-th="แอปจองที่จอดรถที่ออกแบบจากงานวิจัยผู้ใช้จริง ทั้งแบบสอบถามและสัมภาษณ์ นำไปสู่ Flow การจอง จ่ายเงิน และติดตามที่จอดแบบครบวงจร">
+            A parking-reservation app concept built from real user research — quantitative surveys and interviews shaped a booking, payment, and live-tracking flow end to end.
+          </p>
+          <span class="confidential-note" data-en="Self-directed UX case study — concept exploration" data-th="เคสศึกษาที่ทำขึ้นเอง — โปรเจกต์สำรวจแนวคิด">Self-directed UX case study — concept exploration</span>
+        </div>
       </a>
 
     </div>
