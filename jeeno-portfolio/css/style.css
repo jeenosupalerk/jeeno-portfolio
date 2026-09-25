@@ -565,13 +565,75 @@ ul { margin: 0; padding: 0; list-style: none; }
 .work-card:hover {
   transform: translateY(-8px) scale(1.015);
   box-shadow: 0 34px 80px -22px rgba(0,0,0,0.45);
-  border-color: rgba(16,16,16,0.08);
+  border-color: rgba(16,16,16,0.16);
 }
 
 .work-thumb.photo-reveal {
   --reveal-r: 130px;
   aspect-ratio: 4/3;
   border-radius: 0;
+}
+
+/* Motion preview that replaces the still on hover */
+.work-video {
+  position: absolute;
+  inset: -1px;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  object-fit: cover;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+}
+.work-card:hover .work-video,
+.work-video.is-playing {
+  opacity: 1;
+}
+
+/* While the clip is showing, drop the scrim + index so the frame stays clean */
+.work-thumb::after,
+.work-thumb .work-index {
+  transition: opacity 0.4s ease;
+}
+.work-card:hover .work-thumb:has(.work-video)::after,
+.work-card:hover .work-thumb:has(.work-video) .work-index,
+.work-thumb:has(.work-video.is-playing)::after,
+.work-thumb:has(.work-video.is-playing) .work-index {
+  opacity: 0;
+}
+
+.work-preview-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(10,10,10,0.68);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+.work-preview-badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  animation: previewPulse 1.8s ease-in-out infinite;
+}
+@keyframes previewPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.35; transform: scale(0.7); }
 }
 
 .work-thumb.photo-reveal::after {
@@ -657,6 +719,40 @@ ul { margin: 0; padding: 0; list-style: none; }
   border-top: 1px solid var(--line);
   padding-top: 12px;
 }
+
+/* Explicit "go read it" affordance at the foot of every work card */
+.work-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  align-self: flex-start;
+  font-family: var(--font-display);
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  position: relative;
+  padding-bottom: 5px;
+}
+.work-cta::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.5px;
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.work-card:hover .work-cta::after { transform: scaleX(1); }
+
+.work-cta-arrow {
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.work-card:hover .work-cta-arrow { transform: translateX(5px); }
 
 /* ---------- Experience timeline ---------- */
 

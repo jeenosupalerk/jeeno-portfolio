@@ -131,6 +131,47 @@
     if (el) el.textContent = new Date().getFullYear();
   }
 
+  /* ---------- Work-card motion preview ----------
+     Desktop: the clip plays while the pointer is over the card.
+     Touch (no hover): it plays whenever the card is on screen.
+  */
+
+  function initWorkPreview() {
+    var videos = document.querySelectorAll(".work-video");
+    if (!videos.length) return;
+
+    var canHover = window.matchMedia && window.matchMedia("(hover: hover)").matches;
+
+    videos.forEach(function (video) {
+      var card = video.closest(".work-card");
+      if (!card) return;
+
+      function play() {
+        var p = video.play();
+        if (p && p.catch) p.catch(function () { /* autoplay blocked: poster stays */ });
+      }
+      function stop() {
+        video.pause();
+        try { video.currentTime = 0; } catch (e) { /* ignore */ }
+      }
+
+      if (canHover) {
+        card.addEventListener("pointerenter", play);
+        card.addEventListener("pointerleave", stop);
+        return;
+      }
+
+      video.classList.add("is-playing");
+      if (!("IntersectionObserver" in window)) { play(); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) play(); else video.pause();
+        });
+      }, { threshold: 0.45 });
+      io.observe(card);
+    });
+  }
+
   /* ---------- PDF download ----------
      On the real deployed site, the plain <a download> works natively,
      so this only steps in when running inside the claude.ai Artifact
@@ -184,6 +225,7 @@
     initMobileNav();
     initPhotoReveal();
     initYear();
+    initWorkPreview();
     initPdfDownload();
   });
 })();
