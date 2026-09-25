@@ -5,21 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Supalerk Chaonchom — UX/UI &amp; Product Designer</title>
 <meta name="description" content="Supalerk (Jeeno) Chaonchom — UX/UI &amp; Product Designer specializing in Enterprise, Fintech &amp; EdTech design systems and product experiences." />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23111111'/%3E%3Ctext x='50' y='68' font-size='60' font-family='Arial, sans-serif' font-weight='700' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+<meta name="theme-color" content="#1e3b2c" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%231e3b2c'/%3E%3Ctext x='50' y='68' font-size='60' font-family='Arial, sans-serif' font-weight='700' fill='%23f2a33a' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/style.css?v=5" />
 </head>
-<body>
+<body class="home">
 
 <div class="grain-layer" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <header class="nav" id="siteNav">
   <div class="nav-inner">
-    <a href="#hero" class="nav-badge">
-      <span class="dot"></span>
-      <span data-en="Available for new opportunities" data-th="เปิดรับโอกาสใหม่ๆ">Available for new opportunities</span>
+    <a href="#hero" class="nav-id">
+      <img class="nav-avatar" src="assets/avatar.jpg" alt="" />
+      <span class="nav-id-text">
+        <span class="nav-name">Supalerk Chaonchom</span>
+        <span class="nav-sub" data-en="Portfolio · UX/UI Designer" data-th="พอร์ตโฟลิโอ · นักออกแบบ UX/UI">Portfolio · UX/UI Designer</span>
+      </span>
     </a>
 
     <nav class="nav-links" id="navLinks">
@@ -27,7 +32,6 @@
       <a href="#services" data-en="Skills" data-th="ทักษะ">Skills</a>
       <a href="#work" data-en="Work" data-th="ผลงาน">Work</a>
       <a href="#experience" data-en="Experience" data-th="ประสบการณ์">Experience</a>
-      <a href="#contact" data-en="Contact" data-th="ติดต่อ">Contact</a>
     </nav>
 
     <div class="nav-actions">
@@ -36,9 +40,9 @@
         <span class="lang-sep">/</span>
         <span class="lang-opt" data-lang-btn="th">TH</span>
       </button>
-      <a href="#contact" class="btn btn-dark btn-sm">
-        <span data-en="Let's Talk" data-th="คุยกัน">Let's Talk</span>
-        <span class="arrow">↗</span>
+      <a href="#contact" class="btn btn-accent btn-sm nav-cta">
+        <span class="nav-cta-dot" aria-hidden="true"></span>
+        <span data-en="Get in touch" data-th="ติดต่อฉัน">Get in touch</span>
       </a>
       <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
         <span></span><span></span><span></span>
@@ -51,15 +55,16 @@
 
   <!-- HERO -->
   <section id="hero" class="section hero-section">
-    <div class="card hero-card reveal">
-      <p class="eyebrow" data-en="UX/UI &amp; Product Designer" data-th="นักออกแบบ UX/UI &amp; Product Designer">UX/UI &amp; Product Designer</p>
+    <div class="hero-inner reveal">
+      <span class="pill-badge">
+        <span class="dot"></span>
+        <span data-en="UX/UI &amp; Product Designer · Available for work" data-th="นักออกแบบ UX/UI &amp; Product · พร้อมรับงานใหม่">UX/UI &amp; Product Designer · Available for work</span>
+      </span>
 
-      <h1 class="hero-name">
-        <span class="outline-text">SUPALERK</span>
-        <span class="solid-text">CHAONCHOM</span>
+      <h1 class="hero-title">
+        <span data-en="Designing products that" data-th="ออกแบบโปรดักต์ที่">Designing products that</span>
+        <span class="hero-grad" data-en="just make sense." data-th="ใช้แล้วเข้าใจทันที">just make sense.</span>
       </h1>
-
-      <p class="hero-nickname">/ Jeeno</p>
 
       <p class="hero-tagline" data-en="Designing clear, scalable experiences for Enterprise, Fintech &amp; EdTech products — from ambiguous requirements to high-fidelity, testable prototypes." data-th="ออกแบบประสบการณ์ที่ชัดเจนและขยายผลได้ ให้กับผลิตภัณฑ์สาย Enterprise, Fintech และ EdTech ตั้งแต่ requirement ที่ยังไม่ชัด ไปจนถึง Prototype คุณภาพสูงที่พร้อมทดสอบจริง">
         Designing clear, scalable experiences for Enterprise, Fintech &amp; EdTech products — from ambiguous requirements to high-fidelity, testable prototypes.
@@ -76,57 +81,117 @@
         </a>
       </div>
 
-      <div class="hero-social">
-        <a href="mailto:jeenosupalerk@gmail.com" class="pill-tag">
-          <span class="pill-icon">✉</span> jeenosupalerk@gmail.com
+      <ul class="hero-chips" aria-label="Focus areas">
+        <li style="--c: var(--forest)">Enterprise</li>
+        <li style="--c: var(--sunset)">Fintech</li>
+        <li style="--c: var(--ember)">EdTech</li>
+        <li style="--c: var(--leaf)">Design Systems</li>
+        <li style="--c: var(--mist-deep)">AI Prototyping</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SNAPSHOT MARQUEE -->
+  <section class="marquee" aria-label="Snapshots of work and life">
+    <div class="marquee-track">
+      <div class="marquee-group">
+        <figure class="mq-item">
+          <img src="assets/photos/jeeno-studio.jpg" alt="Jeeno sitting in a bright white café" loading="lazy" />
+          <figcaption class="mq-cap"><span data-en="Hi, I'm Jeeno" data-th="สวัสดี ฉันชื่อจีโน่">Hi, I'm Jeeno</span></figcaption>
+        </figure>
+        <a class="mq-item" href="work/pos.html">
+          <img src="assets/work-pos.jpg" alt="Canteen &amp; Restaurant POS screens" loading="lazy" />
+          <span class="mq-cap">01 · Canteen POS</span>
         </a>
-        <a href="tel:+66979563556" class="pill-tag">
-          <span class="pill-icon">☎</span> 097-956-3556
+        <a class="mq-item" href="work/easy-parking.html">
+          <img src="assets/work-easy-parking.jpg" alt="Easy Parking app screens" loading="lazy" />
+          <span class="mq-cap">05 · Easy Parking</span>
+        </a>
+        <figure class="mq-item mq-tall">
+          <img src="assets/photos/jeeno-sunset.jpg" alt="Jeeno on a rocky summit at sunset above a river valley" loading="lazy" />
+          <figcaption class="mq-cap"><span data-en="Off-screen: chasing sunsets" data-th="นอกจอ: ตามเก็บพระอาทิตย์ตก">Off-screen: chasing sunsets</span></figcaption>
+        </figure>
+        <a class="mq-item" href="work/design-system.html">
+          <img src="assets/work-design-system.jpg" alt="Design system token preview" loading="lazy" />
+          <span class="mq-cap">02 · Design System</span>
+        </a>
+        <a class="mq-item" href="work/insurance.html">
+          <img src="assets/work-insurance.jpg" alt="HR Insurance Lookup System screen" loading="lazy" />
+          <span class="mq-cap">03 · HR Insurance</span>
+        </a>
+        <figure class="mq-item">
+          <img src="assets/photos/jeeno-garden.jpg" alt="Jeeno in a dark suit holding a graduation sash in a garden" loading="lazy" />
+          <figcaption class="mq-cap"><span data-en="Graduation day" data-th="วันรับปริญญา">Graduation day</span></figcaption>
+        </figure>
+        <a class="mq-item" href="https://taletails-trade.com">
+          <img src="assets/work-taletails.jpg" alt="Taletails vault storage banner" loading="lazy" />
+          <span class="mq-cap">04 · Taletails</span>
         </a>
       </div>
-    </div>
-
-    <div class="scroll-cue reveal">
-      <span data-en="Scroll" data-th="เลื่อนลง">Scroll</span>
-      <div class="scroll-line"></div>
+      <!-- second copy makes the loop seamless; hidden from assistive tech -->
+      <div class="marquee-group" aria-hidden="true">
+        <figure class="mq-item"><img src="assets/photos/jeeno-studio.jpg" alt="" loading="lazy" /><figcaption class="mq-cap"><span data-en="Hi, I'm Jeeno" data-th="สวัสดี ฉันชื่อจีโน่">Hi, I'm Jeeno</span></figcaption></figure>
+        <a class="mq-item" href="work/pos.html" tabindex="-1"><img src="assets/work-pos.jpg" alt="" loading="lazy" /><span class="mq-cap">01 · Canteen POS</span></a>
+        <a class="mq-item" href="work/easy-parking.html" tabindex="-1"><img src="assets/work-easy-parking.jpg" alt="" loading="lazy" /><span class="mq-cap">05 · Easy Parking</span></a>
+        <figure class="mq-item mq-tall"><img src="assets/photos/jeeno-sunset.jpg" alt="" loading="lazy" /><figcaption class="mq-cap"><span data-en="Off-screen: chasing sunsets" data-th="นอกจอ: ตามเก็บพระอาทิตย์ตก">Off-screen: chasing sunsets</span></figcaption></figure>
+        <a class="mq-item" href="work/design-system.html" tabindex="-1"><img src="assets/work-design-system.jpg" alt="" loading="lazy" /><span class="mq-cap">02 · Design System</span></a>
+        <a class="mq-item" href="work/insurance.html" tabindex="-1"><img src="assets/work-insurance.jpg" alt="" loading="lazy" /><span class="mq-cap">03 · HR Insurance</span></a>
+        <figure class="mq-item"><img src="assets/photos/jeeno-garden.jpg" alt="" loading="lazy" /><figcaption class="mq-cap"><span data-en="Graduation day" data-th="วันรับปริญญา">Graduation day</span></figcaption></figure>
+        <a class="mq-item" href="https://taletails-trade.com" tabindex="-1"><img src="assets/work-taletails.jpg" alt="" loading="lazy" /><span class="mq-cap">04 · Taletails</span></a>
+      </div>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about" class="section">
-    <div class="card reveal">
-      <p class="section-label">/ <span data-en="About" data-th="เกี่ยวกับฉัน">About</span></p>
-
+    <div class="card about-card reveal">
       <div class="about-grid">
-        <div class="about-photo photo-reveal" id="photoReveal">
-          <img class="photo-color" src="assets/avatar.jpg" alt="Portrait of Supalerk Chaonchom" />
-          <img class="photo-gray" src="assets/avatar.jpg" alt="" aria-hidden="true" />
-          <span class="photo-hint" data-en="Hover to reveal" data-th="เอาเมาส์ถูตรงนี้">Hover to reveal</span>
-        </div>
-
         <div class="about-content">
-          <h2 class="section-title" data-en="Most interfaces try to look smart. Good ones just make sense." data-th="อินเทอร์เฟซส่วนใหญ่พยายามดูฉลาด แต่อินเทอร์เฟซที่ดีแค่ทำให้เข้าใจง่าย">
-            Most interfaces try to look smart. Good ones just make sense.
+          <span class="pill-label" data-en="About me" data-th="เกี่ยวกับฉัน">About me</span>
+
+          <h2 class="about-hello">
+            <span data-en="Hi, I'm" data-th="สวัสดี ฉันคือ">Hi, I'm</span>
+            <span class="about-name">Supalerk <span class="about-nick">(Jeeno)</span></span>
           </h2>
+
+          <p class="about-lead" data-en="Most interfaces try to look smart. Good ones just make sense." data-th="อินเทอร์เฟซส่วนใหญ่พยายามดูฉลาด แต่อินเทอร์เฟซที่ดีแค่ทำให้เข้าใจง่าย">
+            Most interfaces try to look smart. Good ones just make sense.
+          </p>
 
           <p class="about-text" data-en="UX/UI &amp; Product Designer with 5 years of experience specializing in complex Enterprise, Fintech, and EdTech ecosystems. I focus on turning ambiguous business requirements into clear user flows, scalable design systems, and high-fidelity prototypes — using AI-augmented workflows (Claude, CodeX) and rapid 'vibe coding' to move from idea to testable product faster." data-th="นักออกแบบ UX/UI &amp; Product Designer ที่มีประสบการณ์ 5 ปีในการออกแบบระบบที่ซับซ้อนสาย Enterprise, Fintech และ EdTech ถนัดแปลงความต้องการทางธุรกิจที่ยังไม่ชัดเจนให้กลายเป็น User Flow และ Design System ที่ขยายผลได้ พร้อมสร้าง Prototype คุณภาพสูงอย่างรวดเร็ว ด้วยเวิร์กโฟลว์ที่ผสาน AI (Claude, CodeX) และแนวทาง 'Vibe Coding'">
             UX/UI &amp; Product Designer with 5 years of experience specializing in complex Enterprise, Fintech, and EdTech ecosystems. I focus on turning ambiguous business requirements into clear user flows, scalable design systems, and high-fidelity prototypes — using AI-augmented workflows (Claude, CodeX) and rapid 'vibe coding' to move from idea to testable product faster.
           </p>
 
           <div class="stat-row">
-            <div class="stat">
+            <div class="stat" style="--c: var(--forest)">
               <span class="stat-num">5+</span>
               <span class="stat-label" data-en="Years Experience" data-th="ปีประสบการณ์">Years Experience</span>
             </div>
-            <div class="stat">
+            <div class="stat" style="--c: var(--sunset)">
               <span class="stat-num">3</span>
               <span class="stat-label" data-en="Industries — Enterprise / Fintech / EdTech" data-th="อุตสาหกรรม — Enterprise / Fintech / EdTech">Industries — Enterprise / Fintech / EdTech</span>
             </div>
-            <div class="stat">
+            <div class="stat" style="--c: var(--ember)">
               <span class="stat-num">1,000+</span>
               <span class="stat-label" data-en="Users on EdTech Platform" data-th="ผู้ใช้งานบนแพลตฟอร์ม EdTech">Users on EdTech Platform</span>
             </div>
           </div>
+        </div>
+
+        <div class="photo-stack" id="photoStack" role="button" tabindex="0" aria-label="Show next photo">
+          <figure class="ps-card" data-pos="0">
+            <img src="assets/photos/jeeno-studio.jpg" alt="Jeeno sitting in a bright white café, holding a drink" />
+            <figcaption class="ps-cap"><span data-en="Calm spaces, clear thinking" data-th="พื้นที่เรียบง่าย ความคิดชัดเจน">Calm spaces, clear thinking</span></figcaption>
+          </figure>
+          <figure class="ps-card" data-pos="1">
+            <img src="assets/photos/jeeno-sunset.jpg" alt="Jeeno on a rocky summit at sunset" />
+            <figcaption class="ps-cap"><span data-en="Weekends: summits &amp; sunsets" data-th="วันหยุด: ยอดเขาและพระอาทิตย์ตก">Weekends: summits &amp; sunsets</span></figcaption>
+          </figure>
+          <figure class="ps-card" data-pos="2">
+            <img src="assets/photos/jeeno-garden.jpg" alt="Jeeno in a dark suit holding a graduation sash" />
+            <figcaption class="ps-cap"><span data-en="B.IT, Thai-Nichi Institute" data-th="ป.ตรี IT สถาบันไทย-ญี่ปุ่น">B.IT, Thai-Nichi Institute</span></figcaption>
+          </figure>
+          <span class="ps-hint"><span data-en="Tap to shuffle" data-th="แตะเพื่อสลับรูป">Tap to shuffle</span> <span aria-hidden="true">↻</span></span>
         </div>
       </div>
     </div>
@@ -134,16 +199,19 @@
 
   <!-- SERVICES -->
   <section id="services" class="section">
-    <div class="card services-card reveal">
-      <span class="ghost-word" aria-hidden="true">SKILLS</span>
-      <p class="section-label">/ <span data-en="Skills" data-th="ทักษะ">Skills</span></p>
+    <div class="section-head reveal">
+      <span class="pill-label" data-en="What I do" data-th="สิ่งที่ฉันทำ">What I do</span>
+      <h2 class="section-big" data-en="Skills" data-th="ทักษะ">Skills</h2>
+    </div>
 
+    <div class="card services-card reveal">
       <div class="accordion" id="servicesAccordion">
 
-        <div class="accordion-item is-open">
+        <div class="accordion-item is-open" style="--acc: var(--forest)">
           <button class="accordion-head">
+            <span class="acc-num">01</span>
             <span class="acc-title" data-en="UX Research" data-th="UX Research">UX Research</span>
-            <span class="acc-icon">↗</span>
+            <span class="acc-icon">+</span>
           </button>
           <div class="accordion-body">
             <p data-en="Client interviews, design sprints, usability testing, and end-to-end user flows that turn ambiguity into clarity." data-th="สัมภาษณ์ลูกค้า, Design Sprint, Usability Testing และออกแบบ User Flow แบบครบวงจร เปลี่ยนความไม่ชัดเจนให้เป็นทิศทางที่ชัดเจน">
@@ -152,10 +220,11 @@
           </div>
         </div>
 
-        <div class="accordion-item">
+        <div class="accordion-item" style="--acc: var(--sunset)">
           <button class="accordion-head">
+            <span class="acc-num">02</span>
             <span class="acc-title" data-en="Design Systems" data-th="Design Systems">Design Systems</span>
-            <span class="acc-icon">↗</span>
+            <span class="acc-icon">+</span>
           </button>
           <div class="accordion-body">
             <p data-en="Design tokens, Figma variables, component libraries, and developer handoff — built to scale across multi-tenant products." data-th="Design Tokens, Figma Variables, Component Library และ Developer Handoff ที่ออกแบบมาให้ขยายผลได้ในผลิตภัณฑ์หลายแพลตฟอร์ม">
@@ -164,10 +233,11 @@
           </div>
         </div>
 
-        <div class="accordion-item">
+        <div class="accordion-item" style="--acc: var(--ember)">
           <button class="accordion-head">
+            <span class="acc-num">03</span>
             <span class="acc-title" data-en="AI Prototyping" data-th="AI Prototyping">AI Prototyping</span>
-            <span class="acc-icon">↗</span>
+            <span class="acc-icon">+</span>
           </button>
           <div class="accordion-body">
             <p data-en="Claude &amp; CodeX sub-agents, Lovable.ai, Google Stitch, and 'vibe coding' for rapid, testable high-fidelity prototypes." data-th="ใช้ Sub-agent จาก Claude/CodeX, Lovable.ai, Google Stitch และแนวทาง Vibe Coding เพื่อสร้าง Prototype คุณภาพสูงได้อย่างรวดเร็ว">
@@ -176,10 +246,11 @@
           </div>
         </div>
 
-        <div class="accordion-item">
+        <div class="accordion-item" style="--acc: var(--leaf)">
           <button class="accordion-head">
+            <span class="acc-num">04</span>
             <span class="acc-title" data-en="Product Design" data-th="Product Design">Product Design</span>
-            <span class="acc-icon">↗</span>
+            <span class="acc-icon">+</span>
           </button>
           <div class="accordion-body">
             <p data-en="Enterprise ERP/CRM, Fintech systems, EdTech platforms, and POS systems — designed for real operational complexity." data-th="ออกแบบระบบ Enterprise ERP/CRM, Fintech, แพลตฟอร์ม EdTech และระบบ POS ที่รองรับความซับซ้อนของการใช้งานจริง">
@@ -194,16 +265,17 @@
 
   <!-- WORK -->
   <section id="work" class="section work-section">
-    <span class="ghost-word ghost-word-center" aria-hidden="true">WORK</span>
-    <p class="section-label center">/ <span data-en="Selected Work" data-th="ผลงานที่คัดสรร">Selected Work</span></p>
-    <h2 class="work-heading" data-en="A closer look at how the thinking became the interface." data-th="เจาะลึกว่าแนวคิดกลายมาเป็นอินเทอร์เฟซได้อย่างไร">A closer look at how the thinking became the interface.</h2>
+    <div class="section-head center reveal">
+      <span class="pill-label" data-en="Selected projects" data-th="ผลงานที่คัดสรร">Selected projects</span>
+      <h2 class="section-big" data-en="Recent Work" data-th="ผลงานล่าสุด">Recent Work</h2>
+      <p class="section-sub" data-en="A closer look at how the thinking became the interface." data-th="เจาะลึกว่าแนวคิดกลายมาเป็นอินเทอร์เฟซได้อย่างไร">A closer look at how the thinking became the interface.</p>
+    </div>
 
     <div class="work-grid">
 
-      <a class="work-card reveal" href="work/pos.html">
-        <div class="work-thumb photo-reveal">
-          <img class="photo-color" src="assets/work-pos.jpg" alt="Canteen &amp; Restaurant POS screens" />
-          <img class="photo-gray" src="assets/work-pos.jpg" alt="" aria-hidden="true" />
+      <a class="work-card reveal" href="work/pos.html" style="--acc: var(--forest)">
+        <div class="work-thumb">
+          <img src="assets/work-pos.jpg" alt="Canteen &amp; Restaurant POS screens" />
           <span class="work-index">01</span>
         </div>
         <div class="work-card-body">
@@ -223,10 +295,9 @@
         </div>
       </a>
 
-      <a class="work-card reveal" href="work/design-system.html">
-        <div class="work-thumb photo-reveal">
-          <img class="photo-color" src="assets/work-design-system.jpg" alt="Design system token preview" />
-          <img class="photo-gray" src="assets/work-design-system.jpg" alt="" aria-hidden="true" />
+      <a class="work-card reveal" href="work/design-system.html" style="--acc: var(--sunset)">
+        <div class="work-thumb">
+          <img src="assets/work-design-system.jpg" alt="Design system token preview" />
           <span class="work-index">02</span>
         </div>
         <div class="work-card-body">
@@ -246,10 +317,9 @@
         </div>
       </a>
 
-      <a class="work-card reveal" href="work/insurance.html">
-        <div class="work-thumb photo-reveal">
-          <img class="photo-color" src="assets/work-insurance.jpg" alt="HR Insurance Lookup System screen" />
-          <img class="photo-gray" src="assets/work-insurance.jpg" alt="" aria-hidden="true" />
+      <a class="work-card reveal" href="work/insurance.html" style="--acc: var(--mist-deep)">
+        <div class="work-thumb">
+          <img src="assets/work-insurance.jpg" alt="HR Insurance Lookup System screen" />
           <span class="work-index">03</span>
         </div>
         <div class="work-card-body">
@@ -269,10 +339,9 @@
         </div>
       </a>
 
-      <a class="work-card reveal" href="https://taletails-trade.com">
-        <div class="work-thumb photo-reveal">
-          <img class="photo-color" src="assets/work-taletails.jpg" alt="Taletails vault storage banner" />
-          <img class="photo-gray" src="assets/work-taletails.jpg" alt="" aria-hidden="true" />
+      <a class="work-card reveal" href="https://taletails-trade.com" style="--acc: var(--ember)">
+        <div class="work-thumb">
+          <img src="assets/work-taletails.jpg" alt="Taletails vault storage banner" />
           <span class="work-index">04</span>
         </div>
         <div class="work-card-body">
@@ -292,10 +361,9 @@
         </div>
       </a>
 
-      <a class="work-card reveal" href="work/easy-parking.html">
-        <div class="work-thumb photo-reveal">
-          <img class="photo-color" src="assets/work-easy-parking.jpg" alt="Easy Parking app screens" />
-          <img class="photo-gray" src="assets/work-easy-parking.jpg" alt="" aria-hidden="true" />
+      <a class="work-card reveal" href="work/easy-parking.html" style="--acc: var(--leaf)">
+        <div class="work-thumb">
+          <img src="assets/work-easy-parking.jpg" alt="Easy Parking app screens" />
           <video class="work-video" src="assets/video/ep-card.mp4" poster="assets/video/ep-card-poster.jpg"
                  muted loop playsinline preload="none" aria-hidden="true"></video>
           <span class="work-preview-badge" data-en="Live preview" data-th="ตัวอย่างเคลื่อนไหว">Live preview</span>
@@ -323,12 +391,15 @@
 
   <!-- EXPERIENCE -->
   <section id="experience" class="section">
-    <div class="card reveal">
-      <p class="section-label">/ <span data-en="Experience" data-th="ประสบการณ์">Experience</span></p>
+    <div class="section-head reveal">
+      <span class="pill-label" data-en="Career path" data-th="เส้นทางการทำงาน">Career path</span>
+      <h2 class="section-big" data-en="Experience" data-th="ประสบการณ์">Experience</h2>
+    </div>
 
+    <div class="card reveal">
       <div class="timeline">
 
-        <div class="timeline-item">
+        <div class="timeline-item is-current">
           <div class="timeline-date">2024 — <span data-en="Present" data-th="ปัจจุบัน">Present</span></div>
           <div class="timeline-content">
             <h4>UX/UI Designer &amp; Product Designer</h4>
@@ -387,34 +458,49 @@
 
   <!-- CONTACT -->
   <section id="contact" class="section">
-    <div class="card contact-card reveal">
-      <span class="pill-badge">
-        <span class="dot"></span>
-        <span data-en="Available for New Project" data-th="เปิดรับโปรเจกต์ใหม่">Available for New Project</span>
-      </span>
+    <div class="contact-card reveal">
+      <img class="contact-bg" src="assets/photos/jeeno-sunset.jpg" alt="" aria-hidden="true" loading="lazy" />
+      <div class="contact-inner">
+        <span class="pill-badge is-glass">
+          <span class="dot"></span>
+          <span data-en="Available for New Project" data-th="เปิดรับโปรเจกต์ใหม่">Available for New Project</span>
+        </span>
 
-      <h2 class="contact-title" data-en="Have a project in mind?" data-th="มีโปรเจกต์ในใจไหม?">Have a project in mind?</h2>
-      <p class="contact-sub" data-en="Let's turn it into something clear, usable, and built to scale." data-th="มาช่วยกันทำให้มันชัดเจน ใช้งานง่าย และขยายผลได้จริง">Let's turn it into something clear, usable, and built to scale.</p>
+        <h2 class="contact-title" data-en="Have a project in mind?" data-th="มีโปรเจกต์ในใจไหม?">Have a project in mind?</h2>
+        <p class="contact-sub" data-en="Let's turn it into something clear, usable, and built to scale." data-th="มาช่วยกันทำให้มันชัดเจน ใช้งานง่าย และขยายผลได้จริง">Let's turn it into something clear, usable, and built to scale.</p>
 
-      <a href="mailto:jeenosupalerk@gmail.com" class="btn btn-dark btn-lg">
-        <span data-en="Contact Me" data-th="ติดต่อฉัน">Contact Me</span>
-        <span class="arrow">↗</span>
-      </a>
+        <a href="mailto:jeenosupalerk@gmail.com" class="btn btn-sunset btn-lg">
+          <span data-en="Contact Me" data-th="ติดต่อฉัน">Contact Me</span>
+          <span class="arrow">↗</span>
+        </a>
 
-      <div class="contact-pills">
-        <a href="mailto:jeenosupalerk@gmail.com" class="pill-tag"><span class="pill-icon">✉</span> Email</a>
-        <a href="tel:+66979563556" class="pill-tag"><span class="pill-icon">☎</span> 097-956-3556</a>
-        <a href="assets/Supalerk_Chaonchom_CV.pdf" class="pill-tag" download><span class="pill-icon">↓</span> <span data-en="Resume" data-th="เรซูเม่">Resume</span></a>
+        <div class="contact-pills">
+          <a href="mailto:jeenosupalerk@gmail.com" class="pill-tag is-glass"><span class="pill-icon">✉</span> jeenosupalerk@gmail.com</a>
+          <a href="tel:+66979563556" class="pill-tag is-glass"><span class="pill-icon">☎</span> 097-956-3556</a>
+          <a href="assets/Supalerk_Chaonchom_CV.pdf" class="pill-tag is-glass" download><span class="pill-icon">↓</span> <span data-en="Resume" data-th="เรซูเม่">Resume</span></a>
+        </div>
       </div>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer">
-  <p>© <span id="year"></span> Supalerk Chaonchom. <span data-en="All rights reserved." data-th="สงวนลิขสิทธิ์">All rights reserved.</span></p>
+<footer class="site-footer footer-dark">
+  <div class="footer-inner">
+    <a class="footer-mail" href="mailto:jeenosupalerk@gmail.com">
+      <span data-en="Get in touch:" data-th="ติดต่อ:">Get in touch:</span>
+      <strong>jeenosupalerk@gmail.com</strong> <span aria-hidden="true">↗</span>
+    </a>
+    <nav class="footer-links">
+      <a href="#about" data-en="About" data-th="เกี่ยวกับฉัน">About</a>
+      <a href="#work" data-en="Work" data-th="ผลงาน">Work</a>
+      <a href="#experience" data-en="Experience" data-th="ประสบการณ์">Experience</a>
+      <a href="assets/Supalerk_Chaonchom_CV.pdf" download data-en="Resume" data-th="เรซูเม่">Resume</a>
+    </nav>
+  </div>
+  <p class="footer-copy">© <span id="year"></span> Supalerk Chaonchom. <span data-en="All rights reserved." data-th="สงวนลิขสิทธิ์">All rights reserved.</span></p>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/main.js?v=5"></script>
 </body>
 </html>

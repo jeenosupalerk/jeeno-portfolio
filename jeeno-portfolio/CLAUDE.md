@@ -23,7 +23,7 @@ conventions to keep, and what is still open.
 ## 2. File map
 
 ```
-index.html                 home: hero, about, skills, work grid, experience, contact
+index.html                 home: hero, photo marquee, about, skills, work grid, experience, contact
 work/pos.html              case study 01 — Canteen & Restaurant POS
 work/design-system.html    case study 02 — Design System / token architecture
 work/insurance.html        case study 03 — HR Insurance Lookup System
@@ -32,6 +32,7 @@ css/style.css              base tokens + home page
 css/case-study.css         everything prefixed .cs-* (case-study pages)
 js/main.js                 all behaviour, one IIFE, six init functions
 assets/                    avatar, CV, work thumbnails
+assets/photos/             owner photos (marquee, About stack, Contact background)
 assets/case-studies/       deck exports used inside case studies
 assets/pdf/                one downloadable PDF per case study
 assets/video/              looping prototype clips + their poster frames
@@ -122,8 +123,8 @@ The Easy Parking card additionally has a **motion preview**: a `<video
 class="work-video">` layered over the thumbnail plus a `.work-preview-badge`
 ("Live preview"). `initWorkPreview()` plays it on `pointerenter` on devices that
 report `(hover: hover)`, and on touch devices plays it via `IntersectionObserver`
-whenever the card is 45% on screen. While the clip is visible, the dark scrim and
-the big index number fade out — that is the `:has(.work-video)` rule in
+whenever the card is 45% on screen. While the clip is visible, the index pill
+fades out — that is the `:has(.work-video)` rule in
 `css/style.css`. **This pattern is meant to be extended to the other cards once
 their clips exist.**
 
@@ -223,6 +224,18 @@ is done from the Cowork session that owns it, not from here.
   files that changed.
 - Prefer building components natively (cards, grids, type) over pasting deck
   screenshots as flat images. Screenshots are for actual product UI only.
-- The site is monochrome and editorial on purpose. Color appears only inside
-  product screenshots and in the two semantic accents (`.is-pain` red,
-  `.is-gain` green). Don't introduce a brand color.
+- **Color (changed 2026-09-25 at the owner's request).** The home page moved
+  from monochrome to a palette pulled from the owner's own photos, defined as
+  tokens at the top of `css/style.css`: `--forest` (pine green, primary),
+  `--leaf`, `--sunset` (amber), `--ember` (orange), `--mist-deep` (teal), on a
+  warm `--paper` background. Layout style follows a Framer reference the owner
+  picked (chonladda-portfolio.framer.website): pill labels, big tight headings,
+  soft rounded cards, a snapshot marquee, a black footer. Use those tokens —
+  don't invent new hues. Case-study pages still keep monochrome content cards;
+  only the shared background changed there.
+- Owner photos live in `assets/photos/` (resized to 1600px, q80): used in the
+  hero marquee, the About polaroid stack (`initPhotoStack()`), and as the
+  Contact card background.
+- CSS/JS links carry a `?v=N` cache-buster. Bump it on every page whenever
+  `style.css`, `case-study.css` or `main.js` changes, or returning visitors see
+  a stale mix.

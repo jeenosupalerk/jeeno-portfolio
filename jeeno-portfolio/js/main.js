@@ -94,34 +94,58 @@
     });
   }
 
-  /* ---------- Hover-to-reveal color (photo + work thumbnails) ---------- */
+  /* ---------- About photo stack ----------
+     Click / tap / Enter throws the front polaroid off to the right,
+     then it slides back in at the bottom of the pile.
+  */
 
-  function initPhotoReveal() {
-    var items = document.querySelectorAll(".photo-reveal");
-    if (!items.length) return;
+  function initPhotoStack() {
+    var stack = document.getElementById("photoStack");
+    if (!stack) return;
+    var cards = Array.prototype.slice.call(stack.querySelectorAll(".ps-card"));
+    var busy = false;
 
-    items.forEach(function (el) {
-      function setPos(clientX, clientY) {
-        var rect = el.getBoundingClientRect();
-        var x = ((clientX - rect.left) / rect.width) * 100;
-        var y = ((clientY - rect.top) / rect.height) * 100;
-        x = Math.max(0, Math.min(100, x));
-        y = Math.max(0, Math.min(100, y));
-        el.style.setProperty("--mx", x + "%");
-        el.style.setProperty("--my", y + "%");
-      }
+    function next() {
+      if (busy) return;
+      busy = true;
+      var front = cards.filter(function (c) { return c.getAttribute("data-pos") === "0"; })[0];
+      front.classList.add("is-out");
+      setTimeout(function () {
+        cards.forEach(function (c) {
+          var pos = parseInt(c.getAttribute("data-pos"), 10);
+          c.setAttribute("data-pos", String((pos + cards.length - 1) % cards.length));
+        });
+        front.classList.remove("is-out");
+        busy = false;
+      }, 380);
+    }
 
-      el.addEventListener("pointerenter", function (e) {
-        el.classList.add("is-active");
-        setPos(e.clientX, e.clientY);
-      });
-      el.addEventListener("pointermove", function (e) {
-        setPos(e.clientX, e.clientY);
-      });
-      el.addEventListener("pointerleave", function () {
-        el.classList.remove("is-active");
-      });
+    stack.addEventListener("click", next);
+    stack.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); next(); }
     });
+  }
+
+  /* ---------- Scroll progress bar + nav shadow ---------- */
+
+  function initScrollProgress() {
+    var bar = document.getElementById("scrollProgress");
+    var nav = document.getElementById("siteNav");
+    if (!bar && !nav) return;
+    var ticking = false;
+
+    function update() {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var p = max > 0 ? window.scrollY / max : 0;
+      if (bar) bar.style.setProperty("--p", p.toFixed(4));
+      if (nav) nav.classList.toggle("is-scrolled", window.scrollY > 24);
+      ticking = false;
+    }
+
+    window.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
   }
 
   /* ---------- Footer year ---------- */
@@ -223,7 +247,8 @@
     initReveal();
     initAccordion();
     initMobileNav();
-    initPhotoReveal();
+    initPhotoStack();
+    initScrollProgress();
     initYear();
     initWorkPreview();
     initPdfDownload();
