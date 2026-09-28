@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=5" />
+<link rel="stylesheet" href="css/style.css?v=6" />
 </head>
 <body class="home">
 
@@ -91,57 +91,85 @@
     </div>
   </section>
 
-  <!-- SNAPSHOT MARQUEE -->
-  <section class="marquee" aria-label="Snapshots of work and life">
-    <div class="marquee-track">
-      <div class="marquee-group">
-        <figure class="mq-item">
-          <img src="assets/photos/jeeno-studio.jpg" alt="Jeeno sitting in a bright white café" loading="lazy" />
-          <figcaption class="mq-cap"><span data-en="Hi, I'm Jeeno" data-th="สวัสดี ฉันชื่อจีโน่">Hi, I'm Jeeno</span></figcaption>
-        </figure>
-        <a class="mq-item" href="work/pos.html">
-          <img src="assets/work-pos.jpg" alt="Canteen &amp; Restaurant POS screens" loading="lazy" />
-          <span class="mq-cap">01 · Canteen POS</span>
-        </a>
-        <a class="mq-item" href="work/easy-parking.html">
-          <img src="assets/work-easy-parking.jpg" alt="Easy Parking app screens" loading="lazy" />
-          <span class="mq-cap">05 · Easy Parking</span>
-        </a>
-        <figure class="mq-item mq-tall">
-          <img src="assets/photos/jeeno-sunset.jpg" alt="Jeeno on a rocky summit at sunset above a river valley" loading="lazy" />
-          <figcaption class="mq-cap"><span data-en="Off-screen: chasing sunsets" data-th="นอกจอ: ตามเก็บพระอาทิตย์ตก">Off-screen: chasing sunsets</span></figcaption>
-        </figure>
-        <a class="mq-item" href="work/design-system.html">
-          <img src="assets/work-design-system.jpg" alt="Design system token preview" loading="lazy" />
-          <span class="mq-cap">02 · Design System</span>
-        </a>
-        <a class="mq-item" href="work/insurance.html">
-          <img src="assets/work-insurance.jpg" alt="HR Insurance Lookup System screen" loading="lazy" />
-          <span class="mq-cap">03 · HR Insurance</span>
-        </a>
-        <figure class="mq-item">
-          <img src="assets/photos/jeeno-garden.jpg" alt="Jeeno in a dark suit holding a graduation sash in a garden" loading="lazy" />
-          <figcaption class="mq-cap"><span data-en="Graduation day" data-th="วันรับปริญญา">Graduation day</span></figcaption>
-        </figure>
-        <a class="mq-item" href="https://taletails-trade.com">
-          <img src="assets/work-taletails.jpg" alt="Taletails vault storage banner" loading="lazy" />
-          <span class="mq-cap">04 · Taletails</span>
-        </a>
+  <!-- DESIGN SHOWCASE -->
+  <section class="section showcase" aria-label="Design showcase">
+    <div class="bento">
+
+      <!-- Live prototype -->
+      <a class="bento-tile tile-proto reveal" href="work/easy-parking.html">
+        <div class="proto-copy">
+          <span class="tile-kicker" data-en="Live prototype" data-th="Prototype ที่ใช้งานได้จริง">Live prototype</span>
+          <h3 class="tile-title" data-en="Book a parking spot in 3 taps" data-th="จองที่จอดรถใน 3 แตะ">Book a parking spot in 3 taps</h3>
+          <span class="tile-link"><span data-en="Open case study" data-th="ดูเคสสตัดี้">Open case study</span> <span aria-hidden="true">→</span></span>
+        </div>
+        <div class="phone">
+          <video src="assets/video/ep-flow.mp4" poster="assets/video/ep-flow-poster.jpg" autoplay loop muted playsinline
+                 aria-label="Easy Parking prototype: search, pick a spot, pay, navigate"></video>
+        </div>
+      </a>
+
+      <!-- Token playground -->
+      <div class="bento-tile tile-play reveal" id="playground" data-theme="forest" data-state="default">
+        <span class="tile-kicker" data-en="Try it · Design tokens" data-th="ลองเล่น · Design Token">Try it · Design tokens</span>
+        <h3 class="tile-title" data-en="One token change, every component follows" data-th="เปลี่ยน Token เดียว ทุก Component เปลี่ยนตาม">One token change, every component follows</h3>
+
+        <div class="play-controls">
+          <div class="swatches" role="radiogroup" aria-label="Brand color">
+            <button class="swatch is-on" role="radio" aria-checked="true" data-theme="forest" style="--s:#1e3b2c" aria-label="Forest"></button>
+            <button class="swatch" role="radio" aria-checked="false" data-theme="sunset" style="--s:#f2a33a" aria-label="Sunset"></button>
+            <button class="swatch" role="radio" aria-checked="false" data-theme="ember" style="--s:#e26d3d" aria-label="Ember"></button>
+            <button class="swatch" role="radio" aria-checked="false" data-theme="mist" style="--s:#3f8378" aria-label="Mist"></button>
+          </div>
+          <div class="states" role="tablist" aria-label="Component state">
+            <button class="state is-on" data-state="default">Default</button>
+            <button class="state" data-state="hover">Hover</button>
+            <button class="state" data-state="focus">Focus</button>
+            <button class="state" data-state="disabled">Disabled</button>
+          </div>
+        </div>
+
+        <div class="play-stage" aria-hidden="true">
+          <div class="demo-field">
+            <span class="demo-label">Email</span>
+            <span class="demo-input">jeeno@studio.co<span class="caret"></span></span>
+          </div>
+          <div class="demo-row">
+            <span class="demo-btn">Continue</span>
+            <span class="demo-btn is-ghost">Cancel</span>
+            <span class="demo-toggle"><span></span></span>
+            <span class="demo-chip">Fintech</span>
+          </div>
+        </div>
+        <code class="play-token">--color-primary: <b id="tokenValue">#1E3B2C</b></code>
       </div>
-      <!-- second copy makes the loop seamless; hidden from assistive tech -->
-      <div class="marquee-group" aria-hidden="true">
-        <figure class="mq-item"><img src="assets/photos/jeeno-studio.jpg" alt="" loading="lazy" /><figcaption class="mq-cap"><span data-en="Hi, I'm Jeeno" data-th="สวัสดี ฉันชื่อจีโน่">Hi, I'm Jeeno</span></figcaption></figure>
-        <a class="mq-item" href="work/pos.html" tabindex="-1"><img src="assets/work-pos.jpg" alt="" loading="lazy" /><span class="mq-cap">01 · Canteen POS</span></a>
-        <a class="mq-item" href="work/easy-parking.html" tabindex="-1"><img src="assets/work-easy-parking.jpg" alt="" loading="lazy" /><span class="mq-cap">05 · Easy Parking</span></a>
-        <figure class="mq-item mq-tall"><img src="assets/photos/jeeno-sunset.jpg" alt="" loading="lazy" /><figcaption class="mq-cap"><span data-en="Off-screen: chasing sunsets" data-th="นอกจอ: ตามเก็บพระอาทิตย์ตก">Off-screen: chasing sunsets</span></figcaption></figure>
-        <a class="mq-item" href="work/design-system.html" tabindex="-1"><img src="assets/work-design-system.jpg" alt="" loading="lazy" /><span class="mq-cap">02 · Design System</span></a>
-        <a class="mq-item" href="work/insurance.html" tabindex="-1"><img src="assets/work-insurance.jpg" alt="" loading="lazy" /><span class="mq-cap">03 · HR Insurance</span></a>
-        <figure class="mq-item"><img src="assets/photos/jeeno-garden.jpg" alt="" loading="lazy" /><figcaption class="mq-cap"><span data-en="Graduation day" data-th="วันรับปริญญา">Graduation day</span></figcaption></figure>
-        <a class="mq-item" href="https://taletails-trade.com" tabindex="-1"><img src="assets/work-taletails.jpg" alt="" loading="lazy" /><span class="mq-cap">04 · Taletails</span></a>
+
+      <!-- Process -->
+      <div class="bento-tile tile-process reveal">
+        <span class="tile-kicker" data-en="How I work" data-th="วิธีการทำงาน">How I work</span>
+        <ol class="process-steps">
+          <li style="--c: var(--forest)"><b>01</b> <span data-en="Research" data-th="วิจัยผู้ใช้">Research</span></li>
+          <li style="--c: var(--leaf)"><b>02</b> <span data-en="User flow" data-th="User Flow">User flow</span></li>
+          <li style="--c: var(--sunset)"><b>03</b> <span data-en="UI &amp; system" data-th="UI และ Design System">UI &amp; system</span></li>
+          <li style="--c: var(--ember)"><b>04</b> <span data-en="AI prototype" data-th="Prototype ด้วย AI">AI prototype</span></li>
+        </ol>
       </div>
+
+      <!-- Numbers -->
+      <div class="bento-tile tile-stat reveal">
+        <span class="big-num" data-count="1000">0</span><span class="big-plus">+</span>
+        <span class="tile-note" data-en="users on the EdTech platform I design" data-th="ผู้ใช้งานบนแพลตฟอร์ม EdTech ที่ฉันออกแบบ">users on the EdTech platform I design</span>
+      </div>
+
+      <!-- Toolkit -->
+      <div class="bento-tile tile-tools reveal">
+        <span class="tile-kicker" data-en="Toolkit" data-th="เครื่องมือ">Toolkit</span>
+        <ul class="tool-cloud">
+          <li>Figma</li><li>Claude</li><li>CodeX</li><li>Lovable</li><li>Google Stitch</li><li>Supabase</li><li>HTML/CSS</li>
+        </ul>
+      </div>
+
     </div>
   </section>
-
   <!-- ABOUT -->
   <section id="about" class="section">
     <div class="card about-card reveal">
@@ -501,6 +529,6 @@
   <p class="footer-copy">© <span id="year"></span> Supalerk Chaonchom. <span data-en="All rights reserved." data-th="สงวนลิขสิทธิ์">All rights reserved.</span></p>
 </footer>
 
-<script src="js/main.js?v=5"></script>
+<script src="js/main.js?v=6"></script>
 </body>
 </html>

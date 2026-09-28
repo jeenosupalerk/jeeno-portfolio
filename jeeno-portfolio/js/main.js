@@ -126,6 +126,62 @@
     });
   }
 
+  /* ---------- Showcase: token playground, process steps, count-up ---------- */
+
+  function initShowcase() {
+    var play = document.getElementById("playground");
+    if (play) {
+      var hex = { forest: "#1E3B2C", sunset: "#F2A33A", ember: "#E26D3D", mist: "#3F8378" };
+      var tokenEl = document.getElementById("tokenValue");
+      play.querySelectorAll(".swatch").forEach(function (sw) {
+        sw.addEventListener("click", function () {
+          var t = sw.getAttribute("data-theme");
+          play.setAttribute("data-theme", t);
+          play.querySelectorAll(".swatch").forEach(function (s) {
+            s.classList.toggle("is-on", s === sw);
+            s.setAttribute("aria-checked", s === sw ? "true" : "false");
+          });
+          if (tokenEl) tokenEl.textContent = hex[t];
+        });
+      });
+      play.querySelectorAll(".state").forEach(function (st) {
+        st.addEventListener("click", function () {
+          play.setAttribute("data-state", st.getAttribute("data-state"));
+          play.querySelectorAll(".state").forEach(function (s) { s.classList.toggle("is-on", s === st); });
+        });
+      });
+    }
+
+    var steps = document.querySelectorAll(".process-steps li");
+    if (steps.length) {
+      var i = 0;
+      steps[0].classList.add("is-on");
+      setInterval(function () {
+        steps[i].classList.remove("is-on");
+        i = (i + 1) % steps.length;
+        steps[i].classList.add("is-on");
+      }, 1600);
+    }
+
+    var num = document.querySelector(".big-num[data-count]");
+    if (num && "IntersectionObserver" in window) {
+      var target = parseInt(num.getAttribute("data-count"), 10);
+      var io = new IntersectionObserver(function (entries) {
+        if (!entries[0].isIntersecting) return;
+        io.disconnect();
+        var t0 = performance.now();
+        (function tick(now) {
+          var k = Math.min(1, (now - t0) / 1400);
+          num.textContent = Math.round(target * (1 - Math.pow(1 - k, 3))).toLocaleString("en-US");
+          if (k < 1) requestAnimationFrame(tick);
+        })(t0);
+      }, { threshold: 0.6 });
+      io.observe(num);
+    } else if (num) {
+      num.textContent = Number(num.getAttribute("data-count")).toLocaleString("en-US");
+    }
+  }
+
   /* ---------- Scroll progress bar + nav shadow ---------- */
 
   function initScrollProgress() {
@@ -248,6 +304,7 @@
     initAccordion();
     initMobileNav();
     initPhotoStack();
+    initShowcase();
     initScrollProgress();
     initYear();
     initWorkPreview();
