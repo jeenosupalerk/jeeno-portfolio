@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>School App for Parents — Case Study | Supalerk Chaonchom</title>
+<meta name="description" content="A large redesign of a school app for parents: a new brand, one design across desktop and mobile, and a token system that makes the next change easier." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23111111'/%3E%3Ctext x='50' y='68' font-size='60' font-family='Arial, sans-serif' font-weight='700' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=Anuphan:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=14" />
+<link rel="stylesheet" href="../css/case-study.css?v=14" />
+</head>
+<body class="cs-body">
+
+<div class="grain-layer" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute;" aria-hidden="true">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h14V10" /></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 10h18" /></symbol>
+  <symbol id="i-grade" viewBox="0 0 24 24"><path d="M6 3h12v18H6zM9 8h6M9 12h6M9 16h3" /></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M8 12l3 3 5-6" /></symbol>
+  <symbol id="i-news" viewBox="0 0 24 24"><path d="M3 10v4l13 5V5L3 10zM16 9c3 0 4 1.500 4 3s-1 3-4 3M7 15l1 5h3l-1-4" /></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" /><path d="M4 21c1-5 4-7 8-7s7 2 8 7" /></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" /><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.600 5.600l2.100 2.100M16.300 16.300l2.100 2.100M5.600 18.400l2.100-2.100M16.300 7.700l2.100-2.100" /></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-8-5-8-11a4.500 4.500 0 018-2.800A4.500 4.500 0 0120 9c0 6-8 11-8 11z" /></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v6M12 16.500v.5" /></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16V10a6 6 0 0112 0v6l2 2H4l2-2zM10 21h4" /></symbol>
+</svg>
+
+<nav class="cs-nav">
+  <div class="cs-nav-inner">
+    <a href="../index.html#work" class="cs-back">
+      <span class="arrow-left">&#8592;</span>
+      <span data-en="Back to portfolio" data-th="กลับหน้าพอร์ตโฟลิโอ">Back to portfolio</span>
+    </a>
+    <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+      <span class="lang-opt active" data-lang-btn="en">EN</span>
+      <span class="lang-sep">/</span>
+      <span class="lang-opt" data-lang-btn="th">TH</span>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="section cs-hero">
+    <div class="card cs-hero-card reveal">
+      <p class="cs-eyebrow" data-en="School App for Parents · Redesign Case Study" data-th="ระบบโรงเรียนสำหรับผู้ปกครอง · เคสสตัดี้การรีดีไซน์">School App for Parents · Redesign Case Study</p>
+
+      <h1 class="cs-title" data-en="A Big Redesign, Built So the Next Change Is Small" data-th="รีดีไซน์ครั้งใหญ่ ที่วางระบบให้การแก้ครั้งต่อไปเป็นเรื่องเล็ก">A Big Redesign, Built So the Next Change Is Small</h1>
+
+      <p class="cs-tagline" data-en="A school app used by parents moved to a new brand. Rather than repaint each screen, the work bound the screens to one token system, made desktop follow mobile, and rewrote the experience for its real reader: a parent." data-th="แอปโรงเรียนที่ผู้ปกครองใช้งานเปลี่ยนมาใช้แบรนด์ใหม่ แทนที่จะทาสีทีละจอ งานนี้ผูกหน้าจอเข้ากับระบบ Token ชุดเดียว ปรับ Desktop ให้ตรงกับ Mobile และออกแบบใหม่เพื่อผู้อ่านตัวจริง คือผู้ปกครอง">A school app used by parents moved to a new brand. Rather than repaint each screen, the work bound the screens to one token system, made desktop follow mobile, and rewrote the experience for its real reader: a parent.</p>
+
+      <div class="cs-meta-grid">
+        <div class="cs-meta-item">
+          <span class="cs-meta-label" data-en="Role" data-th="บทบาท">Role</span>
+          <span class="cs-meta-value" data-en="UX/UI Designer" data-th="UX/UI Designer">UX/UI Designer</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label" data-en="Tool" data-th="เครื่องมือ">Tool</span>
+          <span class="cs-meta-value" data-en="Figma Variables and Components" data-th="Figma Variables และ Components">Figma Variables and Components</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label" data-en="Platform" data-th="แพลตฟอร์ม">Platform</span>
+          <span class="cs-meta-value" data-en="Mobile and desktop web" data-th="มือถือและเว็บบน Desktop">Mobile and desktop web</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label" data-en="Type" data-th="ประเภทงาน">Type</span>
+          <span class="cs-meta-value" data-en="Company work, details withheld" data-th="งานบริษัท ปิดข้อมูลจริง">Company work, details withheld</span>
+        </div>
+      </div>
+
+      <p class="cs-note" data-en="The product name, logo, company, schools, and all real content are withheld. Every screen on this page was rebuilt for this portfolio with sample data, so it shows the design approach, not the product file." data-th="ชื่อผลิตภัณฑ์ โลโก้ บริษัท โรงเรียน และเนื้อหาจริงทั้งหมดถูกปิดไว้ หน้าจอในหน้านี้วาดขึ้นใหม่สำหรับพอร์ตโฟลิโอด้วยข้อมูลสมมติ จึงแสดงแนวทางการออกแบบ ไม่ใช่ไฟล์งานจริง">The product name, logo, company, schools, and all real content are withheld. Every screen on this page was rebuilt for this portfolio with sample data, so it shows the design approach, not the product file.</p>
+    </div>
+  </section>
+
+  <!-- 01 OVERVIEW -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="01 — Overview" data-th="01 — ภาพรวมโปรเจกต์">01 — Overview</p>
+    <h2 class="cs-h2" data-en="A new brand was the reason, not the whole job" data-th="แบรนด์ใหม่เป็นจุดเริ่ม แต่ไม่ใช่งานทั้งหมด">A new brand was the reason, not the whole job</h2>
+    <p class="cs-overview-text" data-en="Parents use this app to follow school news, grades, payments, health records, and leave. They sign in with their child's account, on a phone or a computer. When the brand changed, the mobile and desktop versions had already drifted apart. A repaint would have carried those problems into the new brand and left the same work waiting for the next change." data-th="ผู้ปกครองใช้แอปนี้ติดตามข่าวโรงเรียน ผลการเรียน การชำระเงิน ข้อมูลสุขภาพ และการลา โดยเข้าใช้ด้วยบัญชีของนักเรียน ทั้งบนมือถือและคอมพิวเตอร์ ตอนที่เปลี่ยนแบรนด์ เวอร์ชันมือถือกับ Desktop ก็ห่างกันไปมากแล้ว ถ้าแค่เปลี่ยนสี ปัญหาเดิมจะตามมาอยู่ในแบรนด์ใหม่ และงานแบบเดิมก็จะรออยู่ในการเปลี่ยนครั้งถัดไป">Parents use this app to follow school news, grades, payments, health records, and leave. They sign in with their child's account, on a phone or a computer. When the brand changed, the mobile and desktop versions had already drifted apart. A repaint would have carried those problems into the new brand and left the same work waiting for the next change.</p>
+  </section>
+
+  <!-- 02 CONCEPT -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="02 — Concept of the Change" data-th="02 — แนวคิดของการเปลี่ยนแปลง">02 — Concept of the Change</p>
+    <h2 class="cs-h2" data-en="Four changes that depend on each other" data-th="สี่การเปลี่ยนแปลงที่ต้องไปด้วยกัน">Four changes that depend on each other</h2>
+    <div class="cs-results is-four">
+      <div class="cs-result">
+        <p class="cs-result-num">01</p>
+        <h4 data-en="A new brand" data-th="เปลี่ยนแบรนด์">A new brand</h4>
+        <p data-en="New screens all use the new theme, while the old one stays so older files keep working." data-th="จอใหม่ทั้งหมดใช้ธีมใหม่ ส่วนธีมเก่ายังเก็บไว้เพื่อให้ไฟล์เดิมไม่พัง">New screens all use the new theme, while the old one stays so older files keep working.</p>
+      </div>
+      <div class="cs-result">
+        <p class="cs-result-num">02</p>
+        <h4 data-en="Designed for parents" data-th="ออกแบบเพื่อผู้ปกครอง">Designed for parents</h4>
+        <p data-en="Warm, plain language for an adult reader, and details that are easy to read and tap." data-th="ภาษาเรียบง่ายและอบอุ่นสำหรับผู้ใหญ่ พร้อมรายละเอียดที่อ่านง่ายและกดง่าย">Warm, plain language for an adult reader, and details that are easy to read and tap.</p>
+      </div>
+      <div class="cs-result">
+        <p class="cs-result-num">03</p>
+        <h4 data-en="Desktop matches mobile" data-th="Desktop ตรงกับ Mobile">Desktop matches mobile</h4>
+        <p data-en="Mobile is the reference for colors, menu, components, and wording." data-th="ยึด Mobile เป็นหลัก ทั้งสี เมนู component และถ้อยคำ">Mobile is the reference for colors, menu, components, and wording.</p>
+      </div>
+      <div class="cs-result">
+        <p class="cs-result-num">04</p>
+        <h4 data-en="Tokens across the system" data-th="ผูก Token ทั้งระบบ">Tokens across the system</h4>
+        <p data-en="Screens use named tokens instead of raw colors, so a change happens in one place." data-th="หน้าจอใช้ Token ที่ตั้งชื่อแล้วแทนค่าสีดิบ การเปลี่ยนจึงทำที่จุดเดียว">Screens use named tokens instead of raw colors, so a change happens in one place.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 AUDIT -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="03 — What the Audit Found" data-th="03 — สิ่งที่พบจากการตรวจจอเดิม">03 — What the Audit Found</p>
+    <h2 class="cs-h2" data-en="Two versions of one product, drifting apart" data-th="ผลิตภัณฑ์เดียว แต่สองเวอร์ชันค่อย ๆ ห่างกัน">Two versions of one product, drifting apart</h2>
+    <div class="cs-empathy-row is-two">
+      <div class="cs-empathy-card is-pain">
+        <p class="cs-empathy-label" data-en="Structure" data-th="โครงสร้าง">Structure</p>
+        <ul>
+          <li data-en="The desktop menu was organized differently from the mobile tab bar." data-th="เมนู Desktop จัดกลุ่มคนละแบบกับแถบเมนูบนมือถือ">The desktop menu was organized differently from the mobile tab bar.</li>
+          <li data-en="Desktop content started at a different position on each screen." data-th="เนื้อหาบน Desktop เริ่มคนละตำแหน่งในแต่ละจอ">Desktop content started at a different position on each screen.</li>
+          <li data-en="The login screen used raw color values, so it could not follow a theme." data-th="หน้าเข้าสู่ระบบใช้ค่าสีดิบ จึงเปลี่ยนตามธีมไม่ได้">The login screen used raw color values, so it could not follow a theme.</li>
+        </ul>
+      </div>
+      <div class="cs-empathy-card is-pain">
+        <p class="cs-empathy-label" data-en="Details" data-th="รายละเอียด">Details</p>
+        <ul>
+          <li data-en="Thai text was set in a font with no Thai characters, leaving it to a fallback font." data-th="ข้อความไทยตั้งฟอนต์ที่ไม่มีตัวอักษรไทย จึงไปใช้ฟอนต์สำรองแทน">Thai text was set in a font with no Thai characters, leaving it to a fallback font.</li>
+          <li data-en="Some screens mixed Thai and English, including labels with both languages in brackets." data-th="บางจอใช้ไทยปนอังกฤษ รวมถึงชื่อช่องที่มีสองภาษาในวงเล็บ">Some screens mixed Thai and English, including labels with both languages in brackets.</li>
+          <li data-en="Search boxes came in two styles, and one had an edge nearly invisible on its background." data-th="ช่องค้นหามีสองแบบ และแบบหนึ่งแทบมองไม่เห็นขอบบนพื้นหลัง">Search boxes came in two styles, and one had an edge nearly invisible on its background.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 TOKENS -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="04 — The Token System" data-th="04 — ระบบ Token">04 — The Token System</p>
+    <h2 class="cs-h2" data-en="Try it: change the theme in one place" data-th="ลองดู: เปลี่ยนธีมจากจุดเดียว">Try it: change the theme in one place</h2>
+    <p class="cs-overview-text" data-en="Colors pass through three layers before they reach a screen. Designers only use the top layer, named for its job. Switching a theme changes the middle layer, so nothing on the screen needs editing." data-th="สีต้องผ่าน 3 ชั้นก่อนถึงหน้าจอ นักออกแบบใช้เฉพาะชั้นบนสุดซึ่งตั้งชื่อตามหน้าที่ ส่วนการสลับธีมจะเปลี่ยนที่ชั้นกลาง จึงไม่ต้องแก้อะไรบนหน้าจอเลย">Colors pass through three layers before they reach a screen. Designers only use the top layer, named for its job. Switching a theme changes the middle layer, so nothing on the screen needs editing.</p>
+
+    <div class="ms-stage" id="msThemeStage" data-theme="a">
+      <div class="ms-switch" role="group" aria-label="Theme">
+        <button type="button" data-ms-theme="a" data-prim="navy/700" aria-pressed="true"><span data-en="New brand" data-th="แบรนด์ใหม่">New brand</span></button>
+        <button type="button" data-ms-theme="b" data-prim="teal/700" aria-pressed="false"><span data-en="Demo theme B" data-th="ธีมตัวอย่าง B">Demo theme B</span></button>
+        <button type="button" data-ms-theme="c" data-prim="clay/700" aria-pressed="false"><span data-en="Demo theme C" data-th="ธีมตัวอย่าง C">Demo theme C</span></button>
+      </div>
+
+      <div class="ms-chain">
+        <div class="ms-link">
+          <p data-en="1 · Primitive: the raw color" data-th="1 · Primitive: ค่าสีดิบ">1 · Primitive: the raw color</p>
+          <code id="msPrim">navy/700</code>
+          <span class="ms-chip"></span>
+        </div>
+        <div class="ms-link">
+          <p data-en="2 · Semantic: chosen per theme" data-th="2 · Semantic: เลือกตามธีม">2 · Semantic: chosen per theme</p>
+          <code>primary/500</code>
+          <span class="ms-chip"></span>
+        </div>
+        <div class="ms-link">
+          <p data-en="3 · Mapped: named for its job" data-th="3 · Mapped: ตั้งชื่อตามหน้าที่">3 · Mapped: named for its job</p>
+          <code>button/primary/default</code>
+          <span class="ms-chip"></span>
+        </div>
+        <div class="ms-link">
+          <p data-en="Component: what people see" data-th="Component: สิ่งที่ผู้ใช้เห็น">Component: what people see</p>
+          <code>Button</code>
+          <span class="ms-chip is-btn" data-en="Pay now" data-th="ชำระเงิน">Pay now</span>
+        </div>
+      </div>
+
+      <div class="ms-pair">
+        <figure>
+          <div class="ms-scroll">
+            <div class="ms-browser">
+              <div class="ms-browser-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+              <div class="ms-frame">
+                <div class="ms ms-d" role="img" aria-label="Desktop home screen rebuilt with sample data: a menu on the left, a greeting banner, four menu tiles, and news cards">
+                  <div class="ms-side">
+                    <span class="ms-mark"></span>
+                    <span class="on"><svg><use href="#i-home" /></svg><em data-en="Home" data-th="หน้าหลัก">Home</em></span>
+                    <span><svg><use href="#i-user" /></svg><em data-en="Profile" data-th="โปรไฟล์">Profile</em></span>
+                    <span><svg><use href="#i-gear" /></svg><em data-en="Settings" data-th="ตั้งค่า">Settings</em></span>
+                    <hr />
+                    <span><svg><use href="#i-news" /></svg><em data-en="Newsfeed" data-th="ฟีดข่าว">Newsfeed</em></span>
+                    <span><svg><use href="#i-heart" /></svg><em data-en="Health Care" data-th="ข้อมูลสุขภาพ">Health Care</em></span>
+                    <span><svg><use href="#i-card" /></svg><em data-en="Payment" data-th="ชำระเงิน">Payment</em></span>
+                  </div>
+                  <div class="ms-main">
+                    <div class="ms-head">
+                      <strong data-en="Home" data-th="หน้าหลัก">Home</strong>
+                      <div class="ms-who"><i></i><span data-en="Student Name" data-th="ชื่อนักเรียน">Student Name</span></div>
+                    </div>
+                    <div class="ms-hello">
+                      <div><small data-en="Hello" data-th="สวัสดี">Hello</small><b data-en="Student Name" data-th="ชื่อนักเรียน">Student Name</b></div>
+                    </div>
+                    <div class="ms-menu">
+                      <div class="ms-tile"><i><svg><use href="#i-grade" /></svg></i><span data-en="Grades" data-th="ผลการเรียน">Grades</span></div>
+                      <div class="ms-tile"><i><svg><use href="#i-card" /></svg></i><span data-en="Payment" data-th="ชำระเงิน">Payment</span></div>
+                      <div class="ms-tile"><i><svg><use href="#i-check" /></svg></i><span data-en="Approvals" data-th="การอนุมัติ">Approvals</span></div>
+                      <div class="ms-tile"><i><svg><use href="#i-heart" /></svg></i><span data-en="Health" data-th="สุขภาพ">Health</span></div>
+                    </div>
+                    <div class="ms-cols">
+                      <div class="ms-news"><i><svg><use href="#i-news" /></svg></i><div><b data-en="Sample school announcement" data-th="ตัวอย่างประกาศจากโรงเรียน">Sample school announcement</b><span data-en="1 January" data-th="1 มกราคม">1 January</span></div></div>
+                      <div class="ms-news"><i><svg><use href="#i-news" /></svg></i><div><b data-en="Sample class activity" data-th="ตัวอย่างกิจกรรมของห้องเรียน">Sample class activity</b><span data-en="1 January" data-th="1 มกราคม">1 January</span></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption data-en="Desktop" data-th="Desktop">Desktop</figcaption>
+        </figure>
+        <figure>
+          <div class="cs-phone ms-frame">
+            <div class="ms ms-m" role="img" aria-label="The same home screen on mobile: a greeting banner, menu tiles, news cards, and a tab bar">
+              <div class="ms-body">
+                <div class="ms-hello">
+                  <div><small data-en="Hello" data-th="สวัสดี">Hello</small><b data-en="Student Name" data-th="ชื่อนักเรียน">Student Name</b></div>
+                </div>
+                <p class="ms-sec" data-en="Menu" data-th="เมนู">Menu</p>
+                <div class="ms-menu">
+                  <div class="ms-tile"><i><svg><use href="#i-grade" /></svg></i><span data-en="Grades" data-th="ผลการเรียน">Grades</span></div>
+                  <div class="ms-tile"><i><svg><use href="#i-card" /></svg></i><span data-en="Payment" data-th="ชำระเงิน">Payment</span></div>
+                  <div class="ms-tile"><i><svg><use href="#i-check" /></svg></i><span data-en="Approvals" data-th="การอนุมัติ">Approvals</span></div>
+                  <div class="ms-tile"><i><svg><use href="#i-heart" /></svg></i><span data-en="Health" data-th="สุขภาพ">Health</span></div>
+                </div>
+                <p class="ms-sec" data-en="Newsfeed" data-th="ฟีดข่าว">Newsfeed</p>
+                <div class="ms-news"><i><svg><use href="#i-news" /></svg></i><div><b data-en="Sample school announcement" data-th="ตัวอย่างประกาศจากโรงเรียน">Sample school announcement</b><span data-en="1 January" data-th="1 มกราคม">1 January</span></div></div>
+                <div class="ms-news"><i><svg><use href="#i-news" /></svg></i><div><b data-en="Sample class activity" data-th="ตัวอย่างกิจกรรมของห้องเรียน">Sample class activity</b><span data-en="1 January" data-th="1 มกราคม">1 January</span></div></div>
+              </div>
+              <div class="ms-tabs">
+                <span class="on"><svg><use href="#i-home" /></svg><em data-en="Home" data-th="หน้าหลัก">Home</em></span>
+                <span><svg><use href="#i-bell" /></svg><em data-en="Alerts" data-th="แจ้งเตือน">Alerts</em></span>
+                <span><svg><use href="#i-user" /></svg><em data-en="Profile" data-th="โปรไฟล์">Profile</em></span>
+                <span><svg><use href="#i-gear" /></svg><em data-en="Settings" data-th="ตั้งค่า">Settings</em></span>
+              </div>
+            </div>
+          </div>
+          <figcaption data-en="Mobile" data-th="Mobile">Mobile</figcaption>
+        </figure>
+      </div>
+    </div>
+    <p class="cs-note" data-en="Themes B and C are made up for this demo. Token names are simplified from the real file." data-th="ธีม B และ C สร้างขึ้นเพื่อการสาธิตนี้เท่านั้น ชื่อ Token ปรับให้เรียบง่ายกว่าในไฟล์จริง">Themes B and C are made up for this demo. Token names are simplified from the real file.</p>
+  </section>
+
+  <!-- 05 DESKTOP MATCHES MOBILE -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="05 — Desktop Matches Mobile" data-th="05 — Desktop ตรงกับ Mobile">05 — Desktop Matches Mobile</p>
+    <h2 class="cs-h2" data-en="One set of rules, sized for each screen" data-th="กติกาชุดเดียว ปรับขนาดตามจอ">One set of rules, sized for each screen</h2>
+    <div class="card jm-card">
+      <div class="jm-scroll">
+      <div class="jm" style="--n:5;">
+        <div class="jm-corner"></div>
+        <div class="jm-stage"><b>01</b><span data-en="Menu" data-th="เมนู">Menu</span></div>
+        <div class="jm-stage"><b>02</b><span data-en="Content column" data-th="คอลัมน์เนื้อหา">Content column</span></div>
+        <div class="jm-stage"><b>03</b><span data-en="Search box" data-th="ช่องค้นหา">Search box</span></div>
+        <div class="jm-stage"><b>04</b><span data-en="Filter chips" data-th="ตัวเลือกกรอง">Filter chips</span></div>
+        <div class="jm-stage"><b>05</b><span data-en="Field labels" data-th="ชื่อช่องกรอก">Field labels</span></div>
+        <p class="jm-row-label" data-en="Before" data-th="ก่อน">Before</p>
+        <div class="jm-cell is-pain"><span data-en="Desktop and mobile organized differently" data-th="Desktop กับ Mobile จัดกลุ่มคนละแบบ">Desktop and mobile organized differently</span></div>
+        <div class="jm-cell is-pain"><span data-en="Started at 295, 310, or 323 px" data-th="เริ่มที่ 295, 310 หรือ 323 px">Started at 295, 310, or 323 px</span></div>
+        <div class="jm-cell is-pain"><span data-en="Two styles, one with a faint edge at about 1.07:1 contrast" data-th="มีสองแบบ และแบบหนึ่งขอบจางมาก contrast ราว 1.07:1">Two styles, one with a faint edge at about 1.07:1 contrast</span></div>
+        <div class="jm-cell is-pain"><span data-en="Selected 40 px and unselected 44 px on desktop" data-th="บน Desktop ตัวที่เลือกสูง 40 px ตัวไม่เลือกสูง 44 px">Selected 40 px and unselected 44 px on desktop</span></div>
+        <div class="jm-cell is-pain"><span data-en="Gray regular on desktop, bold on mobile" data-th="Desktop ตัวปกติสีเทา แต่ Mobile ตัวหนา">Gray regular on desktop, bold on mobile</span></div>
+        <p class="jm-row-label" data-en="Rule now" data-th="กติกาตอนนี้">Rule now</p>
+        <div class="jm-cell is-gain"><span data-en="The same menu on both" data-th="เมนูชุดเดียวกันทั้งสองแพลตฟอร์ม">The same menu on both</span></div>
+        <div class="jm-cell is-gain"><span data-en="323 px on every desktop screen, in line with the header" data-th="เริ่มที่ 323 px ทุกจอ และตรงกับแถบหัว">323 px on every desktop screen, in line with the header</span></div>
+        <div class="jm-cell is-gain"><span data-en="One outlined style: 48 px mobile, 52 px desktop" data-th="แบบเดียวที่มีเส้นขอบ มือถือ 48 px Desktop 52 px">One outlined style: 48 px mobile, 52 px desktop</span></div>
+        <div class="jm-cell is-gain"><span data-en="One style at a steady height: 36 px mobile, 40 px desktop" data-th="แบบเดียว ความสูงคงที่ มือถือ 36 px Desktop 40 px">One style at a steady height: 36 px mobile, 40 px desktop</span></div>
+        <div class="jm-cell is-gain"><span data-en="Bold, in the heading color, on both" data-th="ตัวหนา สีเดียวกับหัวข้อ ทั้งสองแพลตฟอร์ม">Bold, in the heading color, on both</span></div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 DESIGNED FOR PARENTS -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="06 — Designed for Parents" data-th="06 — ออกแบบเพื่อผู้ปกครอง">06 — Designed for Parents</p>
+    <h2 class="cs-h2" data-en="The account says student. The reader is a parent." data-th="บัญชีเป็นของนักเรียน แต่คนอ่านคือผู้ปกครอง">The account says student. The reader is a parent.</h2>
+    <div class="phone-row ms-stage" data-theme="a">
+      <figure>
+        <div class="cs-phone ms-frame">
+          <div class="ms ms-m" role="img" aria-label="Payment screen with two options: the selected one has a stronger border and tint, with a clear total">
+            <div class="ms-top"><strong data-en="Payment" data-th="ชำระเงิน">Payment</strong></div>
+            <div class="ms-body">
+              <div class="ms-opt is-on"><span class="ms-radio"></span><b data-en="Term 1 tuition (sample)" data-th="ค่าเล่าเรียนภาคเรียนที่ 1 (ตัวอย่าง)">Term 1 tuition (sample)</b></div>
+              <div class="ms-opt"><span class="ms-radio"></span><b data-en="School activity (sample)" data-th="ค่ากิจกรรมโรงเรียน (ตัวอย่าง)">School activity (sample)</b></div>
+              <p class="ms-sec" data-en="Payment method" data-th="วิธีชำระเงิน">Payment method</p>
+              <div class="ms-opt is-on"><span class="ms-radio"></span><b data-en="Bank transfer" data-th="โอนผ่านธนาคาร">Bank transfer</b></div>
+              <div class="ms-opt"><span class="ms-radio"></span><b data-en="Credit card" data-th="บัตรเครดิต">Credit card</b></div>
+              <div class="ms-row"><strong data-en="Total amount" data-th="ยอดรวม">Total amount</strong><strong data-en="1,000 Baht" data-th="1,000 บาท">1,000 Baht</strong></div>
+              <div class="ms-btn" data-en="Proceed with payment" data-th="ดำเนินการชำระเงิน">Proceed with payment</div>
+            </div>
+          </div>
+        </div>
+        <h4 data-en="Every option is a clear target" data-th="ทุกตัวเลือกกดได้ชัดเจน">Every option is a clear target</h4>
+        <p data-en="Hover and selected states were added to items and payment methods, so it is obvious what is about to be paid." data-th="เพิ่มสถานะ Hover และสถานะที่เลือกให้รายการและวิธีชำระเงิน เพื่อให้เห็นชัดว่ากำลังจะจ่ายอะไร">Hover and selected states were added to items and payment methods, so it is obvious what is about to be paid.</p>
+      </figure>
+      <figure>
+        <div class="cs-phone ms-frame">
+          <div class="ms ms-m" role="img" aria-label="Health record card with an icon, a title, a code badge, and labeled rows for type, nurse, and date">
+            <div class="ms-top"><strong data-en="Health Care" data-th="ข้อมูลสุขภาพ">Health Care</strong></div>
+            <div class="ms-body">
+              <div class="ms-card">
+                <div class="ms-cardhead"><i><svg><use href="#i-heart" /></svg></i><b data-en="Medical visit" data-th="บันทึกการรักษา">Medical visit</b><span class="ms-badge">HC-0000</span></div>
+                <div class="ms-row"><span data-en="Type" data-th="ประเภท">Type</span><b data-en="Sample type" data-th="ตัวอย่างประเภท">Sample type</b></div>
+                <div class="ms-row"><span data-en="Visited with" data-th="เข้าพบ">Visited with</span><b data-en="School nurse" data-th="พยาบาลโรงเรียน">School nurse</b></div>
+                <div class="ms-row"><span data-en="Date" data-th="วันที่">Date</span><b data-en="1 January" data-th="1 มกราคม">1 January</b></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h4 data-en="Labels before values" data-th="มีชื่อกำกับก่อนค่า">Labels before values</h4>
+        <p data-en="Health records were rebuilt with a clear heading and labeled rows, so a parent can read one at a glance." data-th="จัดบันทึกสุขภาพใหม่ให้มีหัวข้อชัดและมีชื่อกำกับทุกแถว ผู้ปกครองจึงอ่านเข้าใจได้ทันที">Health records were rebuilt with a clear heading and labeled rows, so a parent can read one at a glance.</p>
+      </figure>
+      <figure>
+        <div class="cs-phone ms-frame">
+          <div class="ms ms-m" role="img" aria-label="Dialog saying the payment was unsuccessful and what to do next, with buttons to try again or go back">
+            <div class="ms-top"><strong data-en="Payment" data-th="ชำระเงิน">Payment</strong></div>
+            <div class="ms-body">
+              <div class="ms-opt"><span class="ms-radio"></span><b data-en="Term 1 tuition (sample)" data-th="ค่าเล่าเรียนภาคเรียนที่ 1 (ตัวอย่าง)">Term 1 tuition (sample)</b></div>
+            </div>
+            <div class="ms-scrim">
+              <div class="ms-dialog">
+                <i><svg><use href="#i-alert" /></svg></i>
+                <b data-en="Payment unsuccessful" data-th="ชำระเงินไม่สำเร็จ">Payment unsuccessful</b>
+                <p data-en="Please check your details and try again, or choose another method." data-th="กรุณาตรวจสอบข้อมูลแล้วลองอีกครั้ง หรือเลือกวิธีอื่น">Please check your details and try again, or choose another method.</p>
+                <div class="ms-btn" data-en="Try again" data-th="ลองอีกครั้ง">Try again</div>
+                <div class="ms-btn is-ghost" data-en="Back to payments" data-th="กลับไปหน้าชำระเงิน">Back to payments</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h4 data-en="Errors say what to do next" data-th="ข้อผิดพลาดบอกว่าต้องทำอะไรต่อ">Errors say what to do next</h4>
+        <p data-en="Messages say what happened and the next step, without blaming the reader. Buttons state their result." data-th="ข้อความบอกว่าเกิดอะไรขึ้นและต้องทำอะไรต่อ โดยไม่ตำหนิผู้อ่าน ส่วนปุ่มบอกผลลัพธ์ของการกด">Messages say what happened and the next step, without blaming the reader. Buttons state their result.</p>
+      </figure>
+    </div>
+    <div class="cs-empathy-row is-two" style="margin-top:36px;">
+      <div class="cs-empathy-card is-gain">
+        <p class="cs-empathy-label" data-en="Writing rules" data-th="กติกาการเขียน">Writing rules</p>
+        <ul>
+          <li data-en="Polite, warm, and written for an adult, with no teen slang." data-th="สุภาพ อบอุ่น เขียนให้ผู้ใหญ่อ่าน ไม่ใช้ภาษาวัยรุ่น">Polite, warm, and written for an adult, with no teen slang.</li>
+          <li data-en="Everyday words instead of school office terms." data-th="ใช้คำทั่วไปแทนศัพท์งานทะเบียน">Everyday words instead of school office terms.</li>
+          <li data-en="One translation per term, kept in a shared glossary." data-th="หนึ่งคำแปลต่อหนึ่งคำ และเก็บไว้ในอภิธานศัพท์กลาง">One translation per term, kept in a shared glossary.</li>
+        </ul>
+      </div>
+      <div class="cs-empathy-card is-gain">
+        <p class="cs-empathy-label" data-en="What stays as it is" data-th="สิ่งที่ตั้งใจคงไว้">What stays as it is</p>
+        <ul>
+          <li data-en="A greeting with the student's name looks wrong for a parent, but it is right: it confirms whose records are open." data-th="คำทักทายที่ใช้ชื่อนักเรียนดูเหมือนผิดสำหรับผู้ปกครอง แต่ถูกแล้ว เพราะยืนยันว่ากำลังเปิดข้อมูลของใคร">A greeting with the student's name looks wrong for a parent, but it is right: it confirms whose records are open.</li>
+          <li data-en="One screen uses one language, with no mixed labels." data-th="หนึ่งจอใช้หนึ่งภาษา ไม่มีชื่อช่องปนกันสองภาษา">One screen uses one language, with no mixed labels.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 KEEPING THE SYSTEM -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="07 — How the System Is Kept" data-th="07 — วิธีดูแล Design System">07 — How the System Is Kept</p>
+    <h2 class="cs-h2" data-en="Rules that make the next change easier" data-th="กติกาที่ทำให้การเปลี่ยนครั้งต่อไปง่ายขึ้น">Rules that make the next change easier</h2>
+    <div class="map is-labeled">
+      <div class="map-side">
+        <p class="map-label" data-en="When using it" data-th="ตอนใช้งาน">When using it</p>
+        <div class="map-node">
+          <h3 data-en="Bind to the top layer only" data-th="ผูกกับชั้นบนสุดเท่านั้น">Bind to the top layer only</h3>
+          <p data-en="No raw colors, so themes keep working." data-th="ไม่ใช้ค่าสีดิบ ธีมจึงยังเปลี่ยนได้">No raw colors, so themes keep working.</p>
+        </div>
+        <div class="map-node">
+          <h3 data-en="Use existing text styles" data-th="ใช้ Text Style ที่มีอยู่">Use existing text styles</h3>
+          <p data-en="Never one-off font sizes." data-th="ไม่ตั้งขนาดตัวอักษรเองเป็นจุด ๆ">Never one-off font sizes.</p>
+        </div>
+        <div class="map-node">
+          <h3 data-en="Check what a token resolves to" data-th="เช็กค่าจริงของ Token ก่อนใช้">Check what a token resolves to</h3>
+          <p data-en="A name can mislead, so look at the real value." data-th="ชื่ออาจทำให้เข้าใจผิด จึงต้องดูค่าจริง">A name can mislead, so look at the real value.</p>
+        </div>
+      </div>
+      <div class="map-core">
+        <strong data-en="Change once" data-th="แก้ครั้งเดียว">Change once</strong>
+        <span data-en="Every screen follows" data-th="ทุกจอเปลี่ยนตาม">Every screen follows</span>
+      </div>
+      <div class="map-side is-right">
+        <p class="map-label" data-en="When changing it" data-th="ตอนแก้ไข">When changing it</p>
+        <div class="map-node">
+          <h3 data-en="Never edit shared parts directly" data-th="ไม่แก้ของกลางโดยตรง">Never edit shared parts directly</h3>
+          <p data-en="Clone the screen or component instead." data-th="Clone จอหรือ component ออกมาแทน">Clone the screen or component instead.</p>
+        </div>
+        <div class="map-node">
+          <h3 data-en="Propose new tokens first" data-th="เสนอ Token ใหม่ก่อนเสมอ">Propose new tokens first</h3>
+          <p data-en="A name in the existing pattern, then approval." data-th="ตั้งชื่อตามรูปแบบเดิม แล้วรออนุมัติ">A name in the existing pattern, then approval.</p>
+        </div>
+        <div class="map-node">
+          <h3 data-en="Write it down" data-th="จดไว้ให้ทีมใช้ต่อ">Write it down</h3>
+          <p data-en="Naming, glossary, and status documents." data-th="เอกสารการตั้งชื่อ อภิธานศัพท์ และสถานะงาน">Naming, glossary, and status documents.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card ai-flow-card">
+      <p class="ai-flow-title" data-en="How each new screen is made" data-th="ขั้นตอนการทำจอใหม่แต่ละจอ">How each new screen is made</p>
+      <div class="flow">
+        <div class="flow-step"><b>01</b><span data-en="Inspect what exists" data-th="ดูของเดิมก่อน">Inspect what exists</span></div>
+        <div class="flow-step"><b>02</b><span data-en="Show one sample screen" data-th="ทำตัวอย่างหนึ่งจอให้ดู">Show one sample screen</span></div>
+        <div class="flow-step"><b>03</b><span data-en="Build the rest with tokens" data-th="ทำจอที่เหลือด้วย Token">Build the rest with tokens</span></div>
+        <div class="flow-step is-key"><b>04</b><span data-en="Run an independent QA" data-th="ตรวจ QA แยกอีกรอบ">Run an independent QA</span></div>
+        <div class="flow-step is-end"><b>05</b><span data-en="Hand off with specs" data-th="ส่งมอบพร้อม Spec">Hand off with specs</span></div>
+        <div class="flow-loop"><span data-en="Not passed: fix and check again" data-th="ไม่ผ่าน: แก้แล้วตรวจอีกครั้ง">Not passed: fix and check again</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 DECISIONS -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="08 — Decisions &amp; Trade-offs" data-th="08 — การตัดสินใจและข้อแลกเปลี่ยน">08 — Decisions &amp; Trade-offs</p>
+    <h2 class="cs-h2" data-en="What each rule gave, and what it cost" data-th="แต่ละกติกาได้อะไร และแลกกับอะไร">What each rule gave, and what it cost</h2>
+
+    <div class="cs-decision">
+      <h3 class="cs-decision-title" data-en="1. Mobile is the source of truth" data-th="1. ยึด Mobile เป็นหลัก">1. Mobile is the source of truth</h3>
+      <p class="cs-decision-text" data-en="The two versions had drifted apart, so one became the reference: desktop now follows mobile's menu, components, and words." data-th="สองเวอร์ชันห่างกันไปแล้ว จึงเลือกเวอร์ชันเดียวเป็นหลัก โดยให้ Desktop ตามเมนู component และถ้อยคำของ Mobile">The two versions had drifted apart, so one became the reference: desktop now follows mobile's menu, components, and words.</p>
+      <div class="cs-empathy-row is-two">
+        <div class="cs-empathy-card is-gain">
+          <p class="cs-empathy-label" data-en="Upside" data-th="ข้อดี">Upside</p>
+          <p class="cs-decision-point" data-en="Moving between phone and computer feels like the same product." data-th="สลับระหว่างมือถือกับคอมพิวเตอร์แล้วยังรู้สึกเป็นผลิตภัณฑ์เดียวกัน">Moving between phone and computer feels like the same product.</p>
+        </div>
+        <div class="cs-empathy-card is-pain">
+          <p class="cs-empathy-label" data-en="Cost" data-th="ข้อแลกเปลี่ยน">Cost</p>
+          <p class="cs-decision-point" data-en="Desktop inherits mobile's open issues too, such as button labels still to be improved." data-th="Desktop รับปัญหาที่ Mobile ยังค้างอยู่มาด้วย เช่น ชื่อปุ่มที่ยังต้องปรับ">Desktop inherits mobile's open issues too, such as button labels still to be improved.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-decision">
+      <h3 class="cs-decision-title" data-en="2. Keep the old theme instead of replacing it" data-th="2. เก็บธีมเก่าไว้ แทนการเขียนทับ">2. Keep the old theme instead of replacing it</h3>
+      <p class="cs-decision-text" data-en="The new brand is its own theme. The old one stays, marked as legacy and closed to new work." data-th="แบรนด์ใหม่เป็นธีมของตัวเอง ส่วนธีมเก่ายังอยู่ โดยระบุว่าเป็นของเก่าและห้ามใช้กับงานใหม่">The new brand is its own theme. The old one stays, marked as legacy and closed to new work.</p>
+      <div class="cs-empathy-row is-two">
+        <div class="cs-empathy-card is-gain">
+          <p class="cs-empathy-label" data-en="Upside" data-th="ข้อดี">Upside</p>
+          <p class="cs-decision-point" data-en="Older files keep working, and the change carries little risk." data-th="ไฟล์เดิมยังใช้งานได้ และการเปลี่ยนมีความเสี่ยงน้อย">Older files keep working, and the change carries little risk.</p>
+        </div>
+        <div class="cs-empathy-card is-pain">
+          <p class="cs-empathy-label" data-en="Cost" data-th="ข้อแลกเปลี่ยน">Cost</p>
+          <p class="cs-decision-point" data-en="Two similar themes can be confused, so every new screen must set its theme explicitly." data-th="ธีมที่คล้ายกันสองชุดอาจเลือกผิดได้ จอใหม่ทุกจอจึงต้องตั้งธีมให้ชัดเจน">Two similar themes can be confused, so every new screen must set its theme explicitly.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-decision">
+      <h3 class="cs-decision-title" data-en="3. Never edit a shared component in place" data-th="3. ไม่แก้ Component กลางโดยตรง">3. Never edit a shared component in place</h3>
+      <p class="cs-decision-text" data-en="One file serves several products. Changes are made on a clone, and additions are approved first." data-th="ไฟล์เดียวรองรับหลายผลิตภัณฑ์ การแก้จึงทำบนตัวที่ Clone ออกมา ส่วนของใหม่ต้องอนุมัติก่อน">One file serves several products. Changes are made on a clone, and additions are approved first.</p>
+      <div class="cs-empathy-row is-two">
+        <div class="cs-empathy-card is-gain">
+          <p class="cs-empathy-label" data-en="Upside" data-th="ข้อดี">Upside</p>
+          <p class="cs-decision-point" data-en="A fix for this app cannot quietly break another product." data-th="การแก้ของแอปนี้จะไม่ไปกระทบผลิตภัณฑ์อื่นแบบไม่รู้ตัว">A fix for this app cannot quietly break another product.</p>
+        </div>
+        <div class="cs-empathy-card is-pain">
+          <p class="cs-empathy-label" data-en="Cost" data-th="ข้อแลกเปลี่ยน">Cost</p>
+          <p class="cs-decision-point" data-en="Small known issues stay in the shared part, and need a workaround on each screen." data-th="ปัญหาเล็ก ๆ ที่รู้อยู่แล้วยังค้างในของกลาง และต้องแก้เฉพาะหน้าที่ระดับจอ">Small known issues stay in the shared part, and need a workaround on each screen.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-decision">
+      <h3 class="cs-decision-title" data-en="4. Pair two fonts, by language" data-th="4. จับคู่ฟอนต์สองตัวตามภาษา">4. Pair two fonts, by language</h3>
+      <p class="cs-decision-text" data-en="The brand's English font has no Thai characters, so a matching Thai font now sets Thai text." data-th="ฟอนต์อังกฤษของแบรนด์ไม่มีตัวอักษรไทย จึงเลือกฟอนต์ไทยที่เข้ากันมาใช้กับข้อความไทย">The brand's English font has no Thai characters, so a matching Thai font now sets Thai text.</p>
+      <div class="cs-empathy-row is-two">
+        <div class="cs-empathy-card is-gain">
+          <p class="cs-empathy-label" data-en="Upside" data-th="ข้อดี">Upside</p>
+          <p class="cs-decision-point" data-en="Thai text no longer depends on whatever fallback font appears." data-th="ข้อความไทยไม่ต้องขึ้นกับฟอนต์สำรองอีกต่อไป">Thai text no longer depends on whatever fallback font appears.</p>
+        </div>
+        <div class="cs-empathy-card is-pain">
+          <p class="cs-empathy-label" data-en="Cost" data-th="ข้อแลกเปลี่ยน">Cost</p>
+          <p class="cs-decision-point" data-en="Until Thai text styles exist, the font has to be set by hand, and the styles are still a proposal." data-th="จนกว่าจะมี Text Style ภาษาไทย ต้องตั้งฟอนต์เอง ซึ่ง Style ชุดนี้ยังเป็นข้อเสนออยู่">Until Thai text styles exist, the font has to be set by hand, and the styles are still a proposal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 STATUS -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="09 — Where It Stands" data-th="09 — สถานะของงาน">09 — Where It Stands</p>
+    <h2 class="cs-h2" data-en="What is done, and what still is not" data-th="สิ่งที่เสร็จแล้ว และสิ่งที่ยังไม่เสร็จ">What is done, and what still is not</h2>
+    <div class="cs-results">
+      <div class="cs-result">
+        <p class="cs-result-num">01</p>
+        <h4 data-en="Desktop set aligned to mobile" data-th="ชุดจอ Desktop ตรงกับ Mobile แล้ว">Desktop set aligned to mobile</h4>
+        <p data-en="The desktop screens were aligned and the missing ones designed in Figma, and QA found no blocking issues." data-th="ปรับจอ Desktop ให้ตรงกันและออกแบบจอที่ขาดใน Figma แล้ว และการตรวจ QA ไม่พบปัญหาระดับร้ายแรง">The desktop screens were aligned and the missing ones designed in Figma, and QA found no blocking issues.</p>
+      </div>
+      <div class="cs-result">
+        <p class="cs-result-num">02</p>
+        <h4 data-en="Known gaps remain" data-th="ยังมีจุดที่รู้ว่าค้างอยู่">Known gaps remain</h4>
+        <p data-en="Some illustrations and a gradient cannot follow a theme yet, and a warning icon's contrast needs a new token." data-th="ภาพประกอบบางส่วนและสีไล่เฉดยังเปลี่ยนตามธีมไม่ได้ และ contrast ของไอคอนเตือนยังต้องการ Token ใหม่">Some illustrations and a gradient cannot follow a theme yet, and a warning icon's contrast needs a new token.</p>
+      </div>
+      <div class="cs-result">
+        <p class="cs-result-num">03</p>
+        <h4 data-en="No impact numbers to share" data-th="ไม่มีตัวเลขผลลัพธ์ที่เปิดเผยได้">No impact numbers to share</h4>
+        <p data-en="This page does not claim results from parents. Its claim is about the structure: what one change now takes." data-th="หน้านี้ไม่ได้อ้างผลลัพธ์จากผู้ปกครอง แต่เล่าเรื่องโครงสร้าง ว่าการเปลี่ยนหนึ่งครั้งใช้งานน้อยลงอย่างไร">This page does not claim results from parents. Its claim is about the structure: what one change now takes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="section reveal">
+    <div class="card cs-cta-card">
+      <h2 class="cs-cta-title" data-en="Interested in working together?" data-th="สนใจร่วมงาน หรืออยากคุยเรื่องดีไซน์?">Interested in working together?</h2>
+      <p class="cs-cta-sub" data-en="Open to UX/UI and design system work on products that keep changing. Feel free to reach out." data-th="เปิดรับงาน UX/UI และ Design System สำหรับผลิตภัณฑ์ที่ต้องเปลี่ยนแปลงอยู่เสมอ ทักมาคุยกันได้เลย">Open to UX/UI and design system work on products that keep changing. Feel free to reach out.</p>
+      <div class="cs-cta-actions">
+        <a href="mailto:jeenosupalerk@gmail.com" class="btn btn-dark">
+          <span data-en="Get in Touch" data-th="ติดต่อฉัน">Get in Touch</span>
+          <span class="arrow">&#8599;</span>
+        </a>
+        <a href="../index.html#work" class="btn btn-outline">
+          <span data-en="Back to Portfolio" data-th="กลับหน้าพอร์ตโฟลิโอ">Back to Portfolio</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> Supalerk Chaonchom. <span data-en="All rights reserved." data-th="สงวนลิขสิทธิ์">All rights reserved.</span></p>
+</footer>
+
+<script src="../js/main.js?v=14"></script>
+</body>
+</html>

@@ -24,15 +24,16 @@ conventions to keep, and what is still open.
 
 ```
 index.html                 home: hero, photo marquee, about, skills, AI workflow, work grid, experience, contact
-work/pos.html              case study 01 — Canteen & Restaurant POS
-work/design-system.html    case study 02 — Design System / token architecture
-work/insurance.html        case study 03 — HR Insurance Lookup System
-work/easy-parking.html     case study 05 — Easy Parking (the most developed one)
-work/teebadgun.html        case study 06 — Teebadgun redesign (built around decisions and trade-offs, see §4)
-work/gym-scan.html         case study 07 — Yim Ngai gym scan app (design concept and continuity, see §4)
+work/pos.html              hidden: the owner pulled it from the site, no links point here, noindex; kept so it can return after a redesign
+work/design-system.html    case study 01 — Design System / token architecture
+work/insurance.html        case study 02 — HR Insurance Lookup System
+work/easy-parking.html     case study 04 — Easy Parking (the most developed one)
+work/teebadgun.html        case study 05 — Teebadgun redesign (built around decisions and trade-offs, see §4)
+work/gym-scan.html         case study 06 — Yim Ngai gym scan app (design concept and continuity, see §4)
+work/school-parent-app.html case study 07 — school app for parents, company work with real details withheld (see §4)
 css/style.css              base tokens + home page
 css/case-study.css         everything prefixed .cs-* (case-study pages)
-js/main.js                 all behaviour, one IIFE, six init functions
+js/main.js                 all behaviour, one IIFE, one init function per feature
 assets/                    avatar, CV, work thumbnails
 assets/photos/             owner photos (marquee, About stack, Contact background)
 assets/case-studies/       deck exports used inside case studies
@@ -41,7 +42,7 @@ assets/video/              looping prototype clips + their poster frames
 tools/build_flow_clip.py   generates the clips in assets/video/ (see §7)
 ```
 
-Card 04 in the work grid is **Taletails**, which links out to
+Card 03 in the work grid is **Taletails**, which links out to
 `https://taletails-trade.com` — it has no local case-study page.
 
 ## 3. Bilingual system (important)
@@ -115,6 +116,7 @@ Component classes worth knowing (all in `css/case-study.css`):
 | `.persona-head` / `.is-hero` | persona with an icon tile, no stock photos of people |
 | `.annot` | phone screen with numbered notes |
 | `.phone-row` | three phone screens, each with a heading and a line of text |
+| `.ms` / `.ms-stage` | rebuilt product mockups, scaled with the frame and themed through token layers |
 | `.map` (style.css) | mind map: `.map-side` x2 of three `.map-node`, `.map-core` in the middle |
 | `.flow` / `.flow-step` (style.css) | connected steps; `.is-key` highlights, `.is-end` drops the arrow, `.flow-loop` marks a retry |
 
@@ -131,6 +133,12 @@ Workout, Over Time, Decisions & Trade-offs, Design System, Where It Stands. Its
 screens come from the deployed app with seeded sample data and a stubbed scan
 reply, and the page says so. Do not mention the source of the fat-loss program,
 and do not add a live link until the owner clears the name and content for public use.
+
+`work/school-parent-app.html` is company work with every real detail withheld: no
+product name, logo, company, school, or real content, and the broad title is the
+owner's choice. Its screens are `.ms` mockups rebuilt in HTML with sample data, never
+product screenshots. `.ms-stage` holds three token layers as CSS variables, and
+`initThemeDemo()` swaps its `data-theme`.
 
 ## 5. Home page work cards
 
@@ -227,9 +235,8 @@ is done from the Cowork session that owns it, not from here.
 
 ## 9. Open work
 
-1. **Clips for the remaining three case studies.** Easy Parking is the only page
-   with motion. POS needs a browser-chrome frame rather than a phone frame;
-   Design System is better served by cycling a component through
+1. **Clips for the remaining case studies.** Easy Parking is the only page
+   with motion. Design System is better served by cycling a component through
    Default → Hover → Focus → Disabled than by a screen push. Once a project has
    a 4:3 clip, give its home-page card the same hover preview as Easy Parking.
 2. **A visual-first hero direction.** The owner likes

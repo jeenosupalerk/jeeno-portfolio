@@ -259,6 +259,24 @@
      download links do nothing there.
   */
 
+  // Theme switch on the school app case study: changes one attribute, and the
+  // token layers in case-study.css re-theme everything inside the stage.
+  function initThemeDemo() {
+    var stage = document.getElementById("msThemeStage");
+    if (!stage) return;
+    var buttons = stage.querySelectorAll("[data-ms-theme]");
+    var prim = document.getElementById("msPrim");
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        stage.setAttribute("data-theme", btn.getAttribute("data-ms-theme"));
+        prim.textContent = btn.getAttribute("data-prim");
+        buttons.forEach(function (b) {
+          b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+        });
+      });
+    });
+  }
+
   function initPdfDownload() {
     var links = document.querySelectorAll(".cs-pdf-download");
     if (!links.length) return;
@@ -309,5 +327,6 @@
     initYear();
     initWorkPreview();
     initPdfDownload();
+    initThemeDemo();
   });
 })();
