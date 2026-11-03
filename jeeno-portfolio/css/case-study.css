@@ -219,8 +219,8 @@
 
 .cs-callout {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 40px;
+  grid-template-columns: 64px 1fr;
+  gap: 28px;
   align-items: center;
   background: var(--card-bg);
   border-radius: var(--radius-lg);
@@ -915,6 +915,7 @@
   color: var(--ink);
 }
 .ring small { font-size: 13px; font-weight: 500; margin-left: 1px; color: var(--muted); }
+.ring.is-word span { padding: 0 16px; font-size: 14px; line-height: 1.2; letter-spacing: 0; text-align: center; }
 
 /* ------------------------------------------------------------------ */
 /* Persona with an icon tile                                           */
