@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Employee ERP — Case Study | Supalerk Chaonchom</title>
+<meta name="description" content="Moving old Windows back-office screens to a web app without changing a single field: the method, the new layout, and what each decision cost." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23111111'/%3E%3Ctext x='50' y='68' font-size='60' font-family='Arial, sans-serif' font-weight='700' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&family=Prompt:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=15" />
+<link rel="stylesheet" href="../css/case-study.css?v=15" />
+</head>
+<body class="cs-body">
+
+<div class="grain-layer" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute;" aria-hidden="true">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h14V10" /></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" /><rect x="14" y="4" width="6" height="6" /><rect x="4" y="14" width="6" height="6" /><rect x="14" y="14" width="6" height="6" /></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" /><path d="M4 21c1-5 4-7 8-7s7 2 8 7" /></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" /><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.600 5.600l2.100 2.100M16.300 16.300l2.100 2.100M5.600 18.400l2.100-2.100M16.300 7.700l2.100-2.100" /></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="M20 20l-4-4" /></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" /></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2" /><path d="M4 10h16M8 3v4M16 3v4" /></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></symbol>
+  <symbol id="i-save" viewBox="0 0 24 24"><path d="M5 4h12l3 3v13H5zM8 4v5h8V4M8 20v-6h8v6" /></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM15 3v4h4" /></symbol>
+  <symbol id="i-exit" viewBox="0 0 24 24"><path d="M10 4H5v16h5M14 8l4 4-4 4M8 12h10" /></symbol>
+</svg>
+
+<nav class="cs-nav">
+  <div class="cs-nav-inner">
+    <a href="../index.html#work" class="cs-back">
+      <span class="arrow-left">&#8592;</span>
+      <span data-en="Back to portfolio" data-th="กลับหน้าพอร์ตโฟลิโอ">Back to portfolio</span>
+    </a>
+    <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+      <span class="lang-opt active" data-lang-btn="en">EN</span>
+      <span class="lang-sep">/</span>
+      <span class="lang-opt" data-lang-btn="th">TH</span>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="section cs-hero">
+    <div class="card cs-hero-card reveal">
+      <p class="cs-eyebrow" data-en="Employee ERP · Screen Upgrade Case Study" data-th="ERP ของพนักงาน · เคสสตัดี้การยกระดับจอเก่า">Employee ERP · Screen Upgrade Case Study</p>
+      <h1 class="cs-title" data-en="New Screens, and Not One Field Lost" data-th="จอใหม่ทั้งหน้า แต่ไม่มี Field ไหนหาย">New Screens, and Not One Field Lost</h1>
+      <p class="cs-tagline" data-en="Old Windows back-office screens are moving to a web app. The look and layout can change, but the fields hold the real work, so every label, type, and order stays as it is in the old system." data-th="จอหลังบ้านแบบโปรแกรม Windows กำลังย้ายมาเป็นเว็บแอป หน้าตาและการจัดวางเปลี่ยนได้ แต่ Field คือตัวงานจริง ชื่อ ประเภท และลำดับทุกช่องจึงคงไว้ตามระบบเดิม">Old Windows back-office screens are moving to a web app. The look and layout can change, but the fields hold the real work, so every label, type, and order stays as it is in the old system.</p>
+      <div class="cs-meta-grid">
+        <div class="cs-meta-item"><span class="cs-meta-label" data-en="Role" data-th="บทบาท">Role</span><span class="cs-meta-value" data-en="UX/UI Designer" data-th="UX/UI Designer">UX/UI Designer</span></div>
+        <div class="cs-meta-item"><span class="cs-meta-label" data-en="Tool" data-th="เครื่องมือ">Tool</span><span class="cs-meta-value" data-en="Figma Variables and Components" data-th="Figma Variables และ Components">Figma Variables and Components</span></div>
+        <div class="cs-meta-item"><span class="cs-meta-label" data-en="Platform" data-th="แพลตฟอร์ม">Platform</span><span class="cs-meta-value" data-en="Web app, from a Windows program" data-th="เว็บแอป จากโปรแกรม Windows">Web app, from a Windows program</span></div>
+        <div class="cs-meta-item"><span class="cs-meta-label" data-en="Type" data-th="ประเภทงาน">Type</span><span class="cs-meta-value" data-en="Company work, details withheld" data-th="งานบริษัท ปิดข้อมูลจริง">Company work, details withheld</span></div>
+      </div>
+      <p class="cs-note" data-en="The product name, logo, company, customers, and all real records are withheld. Every screen on this page was rebuilt for this portfolio with sample data, so it shows the design approach, not the product file." data-th="ชื่อผลิตภัณฑ์ โลโก้ บริษัท ลูกค้า และข้อมูลจริงทั้งหมดถูกปิดไว้ หน้าจอในหน้านี้วาดขึ้นใหม่สำหรับพอร์ตโฟลิโอด้วยข้อมูลสมมติ จึงแสดงแนวทางการออกแบบ ไม่ใช่ไฟล์งานจริง">The product name, logo, company, customers, and all real records are withheld. Every screen on this page was rebuilt for this portfolio with sample data, so it shows the design approach, not the product file.</p>
+    </div>
+  </section>
+
+  <!-- 01 OVERVIEW -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="01 — Overview" data-th="01 — ภาพรวมโปรเจกต์">01 — Overview</p>
+    <h2 class="cs-h2" data-en="A screen full of fields is a screen full of rules" data-th="จอที่เต็มไปด้วย Field คือจอที่เต็มไปด้วยกฎงาน">A screen full of fields is a screen full of rules</h2>
+    <p class="cs-overview-text" data-en="Officers at public agencies and private companies use this system for finance and back-office records. The example on this page is a transfer record: who gets paid, how much, from which account, and who signs. A field that looks unnecessary may be there for an audit or an accounting rule, so a redesign cannot judge it by its looks." data-th="เจ้าหน้าที่ของหน่วยงานรัฐและบริษัทเอกชนใช้ระบบนี้บันทึกงานการเงินและงานหลังบ้าน ตัวอย่างในหน้านี้คือการบันทึกการโอนเงิน ว่าจ่ายให้ใคร เท่าไร จากบัญชีไหน และใครลงนาม Field ที่ดูเหมือนไม่จำเป็นอาจมีไว้เพื่อการตรวจสอบหรือกฎบัญชี การรีดีไซน์จึงตัดสินจากหน้าตาไม่ได้">Officers at public agencies and private companies use this system for finance and back-office records. The example on this page is a transfer record: who gets paid, how much, from which account, and who signs. A field that looks unnecessary may be there for an audit or an accounting rule, so a redesign cannot judge it by its looks.</p>
+  </section>
+
+  <!-- 02 OLD SCREEN -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="02 — The Old Screen" data-th="02 — จอเดิม">02 — The Old Screen</p>
+    <h2 class="cs-h2" data-en="Everything is there, all at the same volume" data-th="ข้อมูลครบทุกอย่าง แต่ดังเท่ากันหมด">Everything is there, all at the same volume</h2>
+    <div class="ms-scroll is-wide">
+      <div class="ms-browser">
+        <div class="ms-frame">
+          <div class="lg" role="img" aria-label="The old Windows screen, rebuilt with sample data: an icon toolbar, one long form, bright magenta, green and yellow fills, a 14-column table, and a second table below it">
+            <div class="lg-bar" data-en="Finance system : user : sample" data-th="ระบบการเงิน : ผู้ใช้งาน : ตัวอย่าง">Finance system : user : sample</div>
+            <div class="lg-menu"><span data-en="Master files" data-th="แฟ้มข้อมูลหลัก">Master files</span><span data-en="Record entries" data-th="บันทึกรายการ">Record entries</span><span data-en="Reports" data-th="รายงาน">Reports</span></div>
+            <div class="lg-shell">
+              <div class="lg-tools" aria-hidden="true"><i><svg><use href="#i-save" /></svg></i><i><svg><use href="#i-file" /></svg></i><i><svg><use href="#i-exit" /></svg></i></div>
+              <div style="min-width:0;">
+                <div class="lg-title" data-en="Transfer record" data-th="บันทึกการโอนเงิน">Transfer record</div>
+                <div class="lg-form">
+                  <div class="lg-fields">
+                    <span class="lg-l" data-en="Bank Trans GID:" data-th="Bank Trans GID:">Bank Trans GID:</span><span class="lg-i is-ro"></span>
+                    <span class="lg-l" data-en="Transfer / entry date:" data-th="วันที่โอน/ทำรายการ:">Transfer / entry date:</span><span class="lg-i ">01/01/2567 00:00:00</span>
+                    <span class="lg-l" data-en="Dimension 1:" data-th="มิติ 1:">Dimension 1:</span><span class="lg-i is-dd"><span data-en="Budget" data-th="เงินงบประมาณ">Budget</span></span>
+                    <span class="lg-l" data-en="Reference no.:" data-th="เลขที่อ้างอิง:">Reference no.:</span><span class="lg-i "></span>
+                    <span class="lg-l" data-en="Payment method:" data-th="วิธีการจ่ายเงิน:">Payment method:</span><span class="lg-i is-dd"><span data-en="Bank transfer" data-th="โอนเงินเข้าบัญชี">Bank transfer</span></span>
+                    <span class="lg-l" data-en="Reference no. 2:" data-th="เลขที่อ้างอิง 2:">Reference no. 2:</span><span class="lg-i "></span>
+                    <span class="lg-l" data-en="From bank account:" data-th="โอนจากบัญชีธนาคาร:">From bank account:</span><span class="lg-i is-dd"><span data-en="Sample account" data-th="บัญชีตัวอย่าง">Sample account</span></span>
+                    <span class="lg-l" data-en="Reference no. 3:" data-th="เลขที่อ้างอิง 3:">Reference no. 3:</span><span class="lg-i "></span>
+                    <span class="lg-l" data-en="Transferred by:" data-th="ผู้โอนเงิน/ทำรายการ:">Transferred by:</span><span class="lg-i is-dd"><span data-en="Sample officer" data-th="เจ้าหน้าที่ตัวอย่าง">Sample officer</span></span>
+                    <span class="lg-l" data-en="Expire date:" data-th="Expire date:">Expire date:</span><span class="lg-i ">02/01/2567</span>
+                    <span class="lg-l" data-en="Signing set:" data-th="ชุดลงนาม:">Signing set:</span><span class="lg-i is-dd"><span data-en="Transfer slip" data-th="ใบโอนเงิน">Transfer slip</span></span>
+                    <span class="lg-l" data-en="Entry type:" data-th="ชนิดรายการ:">Entry type:</span><span class="lg-i is-dd"><span data-en="Not posted" data-th="ไม่ลงบัญชี">Not posted</span></span>
+                    <span class="lg-l" data-en="Details:" data-th="รายละเอียด:">Details:</span><span class="lg-i is-wide is-tall"></span>
+                    <span class="lg-l" data-en="Disbursed under:" data-th="เบิกจ่ายตาม:">Disbursed under:</span><span class="lg-i is-wide is-dd"></span>
+                    <span class="lg-l" data-en="Recorded by:" data-th="ผู้บันทึก:">Recorded by:</span><span class="lg-i is-ro"></span>
+                    <span class="lg-l" data-en="Recorded on:" data-th="วันที่บันทึก:">Recorded on:</span><span class="lg-i is-ro"></span>
+                    <div class="lg-mag">
+                      <span class="lg-l" data-en="Check status:" data-th="สถานะการตรวจ:">Check status:</span><span class="lg-i is-dd"></span>
+                      <span class="lg-l" data-en="Checked by:" data-th="ผู้ตรวจ:">Checked by:</span><span class="lg-i is-ro"></span>
+                      <span class="lg-l" data-en="Checked on:" data-th="วันที่ตรวจ:">Checked on:</span><span class="lg-i is-ro"></span>
+                    </div>
+                    <span class="lg-l" data-en="Check note:" data-th="หมายเหตุการตรวจ:">Check note:</span><span class="lg-i is-wide is-ro"></span>
+                  </div>
+                  <div class="lg-aside">
+                    <span class="lg-l" data-en="Transfer limit remaining" data-th="วงเงินโอนคงเหลือ">Transfer limit remaining</span>
+                    <span class="lg-i"></span>
+                    <span class="lg-b">Attach Files</span>
+                    <span class="lg-file"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="lg-tw">
+              <table class="lg-t">
+                <thead><tr><th data-en="No." data-th="ลำดับ">No.</th><th data-en="Payable clearing no." data-th="เลขที่ล้างเจ้าหนี้">Payable clearing no.</th><th data-en="Payment request no." data-th="เลขที่ใบขอจ่าย">Payment request no.</th><th data-en="Combined clearing no." data-th="เลขที่รวมล้างเจ้าหนี้">Combined clearing no.</th><th data-en="Reference no." data-th="เลขอ้างอิง">Reference no.</th><th data-en="Vendor code" data-th="รหัสผู้ขาย">Vendor code</th><th data-en="Pay to" data-th="สั่งจ่าย">Pay to</th><th class="g" data-en="Amount requested" data-th="จำนวนเงินขอจ่าย">Amount requested</th><th data-en="Withholding tax + deductions" data-th="ภาษีหัก ณ ที่จ่าย+เงินหัก">Withholding tax + deductions</th><th data-en="Paid per request" data-th="จ่ายจริงตามใบขอจ่าย">Paid per request</th><th data-en="Paid remaining" data-th="จ่ายจริงคงเหลือ">Paid remaining</th><th class="y" data-en="Paid this time" data-th="จ่ายจริงครั้งนี้">Paid this time</th><th data-en="Account no." data-th="เลขบัญชี">Account no.</th><th data-en="Bank" data-th="ธนาคาร">Bank</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td>PD-0001</td><td>PR-0001</td><td></td><td>INV-001</td><td>V-0001</td><td><span data-en="Sample Vendor A" data-th="ผู้ขายตัวอย่าง A">Sample Vendor A</span></td><td class="n g">5,000.00</td><td class="n">0.00</td><td class="n">5,000.00</td><td class="n">5,000.00</td><td class="n y">5,000.00</td><td>000-0-00001-0</td><td><span data-en="Sample Bank" data-th="ธนาคารตัวอย่าง">Sample Bank</span></td></tr>
+                  <tr class="fill"><td colspan="14"></td></tr>
+                  <tr class="tot"><td colspan="8"></td><td class="n y" data-en="Total:" data-th="รวมทั้งสิ้น:">Total:</td><td class="n">5,000.00</td><td class="n">5,000.00</td><td class="n y">5,000.00</td><td colspan="2"></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="lg-band">
+              <strong data-en="Transfer details" data-th="รายละเอียดการโอน">Transfer details</strong>
+              <span class="lg-b">Import File</span>
+              <span class="lg-b" data-en="Create Textfile for bank" data-th="สร้าง Textfile เพื่อธนาคาร">Create Textfile for bank</span>
+              <span class="lg-b" data-en="Create Textfile for co-op" data-th="สร้าง Textfile เพื่อสหกรณ์">Create Textfile for co-op</span>
+              <span class="lg-b" data-en="Create Textfile for eCheque" data-th="สร้าง Textfile eCheque">Create Textfile for eCheque</span>
+            </div>
+            <div class="lg-tw">
+              <table class="lg-t">
+                <thead><tr><th data-en="No." data-th="ลำดับ">No.</th><th data-en="Personnel" data-th="บุคลากร">Personnel</th><th data-en="Account no. / ID" data-th="เลขที่บัญชีธนาคาร/ID">Account no. / ID</th><th data-en="Account name" data-th="ชื่อบัญชีธนาคาร">Account name</th><th data-en="Amount paid" data-th="จำนวนเงินจ่าย">Amount paid</th><th data-en="Bank" data-th="ธนาคาร">Bank</th><th data-en="Branch" data-th="สาขา">Branch</th><th data-en="Note" data-th="หมายเหตุ">Note</th><th>Bank Trans Gid</th></tr></thead>
+                <tbody>
+                  <tr><td>1</td><td></td><td>000-0-00001-0</td><td><span data-en="Sample Vendor A" data-th="ผู้ขายตัวอย่าง A">Sample Vendor A</span></td><td class="n">5,000.00</td><td><span data-en="Sample Bank" data-th="ธนาคารตัวอย่าง">Sample Bank</span></td><td data-en="Sample branch" data-th="สาขาตัวอย่าง">Sample branch</td><td>PD-0001&gt;V-0001</td><td></td></tr>
+                  <tr class="tot"><td colspan="4"></td><td class="n y">5,000.00</td><td colspan="4"></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <span class="ex-pin" style="left:0.6em;top:4.3em;">1</span>
+            <span class="ex-pin" style="left:83%;top:25.6em;">2</span>
+            <span class="ex-pin" style="left:83.5%;top:34.2em;">3</span>
+            <span class="ex-pin" style="left:30%;top:39.4em;">4</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ex-notes">
+      <div class="ex-note"><b>1</b><span data-en="Main actions are small icons with no labels." data-th="คำสั่งหลักเป็นไอคอนเล็ก ๆ ไม่มีชื่อกำกับ">Main actions are small icons with no labels.</span></div>
+      <div class="ex-note"><b>2</b><span data-en="Bright fills compete for attention, and none of them explains itself." data-th="สีสดหลายสีแย่งความสนใจ และไม่มีสีไหนบอกความหมายของตัวเอง">Bright fills compete for attention, and none of them explains itself.</span></div>
+      <div class="ex-note"><b>3</b><span data-en="The one amount to edit is a yellow cell among 14 columns." data-th="จำนวนเงินช่องเดียวที่ต้องแก้ เป็นช่องเหลืองท่ามกลาง 14 คอลัมน์">The one amount to edit is a yellow cell among 14 columns.</span></div>
+      <div class="ex-note"><b>4</b><span data-en="A second table and its export buttons share the same page, with nothing grouped." data-th="ตารางที่สองและปุ่มส่งออกอยู่หน้าเดียวกัน โดยไม่ได้แบ่งกลุ่ม">A second table and its export buttons share the same page, with nothing grouped.</span></div>
+    </div>
+    <p class="cs-note" data-en="Rebuilt with sample data to match the old screen, with its bank-specific button names made generic." data-th="วาดใหม่ด้วยข้อมูลสมมติให้ตรงกับจอเดิม โดยเปลี่ยนชื่อปุ่มที่ระบุธนาคารให้เป็นชื่อกลาง ๆ">Rebuilt with sample data to match the old screen, with its bank-specific button names made generic.</p>
+  </section>
+
+  <!-- 03 THE RULE -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="03 — The Rule" data-th="03 — กติกาหลัก">03 — The Rule</p>
+    <h2 class="cs-h2" data-en="Read the old screen first, then design" data-th="อ่านจอเดิมให้ครบก่อน แล้วค่อยออกแบบ">Read the old screen first, then design</h2>
+    <div class="card ai-flow-card">
+      <p class="ai-flow-title" data-en="Before any design starts" data-th="ก่อนเริ่มออกแบบทุกครั้ง">Before any design starts</p>
+      <div class="flow">
+        <div class="flow-step"><b>01</b><span data-en="List every field, column, and button" data-th="ทำตาราง Field คอลัมน์ และปุ่มให้ครบ">List every field, column, and button</span></div>
+        <div class="flow-step"><b>02</b><span data-en="Classify each one by control type" data-th="จำแนกประเภทของแต่ละช่อง">Classify each one by control type</span></div>
+        <div class="flow-step is-key"><b>03</b><span data-en="Mark every guess with &quot;?&quot; and ask" data-th="ทำเครื่องหมาย &quot;?&quot; ทุกจุดที่เดา แล้วถาม">Mark every guess with &quot;?&quot; and ask</span></div>
+        <div class="flow-step"><b>04</b><span data-en="Confirm the table before designing" data-th="ยืนยันตารางก่อนออกแบบ">Confirm the table before designing</span></div>
+        <div class="flow-step is-end"><b>05</b><span data-en="Map it to the new system" data-th="แปลงเข้าสู่ระบบใหม่">Map it to the new system</span></div>
+      </div>
+    </div>
+    <div style="margin-top:28px;">
+    <div class="cm"><div class="cm-row is-head"><span data-en="In the old program" data-th="ในโปรแกรมเดิม">In the old program</span><em></em><span data-en="In the new design" data-th="ในดีไซน์ใหม่">In the new design</span><span data-en="What it means" data-th="ความหมาย">What it means</span></div><div class="cm-row"><div class="lg cm-old"><span class="lg-i is-dd"><span data-en="Bank transfer" data-th="โอนเงินเข้าบัญชี">Bank transfer</span></span></div><em>&#8594;</em><div class="ex cm-new"><div class="ex-i"><span data-en="Bank transfer" data-th="โอนเงินเข้าบัญชี">Bank transfer</span><svg><use href="#i-down" /></svg></div></div><p data-en="A fixed list of choices becomes a select." data-th="รายการตัวเลือกตายตัว กลายเป็น Select">A fixed list of choices becomes a select.</p></div><div class="cm-row"><div class="lg cm-old"><div class="cm-pair"><span class="lg-i is-ro">V-0001</span><span class="lg-b"><span data-en="Find..." data-th="ค้น...">Find...</span></span></div></div><em>&#8594;</em><div class="ex cm-new"><div class="ex-i">V-0001<svg><use href="#i-search" /></svg></div></div><p data-en="Find and pick from records becomes an input with a search icon and a dialog." data-th="ค้นแล้วเลือกจากรายการ กลายเป็นช่องที่มีไอคอนค้นหาและหน้าต่างเลือกข้อมูล">Find and pick from records becomes an input with a search icon and a dialog.</p></div><div class="cm-row"><div class="lg cm-old"><span class="lg-i is-num">1,000.00</span></div><em>&#8594;</em><div class="ex cm-new"><div class="ex-i is-num">1,000.00</div></div><p data-en="Typed values stay inputs, and numbers align right." data-th="ค่าที่พิมพ์เองยังเป็นช่องกรอก และตัวเลขชิดขวา">Typed values stay inputs, and numbers align right.</p></div><div class="cm-row"><div class="lg cm-old"><span class="lg-i is-ro"><span data-en="Sample officer" data-th="เจ้าหน้าที่ตัวอย่าง">Sample officer</span></span></div><em>&#8594;</em><div class="ex cm-new"><div class="ex-i is-ro"><span data-en="Sample officer" data-th="เจ้าหน้าที่ตัวอย่าง">Sample officer</span></div></div><p data-en="Values the system fills in become read-only and move to the end of the form." data-th="ค่าที่ระบบเติมให้เป็น Read-only และย้ายไปรวมกันท้ายฟอร์ม">Values the system fills in become read-only and move to the end of the form.</p></div><div class="cm-row"><div class="lg cm-old"><span class="cm-sum">1,000.00</span></div><em>&#8594;</em><div class="ex cm-new"><div class="ex-i is-ro is-num">1,000.00</div></div><p data-en="Totals are calculated from the rows, and nobody types them." data-th="ยอดรวมคำนวณจากแถว ไม่มีใครต้องพิมพ์เอง">Totals are calculated from the rows, and nobody types them.</p></div><div class="cm-row"><div class="lg cm-old"><div class="cm-pair"><span class="lg-b">+</span><span class="lg-b">&#10005;</span></div></div><em>&#8594;</em><div class="ex cm-new"><div class="ex-fetch"><svg><use href="#i-plus" /></svg><span data-en="Add row" data-th="เพิ่มแถว">Add row</span></div></div><p data-en="Add and delete buttons beside a table become a named button and a delete icon in the row." data-th="ปุ่มเพิ่มและลบข้างตาราง กลายเป็นปุ่มที่มีชื่อ และไอคอนลบในแถว">Add and delete buttons beside a table become a named button and a delete icon in the row.</p></div></div>
+    </div>
+  </section>
+
+  <!-- 04 NEW SCREEN -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="04 — The New Screen" data-th="04 — จอใหม่">04 — The New Screen</p>
+    <h2 class="cs-h2" data-en="Same fields, in the order the work happens" data-th="Field ชุดเดิม จัดตามลำดับการทำงาน">Same fields, in the order the work happens</h2>
+    <div class="ms-scroll is-wide">
+      <div class="ms-browser">
+        <div class="ms-browser-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="ms-frame" id="erpNewScreen">
+          <div class="ex" role="img" aria-label="The new web screen, rebuilt with sample data: a blue framed form with a four-column grid, a blue framed table with pinned columns and a yellow editable column, and a narrow right rail for the summary and signing">
+            <div class="ex-rail">
+              <i></i>
+              <span><svg><use href="#i-home" /></svg><em data-en="Home" data-th="หน้าหลัก">Home</em></span>
+              <span class="on"><svg><use href="#i-grid" /></svg><em>ERP</em></span>
+              <span><svg><use href="#i-user" /></svg><em data-en="Profile" data-th="โปรไฟล์">Profile</em></span>
+              <span><svg><use href="#i-gear" /></svg><em data-en="Settings" data-th="ตั้งค่า">Settings</em></span>
+            </div>
+            <div class="ex-main">
+              <div class="ex-top">
+                <div class="ex-search"><span data-en="Search" data-th="ค้นหา">Search</span><svg><use href="#i-search" /></svg></div>
+                <div class="ex-who"><i></i><span data-en="Sample Officer" data-th="เจ้าหน้าที่ตัวอย่าง">Sample Officer</span></div>
+              </div>
+              <div class="ex-title">
+                <strong data-en="Transfer record" data-th="บันทึกการโอนเงิน">Transfer record</strong>
+                <span class="ex-chip" data-en="Draft" data-th="ฉบับร่าง">Draft</span>
+                <small>TR-0000</small>
+                <span class="ex-btn is-ghost" data-en="New" data-th="ใหม่">New</span>
+                <span class="ex-btn is-ghost" data-en="Exit" data-th="ออก">Exit</span>
+                <span class="ex-btn" data-en="Save" data-th="บันทึก">Save</span>
+              </div>
+              <div class="ex-cols">
+                <div class="ex-stack">
+                  <div class="ex-panel">
+                    <div class="ex-tabs"><span class="ex-tab on" data-en="Transfer details" data-th="ข้อมูลการโอน">Transfer details</span><span class="ex-tab" data-en="Attach Files" data-th="Attach Files">Attach Files</span></div>
+                    <div class="ex-body">
+                      <div class="ex-grid">
+                        <div class="ex-f"><label data-en="Bank Trans GID" data-th="Bank Trans GID">Bank Trans GID</label><div class="ex-i is-ro">-</div></div>
+                        <div class="ex-f"><label data-en="Transfer / entry date" data-th="วันที่โอน/ทำรายการ">Transfer / entry date</label><div class="ex-i ">01/01/2567 00:00<svg><use href="#i-cal" /></svg></div></div>
+                        <div class="ex-f"><label data-en="Reference no." data-th="เลขที่อ้างอิง">Reference no.</label><div class="ex-i "></div></div>
+                        <div class="ex-f"><label data-en="Dimension 1" data-th="มิติ 1">Dimension 1</label><div class="ex-i "><span data-en="Budget" data-th="เงินงบประมาณ">Budget</span><svg><use href="#i-down" /></svg></div></div>
+                        <div class="ex-f"><label data-en="Payment method" data-th="วิธีการจ่ายเงิน">Payment method</label><div class="ex-i "><span data-en="Bank transfer" data-th="โอนเงินเข้าบัญชี">Bank transfer</span><svg><use href="#i-down" /></svg></div></div>
+                        <div class="ex-f"><label data-en="Reference no. 2" data-th="เลขที่อ้างอิง 2">Reference no. 2</label><div class="ex-i "></div></div>
+                        <div class="ex-f"><label data-en="From bank account" data-th="โอนจากบัญชีธนาคาร">From bank account</label><div class="ex-i "><span data-en="Sample account" data-th="บัญชีตัวอย่าง">Sample account</span><svg><use href="#i-down" /></svg></div></div>
+                        <div class="ex-f"><label data-en="Reference no. 3" data-th="เลขที่อ้างอิง 3">Reference no. 3</label><div class="ex-i "></div></div>
+                        <div class="ex-f"><label data-en="Transferred by" data-th="ผู้โอนเงิน/ทำรายการ">Transferred by</label><div class="ex-i "><span data-en="Sample officer" data-th="เจ้าหน้าที่ตัวอย่าง">Sample officer</span><svg><use href="#i-down" /></svg></div></div>
+                        <div class="ex-f"><label data-en="Expire date" data-th="Expire date">Expire date</label><div class="ex-i ">02/01/2567<svg><use href="#i-cal" /></svg></div></div>
+                        <div class="ex-f"><label data-en="Signing set" data-th="ชุดลงนาม">Signing set</label><div class="ex-i "><span data-en="Transfer slip" data-th="ใบโอนเงิน">Transfer slip</span><svg><use href="#i-down" /></svg></div></div>
+                        <div class="ex-f"><label data-en="Entry type" data-th="ชนิดรายการ">Entry type</label><div class="ex-i "><span data-en="Not posted" data-th="ไม่ลงบัญชี">Not posted</span><svg><use href="#i-down" /></svg></div></div>
+                        <div class="ex-f is-wide"><label data-en="Details" data-th="รายละเอียด">Details</label><div class="ex-i "></div></div>
+                        <div class="ex-f is-wide"><label data-en="Disbursed under" data-th="เบิกจ่ายตาม">Disbursed under</label><div class="ex-i "><svg><use href="#i-down" /></svg></div></div>
+                      </div>
+                      <div class="ex-sys">
+                        <div class="ex-f"><label data-en="Recorded by" data-th="ผู้บันทึก">Recorded by</label><div class="ex-i is-ro">-</div></div><div class="ex-f"><label data-en="Recorded on" data-th="วันที่บันทึก">Recorded on</label><div class="ex-i is-ro">-</div></div><div class="ex-f"><label data-en="Check status" data-th="สถานะการตรวจ">Check status</label><div class="ex-i is-ro">-</div></div><div class="ex-f"><label data-en="Checked by" data-th="ผู้ตรวจ">Checked by</label><div class="ex-i is-ro">-</div></div><div class="ex-f"><label data-en="Checked on" data-th="วันที่ตรวจ">Checked on</label><div class="ex-i is-ro">-</div></div><div class="ex-f"><label data-en="Check note" data-th="หมายเหตุการตรวจ">Check note</label><div class="ex-i is-ro">-</div></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ex-panel">
+                    <div class="ex-tabs"><span class="ex-tab on" data-en="Transfer items" data-th="รายการโอนเงิน">Transfer items</span><span class="ex-tab" data-en="Transfer details" data-th="รายละเอียดการโอน">Transfer details</span></div>
+                    <div class="ex-body">
+                      <div class="ex-fetch"><svg><use href="#i-plus" /></svg><span data-en="Fetch payable clearing / payment request" data-th="เรียกข้อมูลล้างเจ้าหนี้/เลขที่ใบขอจ่าย">Fetch payable clearing / payment request</span></div>
+                      <div class="ex-tw"><table class="ex-t"><thead><tr><th class="p1" scope="col" data-en="No." data-th="ลำดับ">No.</th><th class="p2" scope="col" data-en="Payable clearing no." data-th="เลขที่ล้างเจ้าหนี้">Payable clearing no.</th><th scope="col" data-en="Payment request no." data-th="เลขที่ใบขอจ่าย">Payment request no.</th><th scope="col" data-en="Combined clearing no." data-th="เลขที่รวมล้างเจ้าหนี้">Combined clearing no.</th><th scope="col" data-en="Reference no." data-th="เลขอ้างอิง">Reference no.</th><th scope="col" data-en="Vendor code" data-th="รหัสผู้ขาย">Vendor code</th><th scope="col" data-en="Pay to" data-th="สั่งจ่าย">Pay to</th><th class="n" scope="col" data-en="Amount requested" data-th="จำนวนเงินขอจ่าย">Amount requested</th><th class="n" scope="col" data-en="Withholding tax + deductions" data-th="ภาษีหัก ณ ที่จ่าย+เงินหัก">Withholding tax + deductions</th><th class="n" scope="col" data-en="Paid per request" data-th="จ่ายจริงตามใบขอจ่าย">Paid per request</th><th class="n" scope="col" data-en="Paid remaining" data-th="จ่ายจริงคงเหลือ">Paid remaining</th><th scope="col" data-en="Account no." data-th="เลขบัญชี">Account no.</th><th scope="col" data-en="Bank" data-th="ธนาคาร">Bank</th><th class="pr n" scope="col" data-en="Paid this time" data-th="จ่ายจริงครั้งนี้">Paid this time</th></tr></thead><tbody><tr><td class="p1">1</td><td class="p2">PD-0001</td><td>PR-0001</td><td>-</td><td>INV-001</td><td>V-0001</td><td><span data-en="Sample Vendor A" data-th="ผู้ขายตัวอย่าง A">Sample Vendor A</span></td><td class="n">5,000.00</td><td class="n">0.00</td><td class="n">5,000.00</td><td class="n">5,000.00</td><td>000-0-00001-0</td><td><span data-en="Sample Bank" data-th="ธนาคารตัวอย่าง">Sample Bank</span></td><td class="pr n">5,000.00</td></tr><tr><td class="p1">2</td><td class="p2">PD-0002</td><td>PR-0002</td><td>CB-01</td><td>INV-002</td><td>V-0002</td><td><span data-en="Sample Vendor B" data-th="ผู้ขายตัวอย่าง B">Sample Vendor B</span></td><td class="n">12,500.00</td><td class="n">375.00</td><td class="n">12,125.00</td><td class="n">12,125.00</td><td>000-0-00002-0</td><td><span data-en="Sample Bank" data-th="ธนาคารตัวอย่าง">Sample Bank</span></td><td class="pr n">12,125.00</td></tr><tr><td class="p1">3</td><td class="p2">PD-0003</td><td>PR-0003</td><td>CB-01</td><td>INV-003</td><td>V-0003</td><td><span data-en="Sample Vendor C" data-th="ผู้ขายตัวอย่าง C">Sample Vendor C</span></td><td class="n">3,200.00</td><td class="n">96.00</td><td class="n">3,104.00</td><td class="n">3,104.00</td><td>000-0-00003-0</td><td><span data-en="Sample Bank" data-th="ธนาคารตัวอย่าง">Sample Bank</span></td><td class="pr n">3,104.00</td></tr><tr><td class="p1">4</td><td class="p2">PD-0004</td><td>PR-0004</td><td>-</td><td>INV-004</td><td>V-0004</td><td><span data-en="Sample Vendor D" data-th="ผู้ขายตัวอย่าง D">Sample Vendor D</span></td><td class="n">8,750.00</td><td class="n">0.00</td><td class="n">8,750.00</td><td class="n">8,750.00</td><td>000-0-00004-0</td><td><span data-en="Sample Bank" data-th="ธนาคารตัวอย่าง">Sample Bank</span></td><td class="pr n">8,750.00</td></tr><tr><td class="p1">5</td><td class="p2">PD-0005</td><td>PR-0005</td><td>-</td><td>INV-005</td><td>V-0005</td><td><span data-en="Sample Vendor E" data-th="ผู้ขายตัวอย่าง E">Sample Vendor E</span></td><td class="n">4,100.00</td><td class="n">123.00</td><td class="n">3,977.00</td><td class="n">3,977.00</td><td>000-0-00005-0</td><td><span data-en="Sample Bank" data-th="ธนาคารตัวอย่าง">Sample Bank</span></td><td class="pr n">3,977.00</td></tr></tbody><tfoot><tr><td class="p1"></td><td class="p2" data-en="Total" data-th="รวม">Total</td><td colspan="5"></td><td class="n">33,550.00</td><td class="n">594.00</td><td class="n">32,956.00</td><td class="n">32,956.00</td><td colspan="2"></td><td class="pr n">32,956.00</td></tr></tfoot></table></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ex-side">
+                  <div class="ex-card">
+                    <h6 data-en="Summary" data-th="สรุป">Summary</h6>
+                    <div class="ex-sum"><span data-en="Transfer limit remaining" data-th="วงเงินโอนคงเหลือ">Transfer limit remaining</span><b>100,000.00</b></div>
+                    <div class="ex-sum"><span data-en="Paid this time, total" data-th="ยอดจ่ายจริงครั้งนี้รวม">Paid this time, total</span><b>32,956.00</b></div>
+                  </div>
+                  <div class="ex-card is-sign">
+                    <h6 data-en="Signing history" data-th="ประวัติการลงนาม">Signing history</h6>
+                    <div class="ex-step"><i></i><div><b data-en="Signer 1" data-th="ผู้ลงนาม 1">Signer 1</b><small data-en="Signed" data-th="ลงนามแล้ว">Signed</small></div></div>
+                    <div class="ex-step"><i class="is-wait"></i><div><b data-en="Signer 2" data-th="ผู้ลงนาม 2">Signer 2</b><small data-en="Waiting" data-th="รอลงนาม">Waiting</small></div></div>
+                    <div class="ex-step"><i class="is-wait"></i><div><b data-en="Signer 3" data-th="ผู้ลงนาม 3">Signer 3</b><small data-en="Waiting" data-th="รอลงนาม">Waiting</small></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card jm-card" style="margin-top:28px;">
+      <div class="jm-scroll">
+      <div class="jm" style="--n:5;">
+        <div class="jm-corner"></div>
+        <div class="jm-stage"><b>01</b><span data-en="Actions" data-th="คำสั่งหลัก">Actions</span></div>
+        <div class="jm-stage"><b>02</b><span data-en="Main form" data-th="ฟอร์มหลัก">Main form</span></div>
+        <div class="jm-stage"><b>03</b><span data-en="System fields" data-th="ช่องที่ระบบเติม">System fields</span></div>
+        <div class="jm-stage"><b>04</b><span data-en="Main table" data-th="ตารางหลัก">Main table</span></div>
+        <div class="jm-stage"><b>05</b><span data-en="Second table" data-th="ตารางที่สอง">Second table</span></div>
+        <p class="jm-row-label" data-en="Old" data-th="เดิม">Old</p>
+        <div class="jm-cell is-pain"><span data-en="Icons in a left toolbar" data-th="ไอคอนในแถบเครื่องมือซ้าย">Icons in a left toolbar</span></div>
+        <div class="jm-cell is-pain"><span data-en="One long form with its labels on the left" data-th="ฟอร์มยาวผืนเดียว ชื่อช่องอยู่ทางซ้าย">One long form with its labels on the left</span></div>
+        <div class="jm-cell is-pain"><span data-en="Mixed in with typed fields" data-th="ปนอยู่กับช่องที่ต้องกรอกเอง">Mixed in with typed fields</span></div>
+        <div class="jm-cell is-pain"><span data-en="Scrolls sideways, and key columns leave the view" data-th="เลื่อนแนวนอนแล้วคอลัมน์สำคัญหายไป">Scrolls sideways, and key columns leave the view</span></div>
+        <div class="jm-cell is-pain"><span data-en="Stacked under the first one" data-th="ซ้อนอยู่ใต้ตารางแรก">Stacked under the first one</span></div>
+        <p class="jm-row-label" data-en="New" data-th="ใหม่">New</p>
+        <div class="jm-cell is-gain"><span data-en="Named buttons in the title row" data-th="ปุ่มที่มีชื่อในแถวหัวข้อ">Named buttons in the title row</span></div>
+        <div class="jm-cell is-gain"><span data-en="A blue framed panel with a four-column grid" data-th="Panel กรอบฟ้า จัดฟอร์ม 4 คอลัมน์">A blue framed panel with a four-column grid</span></div>
+        <div class="jm-cell is-gain"><span data-en="Read-only, together at the end of the form" data-th="เป็น Read-only รวมกันท้ายฟอร์ม">Read-only, together at the end of the form</span></div>
+        <div class="jm-cell is-gain"><span data-en="Key columns pinned, with a total row" data-th="ตรึงคอลัมน์สำคัญ พร้อมแถวรวม">Key columns pinned, with a total row</span></div>
+        <div class="jm-cell is-gain"><span data-en="Its own tab in the same panel" data-th="แท็บของตัวเองใน Panel เดียวกัน">Its own tab in the same panel</span></div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 TABLE -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="05 — The 14-Column Table" data-th="05 — ตาราง 14 คอลัมน์">05 — The 14-Column Table</p>
+    <h2 class="cs-h2" data-en="Try it: scroll, and the amount stays in view" data-th="ลองดู: เลื่อนตาราง แล้วยอดเงินยังอยู่ในสายตา">Try it: scroll, and the amount stays in view</h2>
+    <div class="ex ex-demo"><div class="ex-tw" tabindex="0" role="group" aria-label="Sample table with 14 columns that scrolls sideways"><table class="ex-t"><thead><tr><th class="p1" scope="col" data-en="No." data-th="ลำดับ">No.</th><th class="p2" scope="col" data-en="Payable clearing no." data-th="เลขที่ล้างเจ้าหนี้">Payable clearing no.</th><th scope="col" data-en="Payment request no." data-th="เลขที่ใบขอจ่าย">Payment request no.</th><th scope="col" data-en="Combined clearing no." data-th="เลขที่รวมล้างเจ้าหนี้">Combined clearing no.</th><th scope="col" data-en="Reference no." data-th="เลขอ้างอิง">Reference no.</th><th scope="col" data-en="Vendor code" data-th="รหัสผู้ขาย">Vendor code</th><th scope="col" data-en="Pay to" data-th="สั่งจ่าย">Pay to</th><th class="n" scope="col" data-en="Amount requested" data-th="จำนวนเงินขอจ่าย">Amount requested</th><th class="n" scope="col" data-en="Withholding tax + deductions" data-th="ภาษีหัก ณ ที่จ่าย+เงินหัก">Withholding tax + deductions</th><th class="n" scope="col" data-en="Paid per request" data-th="จ่ายจริงตามใบขอจ่าย">Paid per request</th><th class="n" scope="col" data-en="Paid remaining" data-th="จ่ายจริงคงเหลือ">Paid remaining</th><th scope="col" data-en="Account no." data-th="เลขบัญชี">Account no.</th><th scope="col" data-en="Bank" data-th="ธนาคาร">Bank</th><th class="pr n" scope="col" data-en="Paid this time" data-th="จ่ายจริงครั้งนี้">Paid this time</th></tr></thead><tbody><tr><td class="p1">1</td><td class="p2">PD-0001</td><td>PR-0001</td><td>-</td><td>INV-001</td><td>V-0001</td><td><span data-en="Sample Vendor A" data-th="ผู้ขายตัวอย่าง A">Sample Vendor A</span></td><td class="n">5,000.00</td><td class="n">0.00</td><td class="n">5,000.00</td><td class="n">5,000.00</td><td>000-0-00001-0</td><td><span data-en="Sample Bank" data-th="ธนาคารตัวอย่าง">Sample Bank</span></td><td class="pr n">5,000.00</td></tr><tr><td class="p1">2</td><td class="p2">PD-0002</td><td>PR-0002</td><td>CB-01</td><td>INV-002</td><td>V-0002</td><td><span data-en="Sample Vendor B" data-th="ผู้ขายตัวอย่าง B">Sample Vendor B</span></td><td class="n">12,500.00</td><td class="n">375.00</td><td class="n">12,125.00</td><td class="n">12,125.00</td><td>000-0-00002-0</td><td><span data-en="Sample Bank" data-th="ธนาคารตัวอย่าง">Sample Bank</span></td><td class="pr n">12,125.00</td></tr><tr><td class="p1">3</td><td class="p2">PD-0003</td><td>PR-0003</td><td>CB-01</td><td>INV-003</td><td>V-0003</td><td><span data-en="Sample Vendor C" data-th="ผู้ขายตัวอย่าง C">Sample Vendor C</span></td><td class="n">3,200.00</td><td class="n">96.00</td><td class="n">3,104.00</td><td class="n">3,104.00</td><td>000-0-00003-0</td><td><span data-en="Sample Bank" data-th="ธนาคารตัวอย่าง">Sample Bank</span></td><td class="pr n">3,104.00</td></tr><tr><td class="p1">4</td><td class="p2">PD-0004</td><td>PR-0004</td><td>-</td><td>INV-004</td><td>V-0004</td><td><span data-en="Sample Vendor D" data-th="ผู้ขายตัวอย่าง D">Sample Vendor D</span></td><td class="n">8,750.00</td><td class="n">0.00</td><td class="n">8,750.00</td><td class="n">8,750.00</td><td>000-0-00004-0</td><td><span data-en="Sample Bank" data-th="ธนาคารตัวอย่าง">Sample Bank</span></td><td class="pr n">8,750.00</td></tr><tr><td class="p1">5</td><td class="p2">PD-0005</td><td>PR-0005</td><td>-</td><td>INV-005</td><td>V-0005</td><td><span data-en="Sample Vendor E" data-th="ผู้ขายตัวอย่าง E">Sample Vendor E</span></td><td class="n">4,100.00</td><td class="n">123.00</td><td class="n">3,977.00</td><td class="n">3,977.00</td><td>000-0-00005-0</td><td><span data-en="Sample Bank" data-th="ธนาคารตัวอย่าง">Sample Bank</span></td><td class="pr n">3,977.00</td></tr></tbody><tfoot><tr><td class="p1"></td><td class="p2" data-en="Total" data-th="รวม">Total</td><td colspan="5"></td><td class="n">33,550.00</td><td class="n">594.00</td><td class="n">32,956.00</td><td class="n">32,956.00</td><td colspan="2"></td><td class="pr n">32,956.00</td></tr></tfoot></table></div></div>
+    <p class="ex-hint" data-en="Scroll the table sideways. The row number, clearing number, and &quot;Paid this time&quot; stay pinned. Yellow marks the only column to edit." data-th="เลื่อนตารางไปด้านข้าง ลำดับ เลขที่ล้างเจ้าหนี้ และจ่ายจริงครั้งนี้จะอยู่กับที่ สีเหลืองคือคอลัมน์เดียวที่แก้ได้">Scroll the table sideways. The row number, clearing number, and &quot;Paid this time&quot; stay pinned. Yellow marks the only column to edit.</p>
+  </section>
+
+  <!-- 06 FLOW -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="06 — The Main Task" data-th="06 — งานหลัก">06 — The Main Task</p>
+    <h2 class="cs-h2" data-en="Pick from what is waiting, instead of typing it" data-th="เลือกจากรายการที่รออยู่ แทนการพิมพ์เอง">Pick from what is waiting, instead of typing it</h2>
+    <div class="card ai-flow-card">
+      <p class="ai-flow-title" data-en="Recording one transfer" data-th="การบันทึกการโอนหนึ่งครั้ง">Recording one transfer</p>
+      <div class="flow">
+        <div class="flow-step"><b>01</b><span data-en="Fill in the transfer details" data-th="กรอกข้อมูลการโอน">Fill in the transfer details</span></div>
+        <div class="flow-step is-key"><b>02</b><span data-en="Fetch items waiting for transfer" data-th="เรียกรายการรอโอนมาเลือก">Fetch items waiting for transfer</span></div>
+        <div class="flow-step"><b>03</b><span data-en="Check &quot;Paid this time&quot;" data-th="ตรวจจ่ายจริงครั้งนี้">Check &quot;Paid this time&quot;</span></div>
+        <div class="flow-step"><b>04</b><span data-en="Save the record" data-th="บันทึกรายการ">Save the record</span></div>
+        <div class="flow-step is-end"><b>05</b><span data-en="Send it for signing" data-th="ส่งลงนาม">Send it for signing</span></div>
+      </div>
+    </div>
+    <figure class="ex-popframe ms-frame" style="margin-bottom:0;">
+      <div class="ex ex-pop" role="img" aria-label="A dialog listing items waiting for transfer, with a search box, checkboxes on each row, and a select button">
+        <div class="ex-modal">
+          <strong data-en="Items waiting for transfer" data-th="รายการรอโอน">Items waiting for transfer</strong>
+          <div class="ex-i"><span data-en="Search account name" data-th="ค้นหาชื่อบัญชี">Search account name</span><svg><use href="#i-search" /></svg></div>
+          <div class="ex-tw"><table class="ex-t"><thead><tr><th><span class="ex-check"></span></th><th data-en="No." data-th="ลำดับ">No.</th><th data-en="Payable clearing no." data-th="เลขที่ล้างเจ้าหนี้">Payable clearing no.</th><th data-en="Vendor code" data-th="รหัสผู้ขาย">Vendor code</th><th data-en="Pay to" data-th="สั่งจ่าย">Pay to</th><th class="n" data-en="Amount requested" data-th="จำนวนเงินขอจ่าย">Amount requested</th></tr></thead><tbody><tr><td><span class="ex-check on"></span></td><td>1</td><td>PD-0001</td><td>V-0001</td><td><span data-en="Sample Vendor A" data-th="ผู้ขายตัวอย่าง A">Sample Vendor A</span></td><td class="n">5,000.00</td></tr><tr><td><span class="ex-check on"></span></td><td>2</td><td>PD-0002</td><td>V-0002</td><td><span data-en="Sample Vendor B" data-th="ผู้ขายตัวอย่าง B">Sample Vendor B</span></td><td class="n">12,500.00</td></tr><tr><td><span class="ex-check on"></span></td><td>3</td><td>PD-0003</td><td>V-0003</td><td><span data-en="Sample Vendor C" data-th="ผู้ขายตัวอย่าง C">Sample Vendor C</span></td><td class="n">3,200.00</td></tr><tr><td><span class="ex-check on"></span></td><td>4</td><td>PD-0004</td><td>V-0004</td><td><span data-en="Sample Vendor D" data-th="ผู้ขายตัวอย่าง D">Sample Vendor D</span></td><td class="n">8,750.00</td></tr><tr><td><span class="ex-check on"></span></td><td>5</td><td>PD-0005</td><td>V-0005</td><td><span data-en="Sample Vendor E" data-th="ผู้ขายตัวอย่าง E">Sample Vendor E</span></td><td class="n">4,100.00</td></tr><tr><td><span class="ex-check"></span></td><td>6</td><td>PD-0006</td><td>V-0006</td><td><span data-en="Sample Vendor F" data-th="ผู้ขายตัวอย่าง F">Sample Vendor F</span></td><td class="n">9,000.00</td></tr></tbody></table></div>
+          <span class="ex-btn" data-en="Select" data-th="เลือก">Select</span>
+        </div>
+      </div>
+    </figure>
+    <div class="card ai-flow-card">
+      <p class="ai-flow-title" data-en="Where the back office fits in the wider flow" data-th="จอหลังบ้านอยู่ตรงไหนของงานทั้งหมด">Where the back office fits in the wider flow</p>
+      <div class="flow is-four">
+        <div class="flow-step"><b>01</b><span data-en="An employee submits a request" data-th="พนักงานยื่นคำขอ">An employee submits a request</span></div>
+        <div class="flow-step"><b>02</b><span data-en="A manager approves or declines" data-th="หัวหน้าลงนามหรือไม่ลงนาม">A manager approves or declines</span></div>
+        <div class="flow-step is-key"><b>03</b><span data-en="HR or finance handles it in the back office" data-th="ฝ่ายบุคคลหรือการเงินจัดการในหลังบ้าน">HR or finance handles it in the back office</span></div>
+        <div class="flow-step is-end"><b>04</b><span data-en="It appears on the executive dashboard" data-th="ข้อมูลขึ้นบน Dashboard ผู้บริหาร">It appears on the executive dashboard</span></div>
+      </div>
+    </div>
+    <p class="cs-note" data-en="Words and statuses have to match at every step, so the same term is used in each of these products." data-th="ข้อความและสถานะต้องตรงกันทุกขั้นตอน ทุกผลิตภัณฑ์ในเส้นทางนี้จึงใช้คำเดียวกัน">Words and statuses have to match at every step, so the same term is used in each of these products.</p>
+  </section>
+
+  <!-- 07 DECISIONS -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="07 — Decisions &amp; Trade-offs" data-th="07 — การตัดสินใจและข้อแลกเปลี่ยน">07 — Decisions &amp; Trade-offs</p>
+    <h2 class="cs-h2" data-en="What each rule gave, and what it cost" data-th="แต่ละกติกาได้อะไร และแลกกับอะไร">What each rule gave, and what it cost</h2>
+
+    <div class="cs-decision">
+      <h3 class="cs-decision-title" data-en="1. Keep every field, even the awkward ones" data-th="1. เก็บ Field ไว้ทุกช่อง แม้ช่องที่ดูเกะกะ">1. Keep every field, even the awkward ones</h3>
+      <p class="cs-decision-text" data-en="The old screen is the source of truth. Layout can change, but no field is added, removed, or renamed by design." data-th="จอเดิมคือแหล่งข้อมูลจริง เปลี่ยนการจัดวางได้ แต่นักออกแบบไม่เพิ่ม ตัด หรือเปลี่ยนชื่อ Field เอง">The old screen is the source of truth. Layout can change, but no field is added, removed, or renamed by design.</p>
+      <div class="cs-empathy-row is-two">
+        <div class="cs-empathy-card is-gain">
+          <p class="cs-empathy-label" data-en="Upside" data-th="ข้อดี">Upside</p>
+          <p class="cs-decision-point" data-en="Officers keep the words they know, and no rule hidden in a field goes missing." data-th="เจ้าหน้าที่ยังเจอคำเดิมที่คุ้นเคย และกฎงานที่แฝงอยู่ใน Field ไม่หายไป">Officers keep the words they know, and no rule hidden in a field goes missing.</p>
+        </div>
+        <div class="cs-empathy-card is-pain">
+          <p class="cs-empathy-label" data-en="Cost" data-th="ข้อแลกเปลี่ยน">Cost</p>
+          <p class="cs-decision-point" data-en="The screen stays dense. Simplifying it further would be a separate decision with the people who own the process." data-th="จอยังแน่นอยู่ ถ้าจะลดให้ง่ายกว่านี้ ต้องตัดสินใจร่วมกับเจ้าของกระบวนการเป็นอีกเรื่องหนึ่ง">The screen stays dense. Simplifying it further would be a separate decision with the people who own the process.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cs-decision">
+      <h3 class="cs-decision-title" data-en="2. Pin the columns that matter" data-th="2. ตรึงคอลัมน์ที่สำคัญไว้">2. Pin the columns that matter</h3>
+      <p class="cs-decision-text" data-en="With 14 columns, the row number, the clearing number, and the one editable amount stay in view while the rest scroll." data-th="ใน 14 คอลัมน์ ลำดับ เลขที่ล้างเจ้าหนี้ และจำนวนเงินช่องเดียวที่แก้ได้ จะอยู่กับที่ ส่วนที่เหลือเลื่อนได้">With 14 columns, the row number, the clearing number, and the one editable amount stay in view while the rest scroll.</p>
+      <div class="cs-empathy-row is-two">
+        <div class="cs-empathy-card is-gain">
+          <p class="cs-empathy-label" data-en="Upside" data-th="ข้อดี">Upside</p>
+          <p class="cs-decision-point" data-en="While scrolling, you can always see which row you are on and what is being paid." data-th="ระหว่างเลื่อนยังเห็นเสมอว่าอยู่แถวไหน และกำลังจ่ายเท่าไร">While scrolling, you can always see which row you are on and what is being paid.</p>
+        </div>
+        <div class="cs-empathy-card is-pain">
+          <p class="cs-empathy-label" data-en="Cost" data-th="ข้อแลกเปลี่ยน">Cost</p>
+          <p class="cs-decision-point" data-en="Pinned columns take space from the scrolling area, so fewer other columns show at once." data-th="คอลัมน์ที่ตรึงกินพื้นที่ส่วนที่เลื่อน คอลัมน์อื่นจึงเห็นพร้อมกันได้น้อยลง">Pinned columns take space from the scrolling area, so fewer other columns show at once.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cs-decision">
+      <h3 class="cs-decision-title" data-en="3. Give signing a small place" data-th="3. ให้การลงนามอยู่ในพื้นที่เล็ก">3. Give signing a small place</h3>
+      <p class="cs-decision-text" data-en="Signing has the lowest priority on this screen, so it sits in a narrow rail at the bottom right, and the form and table get the room." data-th="การลงนามสำคัญน้อยที่สุดในจอนี้ จึงอยู่ในแถบแคบมุมขวาล่าง และยกพื้นที่ให้ฟอร์มกับตาราง">Signing has the lowest priority on this screen, so it sits in a narrow rail at the bottom right, and the form and table get the room.</p>
+      <div class="cs-empathy-row is-two">
+        <div class="cs-empathy-card is-gain">
+          <p class="cs-empathy-label" data-en="Upside" data-th="ข้อดี">Upside</p>
+          <p class="cs-decision-point" data-en="The main task, checking amounts, gets the most space." data-th="งานหลักคือการตรวจจำนวนเงิน ได้พื้นที่มากที่สุด">The main task, checking amounts, gets the most space.</p>
+        </div>
+        <div class="cs-empathy-card is-pain">
+          <p class="cs-empathy-label" data-en="Cost" data-th="ข้อแลกเปลี่ยน">Cost</p>
+          <p class="cs-decision-point" data-en="Long signing histories need their own view, because the rail cannot show everything." data-th="ประวัติการลงนามยาว ๆ ต้องมีหน้าดูแยก เพราะแถบแคบแสดงได้ไม่หมด">Long signing histories need their own view, because the rail cannot show everything.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cs-decision">
+      <h3 class="cs-decision-title" data-en="4. Mark guesses and ask" data-th="4. ทำเครื่องหมายจุดที่เดา แล้วถาม">4. Mark guesses and ask</h3>
+      <p class="cs-decision-text" data-en="A screenshot cannot show a formula. Anything inferred gets a &quot;?&quot; in the field table and waits for a real answer." data-th="ภาพหน้าจอบอกสูตรคำนวณไม่ได้ จุดที่อนุมานเองจึงมีเครื่องหมาย &quot;?&quot; ในตาราง Field และรอคำตอบจริง">A screenshot cannot show a formula. Anything inferred gets a &quot;?&quot; in the field table and waits for a real answer.</p>
+      <div class="cs-empathy-row is-two">
+        <div class="cs-empathy-card is-gain">
+          <p class="cs-empathy-label" data-en="Upside" data-th="ข้อดี">Upside</p>
+          <p class="cs-decision-point" data-en="Invented behavior does not slip into a system that handles money." data-th="พฤติกรรมที่เดาเองไม่เล็ดลอดเข้าไปในระบบที่เกี่ยวกับเงิน">Invented behavior does not slip into a system that handles money.</p>
+        </div>
+        <div class="cs-empathy-card is-pain">
+          <p class="cs-empathy-label" data-en="Cost" data-th="ข้อแลกเปลี่ยน">Cost</p>
+          <p class="cs-decision-point" data-en="It is slower, and some screens wait on answers before the design can be finished." data-th="งานช้าลง และบางจอต้องรอคำตอบก่อนจึงจะออกแบบจบได้">It is slower, and some screens wait on answers before the design can be finished.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 STATUS -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="08 — Where It Stands" data-th="08 — สถานะของงาน">08 — Where It Stands</p>
+    <h2 class="cs-h2" data-en="What is done, and what still is not" data-th="สิ่งที่เสร็จแล้ว และสิ่งที่ยังไม่เสร็จ">What is done, and what still is not</h2>
+    <div class="cs-results">
+      <div class="cs-result">
+        <p class="cs-result-num">01</p>
+        <h4 data-en="A repeatable method" data-th="วิธีทำที่ใช้ซ้ำได้">A repeatable method</h4>
+        <p data-en="The steps and control mapping are written down, so each new module starts the same way." data-th="ขั้นตอนและการแปลงแต่ละประเภทช่องจดไว้แล้ว ทุกโมดูลใหม่จึงเริ่มแบบเดียวกัน">The steps and control mapping are written down, so each new module starts the same way.</p>
+      </div>
+      <div class="cs-result">
+        <p class="cs-result-num">02</p>
+        <h4 data-en="Questions still open" data-th="ยังมีคำถามที่ค้างอยู่">Questions still open</h4>
+        <p data-en="Some screens still carry &quot;?&quot; marks, such as formulas and which fields are required, and wait for answers." data-th="บางจอยังมีเครื่องหมาย &quot;?&quot; เช่น สูตรคำนวณ และช่องที่ต้องกรอก ซึ่งรอคำตอบอยู่">Some screens still carry &quot;?&quot; marks, such as formulas and which fields are required, and wait for answers.</p>
+      </div>
+      <div class="cs-result">
+        <p class="cs-result-num">03</p>
+        <h4 data-en="No impact numbers to share" data-th="ไม่มีตัวเลขผลลัพธ์ที่เปิดเผยได้">No impact numbers to share</h4>
+        <p data-en="This page does not claim results from officers. Its claim is about the method: new screens without lost fields." data-th="หน้านี้ไม่ได้อ้างผลลัพธ์จากเจ้าหน้าที่ แต่เล่าเรื่องวิธีการ ว่าทำจอใหม่อย่างไรโดย Field ไม่หาย">This page does not claim results from officers. Its claim is about the method: new screens without lost fields.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="section reveal">
+    <div class="card cs-cta-card">
+      <h2 class="cs-cta-title" data-en="Interested in working together?" data-th="สนใจร่วมงาน หรืออยากคุยเรื่องดีไซน์?">Interested in working together?</h2>
+      <p class="cs-cta-sub" data-en="Open to UX/UI work on complex systems that real operations depend on. Feel free to reach out." data-th="เปิดรับงาน UX/UI สำหรับระบบซับซ้อนที่งานจริงต้องพึ่งพา ทักมาคุยกันได้เลย">Open to UX/UI work on complex systems that real operations depend on. Feel free to reach out.</p>
+      <div class="cs-cta-actions">
+        <a href="mailto:jeenosupalerk@gmail.com" class="btn btn-dark">
+          <span data-en="Get in Touch" data-th="ติดต่อฉัน">Get in Touch</span>
+          <span class="arrow">&#8599;</span>
+        </a>
+        <a href="../index.html#work" class="btn btn-outline">
+          <span data-en="Back to Portfolio" data-th="กลับหน้าพอร์ตโฟลิโอ">Back to Portfolio</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> Supalerk Chaonchom. <span data-en="All rights reserved." data-th="สงวนลิขสิทธิ์">All rights reserved.</span></p>
+</footer>
+
+<script src="../js/main.js?v=15"></script>
+</body>
+</html>

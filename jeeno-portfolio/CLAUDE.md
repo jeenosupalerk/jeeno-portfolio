@@ -31,6 +31,7 @@ work/easy-parking.html     case study 04 — Easy Parking (the most developed on
 work/teebadgun.html        case study 05 — Teebadgun redesign (built around decisions and trade-offs, see §4)
 work/gym-scan.html         case study 06 — Yim Ngai gym scan app (design concept and continuity, see §4)
 work/school-parent-app.html case study 07 — school app for parents, company work with real details withheld (see §4)
+work/employee-erp.html      case study 08 — employee ERP, old Windows screens to web app, company work with real details withheld (see §4)
 css/style.css              base tokens + home page
 css/case-study.css         everything prefixed .cs-* (case-study pages)
 js/main.js                 all behaviour, one IIFE, one init function per feature
@@ -117,6 +118,8 @@ Component classes worth knowing (all in `css/case-study.css`):
 | `.annot` | phone screen with numbered notes |
 | `.phone-row` | three phone screens, each with a heading and a line of text |
 | `.ms` / `.ms-stage` | rebuilt product mockups, scaled with the frame and themed through token layers |
+| `.lg` / `.ex` | old Windows screen and new web screen mockups, sized from the frame width |
+| `.cm` | rows that pair an old control with its new control and a line of meaning |
 | `.map` (style.css) | mind map: `.map-side` x2 of three `.map-node`, `.map-core` in the middle |
 | `.flow` / `.flow-step` (style.css) | connected steps; `.is-key` highlights, `.is-end` drops the arrow, `.flow-loop` marks a retry |
 
@@ -139,6 +142,10 @@ product name, logo, company, school, or real content, and the broad title is the
 owner's choice. Its screens are `.ms` mockups rebuilt in HTML with sample data, never
 product screenshots. `.ms-stage` holds three token layers as CSS variables, and
 `initThemeDemo()` swaps its `data-theme`.
+
+`work/employee-erp.html` follows the same withholding rule. Its old screen (`.lg`) and new screen (`.ex`)
+are rebuilt in HTML with sample data, and bank-specific button names are made generic. `.ex-t` is the
+real scrolling table with pinned columns, so keep its totals computed from the rows.
 
 ## 5. Home page work cards
 
