@@ -25,13 +25,13 @@ conventions to keep, and what is still open.
 ```
 index.html                 home: hero, photo marquee, about, skills, AI workflow, work grid, experience, contact
 work/pos.html              hidden: the owner pulled it from the site, no links point here, noindex; kept so it can return after a redesign
-work/design-system.html    case study 01 — Design System / token architecture
-work/insurance.html        case study 02 — HR Insurance Lookup System
-work/easy-parking.html     case study 04 — Easy Parking (the most developed one)
-work/teebadgun.html        case study 05 — Teebadgun redesign (built around decisions and trade-offs, see §4)
-work/gym-scan.html         case study 06 — Yim Ngai gym scan app (design concept and continuity, see §4)
-work/school-parent-app.html case study 07 — school app for parents, company work with real details withheld (see §4)
-work/employee-erp.html      case study 08 — employee ERP, old Windows screens to web app, company work with real details withheld (see §4)
+work/design-system.html    case study 07 — Design System / token architecture
+work/insurance.html        case study 08 — HR Insurance Lookup System
+work/easy-parking.html     case study 01 — Easy Parking (the most developed one)
+work/teebadgun.html        case study 03 — Teebadgun redesign (built around decisions and trade-offs, see §4)
+work/gym-scan.html         case study 02 — Yim Ngai gym scan app (design concept and continuity, see §4)
+work/school-parent-app.html case study 04 — school app for parents, company work with real details withheld (see §4)
+work/employee-erp.html      case study 06 — employee ERP, old Windows screens to web app, company work with real details withheld (see §4)
 css/style.css              base tokens + home page
 css/case-study.css         everything prefixed .cs-* (case-study pages)
 js/main.js                 all behaviour, one IIFE, one init function per feature
@@ -43,7 +43,8 @@ assets/video/              looping prototype clips + their poster frames
 tools/build_flow_clip.py   generates the clips in assets/video/ (see §7)
 ```
 
-Card 03 in the work grid is **Taletails**, which links out to
+The owner wants the most attractive work first, so the work grid runs by visual appeal, not by date.
+Card 05 in the work grid is **Taletails**, which links out to
 `https://taletails-trade.com` — it has no local case-study page.
 
 ## 3. Bilingual system (important)
