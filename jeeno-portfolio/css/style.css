@@ -817,6 +817,251 @@ html[data-lang="th"] .about-hello { line-height: 1.2; letter-spacing: -0.01em; }
   max-width: 640px;
 }
 
+/* ---------- AI workflow ---------- */
+
+.ai-intro {
+  color: var(--ink-soft);
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 680px;
+  margin: 16px 0 0;
+}
+
+.ai-flow-card { margin-top: 28px; padding: 32px; }
+.ai-flow-title {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+
+/* ---------- Mind map (shared with case studies) ---------- */
+
+.map {
+  --map-gap: 14px;
+  --map-arm: 26px;
+  --map-line: color-mix(in srgb, var(--forest) 35%, transparent);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 190px minmax(0, 1fr);
+  gap: 0 calc(var(--map-arm) * 2);
+  align-items: center;
+}
+.map-side {
+  position: relative;
+  display: grid;
+  grid-auto-rows: 1fr;
+  gap: var(--map-gap);
+}
+.map-side::before {
+  content: "";
+  position: absolute;
+  right: calc(var(--map-arm) * -1);
+  top: calc((100% - var(--map-gap) * 2) / 6);
+  bottom: calc((100% - var(--map-gap) * 2) / 6);
+  width: 2px;
+  background: var(--map-line);
+}
+.map-side.is-right::before { right: auto; left: calc(var(--map-arm) * -1); }
+
+.map-node {
+  --acc: var(--forest);
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid rgba(20, 20, 20, 0.06);
+  border-radius: 20px;
+  padding: 20px 22px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 18px 44px -34px rgba(30, 59, 44, 0.45);
+}
+.map-node::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: calc(var(--map-arm) * -1);
+  width: var(--map-arm);
+  height: 2px;
+  background: var(--map-line);
+}
+.is-right .map-node::after { right: auto; left: calc(var(--map-arm) * -1); }
+.map-node h3 {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 6px;
+}
+.map-node p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.map-icon {
+  display: block;
+  width: 34px; height: 34px;
+  padding: 7px;
+  border-radius: 10px;
+  color: var(--acc);
+  background: color-mix(in srgb, var(--acc) 14%, #fff);
+  margin-bottom: 12px;
+}
+
+.map.is-labeled { padding-top: 32px; }
+.map-label {
+  position: absolute;
+  top: -30px;
+  left: 2px;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.map-core {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  padding: 26px 18px;
+  border-radius: 24px;
+  background: var(--forest);
+  color: #fff;
+}
+.map-core::before,
+.map-core::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: var(--map-arm);
+  height: 2px;
+  background: var(--map-line);
+}
+.map-core::before { left: calc(var(--map-arm) * -1); }
+.map-core::after { right: calc(var(--map-arm) * -1); }
+.map-core img {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+.map-core strong {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.map-core span {
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* ---------- Flow steps (shared with case studies) ---------- */
+
+.flow {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0 30px;
+}
+.flow-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.flow-step b {
+  font-family: var(--font-display);
+  font-size: 12px;
+  color: var(--muted);
+}
+.flow-step.is-key {
+  background: color-mix(in srgb, var(--leaf) 20%, #fff);
+  border-color: color-mix(in srgb, var(--leaf) 60%, transparent);
+}
+.flow-step:not(.is-end)::after {
+  content: "\2192";
+  position: absolute;
+  top: 50%;
+  right: -24px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: var(--muted);
+}
+.flow-loop {
+  position: relative;
+  grid-column: 3 / 5;
+  height: 40px;
+  margin: 0 36px;
+  border: 2px dashed color-mix(in srgb, var(--ember) 60%, transparent);
+  border-top: 0;
+  border-radius: 0 0 14px 14px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.flow-loop::before {
+  content: "\25B2";
+  position: absolute;
+  left: -8px;
+  top: -4px;
+  font-size: 11px;
+  line-height: 1;
+  color: var(--ember);
+}
+.flow-loop span {
+  transform: translateY(50%);
+  padding: 2px 10px;
+  background: var(--card-bg);
+  font-size: 12.5px;
+  color: var(--ember);
+  white-space: nowrap;
+}
+.ai-flow-card .flow { padding-bottom: 10px; }
+
+@media (max-width: 960px) {
+  .map { grid-template-columns: 1fr; gap: var(--map-gap); --map-arm: 20px; }
+  .map-core { order: -1; }
+  .map-core::before, .map-core::after, .map-side::before { display: none; }
+  .map-side, .map-side.is-right { grid-auto-rows: auto; padding-left: var(--map-arm); }
+  .map-node::after, .is-right .map-node::after {
+    top: 34px; left: calc(var(--map-arm) * -1); right: auto;
+  }
+  .map-node::before {
+    content: "";
+    position: absolute;
+    left: calc(var(--map-arm) * -1);
+    top: calc(var(--map-gap) * -1);
+    height: calc(100% + var(--map-gap) + 1px);
+    width: 2px;
+    background: var(--map-line);
+  }
+  .is-right .map-node:last-child::before { height: calc(34px + var(--map-gap) + 2px); }
+  .map.is-labeled { padding-top: 0; }
+  .map-label { position: static; margin-left: calc(var(--map-arm) * -1); }
+  .map.is-labeled .map-side { margin-top: 10px; }
+  .map.is-labeled .map-node:first-of-type::before { top: 0; height: 100%; }
+  .map.is-labeled .map-node:last-child::before { height: calc(34px + var(--map-gap) + 2px); }
+  .flow { grid-template-columns: 1fr; gap: 24px; }
+  .flow-step:not(.is-end)::after {
+    content: "\2193";
+    top: auto; bottom: -22px; right: 50%;
+    transform: translateX(50%);
+  }
+  .flow-loop { grid-column: auto; height: auto; margin: 0; border: 0; justify-content: flex-start; }
+  .flow-loop::before { display: none; }
+  .flow-loop span { transform: none; padding: 0; white-space: normal; }
+}
+
 /* ---------- Work ---------- */
 
 .work-grid {

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Teebadgun Redesign — Case Study | Supalerk Chaonchom</title>
+<meta name="description" content="Redesigning a badminton club app around the court itself, with the upside and the cost of each design decision." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23111111'/%3E%3Ctext x='50' y='68' font-size='60' font-family='Arial, sans-serif' font-weight='700' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&family=Bebas+Neue&family=Kanit:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=11" />
+<link rel="stylesheet" href="../css/case-study.css?v=11" />
+</head>
+<body class="cs-body">
+
+<div class="grain-layer" aria-hidden="true"></div>
+
+<nav class="cs-nav">
+  <div class="cs-nav-inner">
+    <a href="../index.html#work" class="cs-back">
+      <span class="arrow-left">&#8592;</span>
+      <span data-en="Back to portfolio" data-th="กลับหน้าพอร์ตโฟลิโอ">Back to portfolio</span>
+    </a>
+    <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+      <span class="lang-opt active" data-lang-btn="en">EN</span>
+      <span class="lang-sep">/</span>
+      <span class="lang-opt" data-lang-btn="th">TH</span>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="section cs-hero">
+    <div class="card cs-hero-card reveal">
+      <p class="cs-eyebrow" data-en="Teebadgun · Redesign Case Study" data-th="TEEBADGUN · เคสสตัดี้การรีดีไซน์">Teebadgun · Redesign Case Study</p>
+
+      <h1 class="cs-title" data-en="Redesigning a Badminton Club App Around the Court" data-th="รีดีไซน์แอปก๊วนแบด โดยให้สนามเป็นหัวใจของหน้าจอ">Redesigning a Badminton Club App Around the Court</h1>
+
+      <p class="cs-tagline" data-en="Teebadgun runs a club session: queue, pairing, payment, and points. This redesign rebuilt the player and organizer screens, and this page is honest about what each decision gave and what it cost." data-th="Teebadgun คือแอปที่ใช้จัดก๊วนแบด ทั้งคิว การจับคู่ การคิดเงิน และแต้มสะสม งานนี้ออกแบบหน้าจอผู้เล่นและผู้จัดใหม่ และเล่าตรง ๆ ว่าการตัดสินใจแต่ละจุดได้อะไรและแลกกับอะไร">Teebadgun runs a club session: queue, pairing, payment, and points. This redesign rebuilt the player and organizer screens, and this page is honest about what each decision gave and what it cost.</p>
+
+      <div class="cs-meta-grid">
+        <div class="cs-meta-item">
+          <span class="cs-meta-label" data-en="Role" data-th="บทบาท">Role</span>
+          <span class="cs-meta-value" data-en="Product Designer, from design to build" data-th="Product Designer ตั้งแต่ออกแบบถึงลงโค้ด">Product Designer, from design to build</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label" data-en="Tool" data-th="เครื่องมือ">Tool</span>
+          <span class="cs-meta-value" data-en="HTML mockups, React, Supabase" data-th="HTML mockup, React, Supabase">HTML mockups, React, Supabase</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label" data-en="Platform" data-th="แพลตฟอร์ม">Platform</span>
+          <span class="cs-meta-value" data-en="Mobile-first web app" data-th="เว็บแอปที่เน้นมือถือ">Mobile-first web app</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label" data-en="Type" data-th="ประเภทงาน">Type</span>
+          <span class="cs-meta-value" data-en="Personal project, real club" data-th="โปรเจกต์ส่วนตัวที่ก๊วนใช้จริง">Personal project, real club</span>
+        </div>
+      </div>
+
+      <p class="cs-note" data-en="Every name, amount, and QR code in these mockups is sample data. No real player information is shown." data-th="ชื่อ ยอดเงิน และ QR ใน mockup ทั้งหมดเป็นข้อมูลสมมติ ไม่มีข้อมูลผู้เล่นจริง">Every name, amount, and QR code in these mockups is sample data. No real player information is shown.</p>
+    </div>
+  </section>
+
+  <!-- 01 OVERVIEW -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="01 — Overview" data-th="01 — ภาพรวมโปรเจกต์">01 — Overview</p>
+    <h2 class="cs-h2" data-en="Two people, one noisy court hall" data-th="ผู้ใช้สองฝั่ง ในสนามที่คนเยอะและวุ่นวาย">Two people, one noisy court hall</h2>
+    <p class="cs-overview-text" data-en="Players glance at their phone between games and want to know when they play and who with. The organizer is on their feet, running several courts at once with one hand. Testing the app on the live site showed that the screens did not yet fit either situation, so the redesign started from how a session actually runs." data-th="ผู้เล่นเหลือบดูมือถือระหว่างรอเกม และอยากรู้ว่าจะได้เล่นเมื่อไรและเล่นกับใคร ส่วนผู้จัดต้องยืนดูแลหลายสนามพร้อมกันด้วยมือเดียว การทดสอบบนเว็บจริงชี้ว่าหน้าจอเดิมยังไม่เข้ากับสถานการณ์ของทั้งสองฝั่ง จึงเริ่มออกแบบใหม่จากการจัดก๊วนที่เกิดขึ้นจริง">Players glance at their phone between games and want to know when they play and who with. The organizer is on their feet, running several courts at once with one hand. Testing the app on the live site showed that the screens did not yet fit either situation, so the redesign started from how a session actually runs.</p>
+  </section>
+
+  <!-- 02 PROBLEM -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="02 — What Testing Found" data-th="02 — สิ่งที่พบจากการทดสอบ">02 — What Testing Found</p>
+    <h2 class="cs-h2" data-en="Small frictions that add up during a session" data-th="ปัญหาเล็ก ๆ ที่สะสมกันระหว่างจัดก๊วน">Small frictions that add up during a session</h2>
+    <div class="cs-empathy-row is-two">
+      <div class="cs-empathy-card is-pain">
+        <p class="cs-empathy-label" data-en="Hard to operate" data-th="ใช้งานยากหน้างาน">Hard to operate</p>
+        <ul>
+          <li data-en="Nine buttons in the top bar wrapped onto several rows." data-th="แถบบนมี 9 ปุ่ม จนต้องขึ้นหลายแถว">Nine buttons in the top bar wrapped onto several rows.</li>
+          <li data-en="The button that removes a player from a court was only 24px." data-th="ปุ่มนำผู้เล่นออกจากสนามมีขนาดเพียง 24px">The button that removes a player from a court was only 24px.</li>
+          <li data-en="Sending a waiting group to a court took three steps." data-th="การส่งกลุ่มที่รออยู่ลงสนามต้องทำถึง 3 ขั้น">Sending a waiting group to a court took three steps.</li>
+          <li data-en="Selecting a player only worked on the small number at the left of the row." data-th="ต้องแตะที่เลขลำดับด้านซ้ายเท่านั้น จึงจะเลือกผู้เล่นได้">Selecting a player only worked on the small number at the left of the row.</li>
+        </ul>
+      </div>
+      <div class="cs-empathy-card is-pain">
+        <p class="cs-empathy-label" data-en="Easy to get wrong" data-th="พลาดได้ง่าย">Easy to get wrong</p>
+        <ul>
+          <li data-en="The shuttle count started at 0, so forgetting it meant charging nothing." data-th="ช่องจำนวนลูกแบดเริ่มที่ 0 ถ้าลืมกรอก ค่าลูกจะเป็น 0 บาท">The shuttle count started at 0, so forgetting it meant charging nothing.</li>
+          <li data-en="Players already in a waiting group had no label, and could be picked twice." data-th="ผู้เล่นที่อยู่ในกลุ่มรอแล้วไม่มีป้ายบอก จึงเสี่ยงถูกเลือกซ้ำ">Players already in a waiting group had no label, and could be picked twice.</li>
+          <li data-en="Deleting a court had no confirmation." data-th="ลบสนามได้ทันทีโดยไม่มีการยืนยัน">Deleting a court had no confirmation.</li>
+          <li data-en="Organizers could not find their way in from the home-screen app, which opened the player login." data-th="ผู้จัดหาทางเข้าไม่เจอ เพราะแอปบนหน้าจอโฮมเปิดหน้าล็อกอินของผู้เล่น">Organizers could not find their way in from the home-screen app, which opened the player login.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 NEEDS MAP -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="03 — Needs Map" data-th="03 — แผนผังความต้องการ">03 — Needs Map</p>
+    <h2 class="cs-h2" data-en="What each person needs during a session" data-th="ระหว่างจัดก๊วน แต่ละฝั่งต้องการอะไร">What each person needs during a session</h2>
+    <div class="map is-labeled">
+      <div class="map-side">
+        <p class="map-label" data-en="Player" data-th="ผู้เล่น">Player</p>
+        <div class="map-node">
+          <h3 data-en="When do I play?" data-th="เมื่อไรจะได้เล่น">When do I play?</h3>
+          <p data-en="Queue position and court status, never a guessed time." data-th="แสดงลำดับคิวและสถานะสนาม โดยไม่เดาเวลา">Queue position and court status, never a guessed time.</p>
+        </div>
+        <div class="map-node">
+          <h3 data-en="Who am I playing with?" data-th="เล่นกับใคร">Who am I playing with?</h3>
+          <p data-en="A court view with both teams in position." data-th="มุมมองสนามที่เห็นทั้งสองทีมตามตำแหน่ง">A court view with both teams in position.</p>
+        </div>
+        <div class="map-node">
+          <h3 data-en="What do I owe?" data-th="ต้องจ่ายเท่าไร">What do I owe?</h3>
+          <p data-en="A clear bill and three payment steps." data-th="ยอดเงินชัดเจนและจ่ายเงินใน 3 ขั้นตอน">A clear bill and three payment steps.</p>
+        </div>
+      </div>
+      <div class="map-core">
+        <strong data-en="One busy session" data-th="หนึ่งรอบที่วุ่นวาย">One busy session</strong>
+        <span data-en="Two roles, different needs" data-th="สองบทบาท สองความต้องการ">Two roles, different needs</span>
+      </div>
+      <div class="map-side is-right">
+        <p class="map-label" data-en="Organizer" data-th="ผู้จัด">Organizer</p>
+        <div class="map-node">
+          <h3 data-en="What is next on each court?" data-th="แต่ละสนามต้องทำอะไรต่อ">What is next on each court?</h3>
+          <p data-en="One main button that follows the court state." data-th="ปุ่มหลักปุ่มเดียวที่เปลี่ยนตามสถานะสนาม">One main button that follows the court state.</p>
+        </div>
+        <div class="map-node">
+          <h3 data-en="How do I avoid mistakes?" data-th="จะลดความผิดพลาดอย่างไร">How do I avoid mistakes?</h3>
+          <p data-en="Group labels and a shuttle counter that starts at 1." data-th="ป้ายกลุ่ม และตัวนับลูกแบดที่เริ่มจาก 1">Group labels and a shuttle counter that starts at 1.</p>
+        </div>
+        <div class="map-node">
+          <h3 data-en="Where are my tools?" data-th="เครื่องมืออยู่ตรงไหน">Where are my tools?</h3>
+          <p data-en="A labeled bottom menu, usable with one hand." data-th="เมนูล่างที่มีชื่อกำกับ ใช้ได้ด้วยมือเดียว">A labeled bottom menu, usable with one hand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 USER FLOW -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="04 — User Flow" data-th="04 — USER FLOW">04 — User Flow</p>
+    <h2 class="cs-h2" data-en="Two flows that keep handing off to each other" data-th="สอง Flow ที่ส่งต่องานให้กันตลอดรอบ">Two flows that keep handing off to each other</h2>
+    <div class="card lanes-card">
+      <div class="lanes">
+        <p class="lane-label" data-en="Player" data-th="ผู้เล่น">Player</p>
+        <div class="flow-step"><span data-en="Check in" data-th="เช็คอิน">Check in</span></div>
+        <div class="flow-step"><span data-en="See queue position" data-th="ดูลำดับคิว">See queue position</span></div>
+        <div class="flow-step is-key"><span data-en="Get the your-turn alert" data-th="ได้รับแจ้งว่าถึงตา">Get the your-turn alert</span></div>
+        <div class="flow-step"><span data-en="Play the game" data-th="ลงเล่น">Play the game</span></div>
+        <div class="flow-step is-end is-key"><span data-en="Pay and attach a slip" data-th="จ่ายเงินและแนบสลิป">Pay and attach a slip</span></div>
+        <div class="lane-link is-up"><span data-en="Sending a group alerts the players" data-th="เมื่อส่งกลุ่มลงสนาม ระบบจะแจ้งผู้เล่น">Sending a group alerts the players</span></div>
+        <div class="lane-link is-down"><span data-en="The slip goes to the organizer to confirm" data-th="สลิปถูกส่งให้ผู้จัดยืนยัน">The slip goes to the organizer to confirm</span></div>
+        <p class="lane-label" data-en="Organizer" data-th="ผู้จัด">Organizer</p>
+        <div class="flow-step"><span data-en="Add players to the queue" data-th="เพิ่มผู้เล่นเข้าคิว">Add players to the queue</span></div>
+        <div class="flow-step"><span data-en="Build a group" data-th="จัดกลุ่ม">Build a group</span></div>
+        <div class="flow-step is-key"><span data-en="Send to a free court" data-th="ส่งลงสนามว่าง">Send to a free court</span></div>
+        <div class="flow-step"><span data-en="End game, count shuttles" data-th="จบเกมและนับลูกแบด">End game, count shuttles</span></div>
+        <div class="flow-step is-end is-key"><span data-en="Confirm payment" data-th="ยืนยันการชำระเงิน">Confirm payment</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 SESSION JOURNEY -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="05 — Session Journey" data-th="05 — เส้นทางตลอดรอบ">05 — Session Journey</p>
+    <h2 class="cs-h2" data-en="One session, stage by stage" data-th="หนึ่งรอบการเล่น ไล่ทีละช่วง">One session, stage by stage</h2>
+    <div class="card jm-card">
+      <div class="jm-scroll">
+      <div class="jm" style="--n:5;">
+        <div class="jm-corner"></div>
+        <div class="jm-stage"><b>01</b><span data-en="Check in" data-th="เช็คอิน">Check in</span></div>
+        <div class="jm-stage"><b>02</b><span data-en="Wait" data-th="รอคิว">Wait</span></div>
+        <div class="jm-stage"><b>03</b><span data-en="Send to court" data-th="ส่งลงสนาม">Send to court</span></div>
+        <div class="jm-stage"><b>04</b><span data-en="Finish the game" data-th="จบเกม">Finish the game</span></div>
+        <div class="jm-stage"><b>05</b><span data-en="Pay" data-th="จ่ายเงิน">Pay</span></div>
+        <p class="jm-row-label" data-en="Player" data-th="ผู้เล่น">Player</p>
+        <div class="jm-cell"><span data-en="Checks in" data-th="เช็คอิน">Checks in</span></div>
+        <div class="jm-cell"><span data-en="Sees queue position" data-th="ดูลำดับคิว">Sees queue position</span></div>
+        <div class="jm-cell"><span data-en="Gets the your-turn alert" data-th="ได้รับแจ้งว่าถึงตา">Gets the your-turn alert</span></div>
+        <div class="jm-cell"><span data-en="Plays the game" data-th="ลงเล่น">Plays the game</span></div>
+        <div class="jm-cell"><span data-en="Pays and attaches a slip" data-th="จ่ายเงินและแนบสลิป">Pays and attaches a slip</span></div>
+        <p class="jm-row-label" data-en="Organizer" data-th="ผู้จัด">Organizer</p>
+        <div class="jm-cell"><span data-en="Adds players to the queue" data-th="เพิ่มผู้เล่นเข้าคิว">Adds players to the queue</span></div>
+        <div class="jm-cell"><span data-en="Builds a group" data-th="จัดกลุ่ม">Builds a group</span></div>
+        <div class="jm-cell"><span data-en="Sends to a free court" data-th="ส่งลงสนามว่าง">Sends to a free court</span></div>
+        <div class="jm-cell"><span data-en="Ends the game, counts shuttles" data-th="จบเกมและนับลูกแบด">Ends the game, counts shuttles</span></div>
+        <div class="jm-cell"><span data-en="Confirms payment" data-th="ยืนยันการชำระเงิน">Confirms payment</span></div>
+        <p class="jm-row-label" data-en="Found in testing" data-th="ปัญหาที่พบ">Found in testing</p>
+        <div class="jm-cell is-pain"><span data-en="Organizers could not find their way in from the home-screen app" data-th="ผู้จัดหาทางเข้าจากแอปบนหน้าจอโฮมไม่เจอ">Organizers could not find their way in from the home-screen app</span></div>
+        <div class="jm-cell is-pain"><span data-en="Players in a waiting group had no label and could be picked twice" data-th="ผู้เล่นในกลุ่มรอไม่มีป้ายบอก จึงเสี่ยงถูกเลือกซ้ำ">Players in a waiting group had no label and could be picked twice</span></div>
+        <div class="jm-cell is-pain"><span data-en="Sending a group took three steps" data-th="การส่งกลุ่มลงสนามต้องทำถึง 3 ขั้น">Sending a group took three steps</span></div>
+        <div class="jm-cell is-pain"><span data-en="Shuttle count started at 0" data-th="จำนวนลูกแบดเริ่มที่ 0">Shuttle count started at 0</span></div>
+        <div class="jm-cell is-pain is-empty" aria-hidden="true">&#8212;</div>
+        <p class="jm-row-label" data-en="Design answer" data-th="สิ่งที่ออกแบบ">Design answer</p>
+        <div class="jm-cell is-gain"><span data-en="One login page that routes by permission" data-th="หน้าล็อกอินเดียว แล้วพาไปตามสิทธิ์">One login page that routes by permission</span></div>
+        <div class="jm-cell is-gain"><span data-en="Group labels on players" data-th="ป้ายกลุ่มบนชื่อผู้เล่น">Group labels on players</span></div>
+        <div class="jm-cell is-gain"><span data-en="One main button that follows the court state" data-th="ปุ่มหลักปุ่มเดียวที่เปลี่ยนตามสถานะสนาม">One main button that follows the court state</span></div>
+        <div class="jm-cell is-gain"><span data-en="− and + buttons that start at 1" data-th="ปุ่ม − และ + ที่เริ่มจาก 1">− and + buttons that start at 1</span></div>
+        <div class="jm-cell is-gain"><span data-en="A clear bill and three payment steps" data-th="ยอดเงินชัดเจนและจ่ายเงินใน 3 ขั้นตอน">A clear bill and three payment steps</span></div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- 06 DIRECTION -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="06 — Direction" data-th="06 — แนวทางการออกแบบ">06 — Direction</p>
+    <h2 class="cs-h2" data-en="&quot;Court View&quot;: show the game the way people picture it" data-th="&quot;Court View&quot; แสดงเกมให้ตรงกับภาพในหัวของคนเล่น">"Court View": show the game the way people picture it</h2>
+    <div class="cs-shot cs-shot-full">
+      <img src="../assets/case-studies/tbg-home-directions.jpg" alt="Three player home screens: an earlier card layout on the left, and the chosen Court View in light and dark themes" loading="lazy" />
+      <p class="cs-shot-caption" data-en="Left: an earlier direction built on cards. Middle and right: Court View, the chosen direction, in light and dark themes." data-th="ซ้าย: แนวทางก่อนหน้าที่ใช้การ์ด · กลางและขวา: Court View ซึ่งเป็นแนวทางที่เลือก ทั้งธีมสว่างและธีมมืด">Left: an earlier direction built on cards. Middle and right: Court View, the chosen direction, in light and dark themes.</p>
+    </div>
+    <div class="annot">
+      <div class="annot-phone">
+        <div class="cs-phone"><img src="../assets/case-studies/tbg-after-player.jpg" alt="Player home screen with a court view, the queue, and court status" loading="lazy" /></div>
+        <span class="annot-pin is-left" style="top:12%;" aria-hidden="true">1</span><span class="annot-pin is-right" style="top:32%;" aria-hidden="true">2</span><span class="annot-pin is-left" style="top:72%;" aria-hidden="true">3</span><span class="annot-pin is-right" style="top:85%;" aria-hidden="true">4</span>
+      </div>
+      <div class="annot-note is-left" style="top:12%;">
+        <span class="annot-num" aria-hidden="true">1</span>
+        <div>
+          <h4 data-en="Queue, not a clock" data-th="บอกคิว ไม่บอกเวลา">Queue, not a clock</h4>
+          <p data-en="How many games are left, never a guessed time." data-th="บอกว่าเหลืออีกกี่เกมก่อนถึงคุณ โดยไม่เดาเวลา">How many games are left, never a guessed time.</p>
+        </div>
+      </div>
+      <div class="annot-note is-right" style="top:32%;">
+        <span class="annot-num" aria-hidden="true">2</span>
+        <div>
+          <h4 data-en="A court from above" data-th="สนามมองจากด้านบน">A court from above</h4>
+          <p data-en="Your team is on the left in blue, opponents on the right in yellow." data-th="ทีมเราอยู่ซ้ายเป็นสีน้ำเงิน คู่แข่งอยู่ขวาเป็นสีเหลือง">Your team is on the left in blue, opponents on the right in yellow.</p>
+        </div>
+      </div>
+      <div class="annot-note is-left" style="top:72%;">
+        <span class="annot-num" aria-hidden="true">3</span>
+        <div>
+          <h4 data-en="Your row stands out" data-th="แถวของคุณเด่นขึ้นมา">Your row stands out</h4>
+          <p data-en="The queue highlights your own row." data-th="คิวไฮไลต์แถวของตัวเอง">The queue highlights your own row.</p>
+        </div>
+      </div>
+      <div class="annot-note is-right" style="top:85%;">
+        <span class="annot-num" aria-hidden="true">4</span>
+        <div>
+          <h4 data-en="Court status at a glance" data-th="เห็นสถานะสนามทันที">Court status at a glance</h4>
+          <p data-en="Each court shows whether it is in play or free." data-th="มีป้ายบอกว่าแต่ละสนามกำลังเล่นหรือว่างอยู่">Each court shows whether it is in play or free.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 BEFORE AND AFTER -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="07 — Before &amp; After" data-th="07 — เทียบก่อนและหลัง">07 — Before &amp; After</p>
+    <h2 class="cs-h2" data-en="The same moments, old screen and new screen" data-th="จังหวะเดียวกัน บนจอเดิมและจอใหม่">The same moments, old screen and new screen</h2>
+    <div class="cs-ba">
+      <div class="cs-ba-phones">
+        <figure>
+          <figcaption class="is-before" data-en="Before" data-th="ก่อน">Before</figcaption>
+          <div class="cs-phone"><img src="../assets/case-studies/tbg-before-player.jpg" alt="Old player home: a logo and four menu cards" loading="lazy" /></div>
+        </figure>
+        <span class="cs-ba-arrow" aria-hidden="true">&#8594;</span>
+        <figure>
+          <figcaption class="is-after" data-en="After" data-th="หลัง">After</figcaption>
+          <div class="cs-phone"><img src="../assets/case-studies/tbg-after-player.jpg" alt="New player home: a court view with both teams and the queue" loading="lazy" /></div>
+        </figure>
+      </div>
+      <div class="cs-ba-body">
+        <h3 data-en="Opening the app as a player" data-th="เมื่อผู้เล่นเปิดแอป">Opening the app as a player</h3>
+        <ul>
+          <li data-en="Before: a menu of four cards, so players had to go elsewhere to see the queue." data-th="ก่อน: เป็นเมนู 4 การ์ด ผู้เล่นต้องเข้าไปอีกหน้าจึงจะเห็นคิว">Before: a menu of four cards, so players had to go elsewhere to see the queue.</li>
+          <li data-en="After: the next match and queue position are on the first screen." data-th="หลัง: เห็นคู่ถัดไปและลำดับคิวตั้งแต่หน้าแรก">After: the next match and queue position are on the first screen.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cs-ba">
+      <div class="cs-ba-phones">
+        <figure>
+          <figcaption class="is-before" data-en="Before" data-th="ก่อน">Before</figcaption>
+          <div class="cs-phone"><img src="../assets/case-studies/tbg-before-admin.jpg" alt="Old organizer screen: nine buttons above a player queue" loading="lazy" /></div>
+        </figure>
+        <span class="cs-ba-arrow" aria-hidden="true">&#8594;</span>
+        <figure>
+          <figcaption class="is-after" data-en="After" data-th="หลัง">After</figcaption>
+          <div class="cs-phone"><img src="../assets/case-studies/tbg-after-admin.jpg" alt="New organizer screen: court cards with one main action each" loading="lazy" /></div>
+        </figure>
+      </div>
+      <div class="cs-ba-body">
+        <h3 data-en="Running courts as an organizer" data-th="เมื่อผู้จัดดูแลสนาม">Running courts as an organizer</h3>
+        <p class="cs-ba-stat"><b>3 &#8594; 1</b><span data-en="steps to send a group to a free court" data-th="ขั้นตอนการส่งกลุ่มลงสนามว่าง">steps to send a group to a free court</span></p>
+        <ul>
+          <li data-en="Before: nine buttons filled the top, pushing the queue and courts down." data-th="ก่อน: ปุ่ม 9 ปุ่มเต็มด้านบน ดันคิวและสนามลงไปด้านล่าง">Before: nine buttons filled the top, pushing the queue and courts down.</li>
+          <li data-en="After: courts come first, with one main button each and a labeled menu." data-th="หลัง: เห็นสนามก่อน แต่ละสนามมีปุ่มหลักปุ่มเดียว และมีเมนูที่มีชื่อกำกับ">After: courts come first, with one main button each and a labeled menu.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cs-ba">
+      <div class="cs-ba-phones">
+        <figure>
+          <figcaption class="is-before" data-en="Before" data-th="ก่อน">Before</figcaption>
+          <div class="cs-phone"><img src="../assets/case-studies/tbg-before-endgame.jpg" alt="Old end-game dialog with a text field set to zero" loading="lazy" /></div>
+        </figure>
+        <span class="cs-ba-arrow" aria-hidden="true">&#8594;</span>
+        <figure>
+          <figcaption class="is-after" data-en="After" data-th="หลัง">After</figcaption>
+          <div class="cs-phone"><img src="../assets/case-studies/tbg-after-endgame.jpg" alt="New end-game sheet with a winner choice and a shuttle counter" loading="lazy" /></div>
+        </figure>
+      </div>
+      <div class="cs-ba-body">
+        <h3 data-en="Ending a game" data-th="เมื่อจบเกม">Ending a game</h3>
+        <p class="cs-ba-stat"><b>0 &#8594; 1</b><span data-en="starting value of the shuttle count" data-th="ค่าเริ่มต้นของจำนวนลูกแบด">starting value of the shuttle count</span></p>
+        <ul>
+          <li data-en="Before: a typed field starting at 0, so forgetting it meant no shuttle charge." data-th="ก่อน: ช่องพิมพ์ที่เริ่มจาก 0 ถ้าลืมกรอก ค่าลูกจะเป็น 0 บาท">Before: a typed field starting at 0, so forgetting it meant no shuttle charge.</li>
+          <li data-en="After: − and + buttons in a bottom sheet, with the next group one tap away." data-th="หลัง: ปุ่ม − และ + ในแผ่นเลื่อนจากด้านล่าง และส่งกลุ่มถัดไปได้ในการกดครั้งเดียว">After: − and + buttons in a bottom sheet, with the next group one tap away.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="cs-note" data-en="Before screens were rendered from the earlier version of the code. After screens are design mockups. Both use sample data." data-th="ภาพก่อนรันจากโค้ดเวอร์ชันเดิม ส่วนภาพหลังเป็น mockup ช่วงออกแบบ ทั้งสองแบบใช้ข้อมูลสมมติ">Before screens were rendered from the earlier version of the code. After screens are design mockups. Both use sample data.</p>
+  </section>
+
+  <!-- 08 DECISIONS -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="08 — Decisions &amp; Trade-offs" data-th="08 — การตัดสินใจและข้อแลกเปลี่ยน">08 — Decisions &amp; Trade-offs</p>
+    <h2 class="cs-h2" data-en="What each change gave, and what it cost" data-th="แต่ละจุดที่เปลี่ยน ได้อะไรและแลกกับอะไร">What each change gave, and what it cost</h2>
+
+    <div class="cs-decision">
+      <h3 class="cs-decision-title" data-en="1. Show queue position, never a time" data-th="1. แสดงลำดับคิว ไม่แสดงเวลา">1. Show queue position, never a time</h3>
+      <p class="cs-decision-text" data-en="Organizers start games at irregular moments when the hall is busy, so any time estimate would be wrong." data-th="ช่วงคนเยอะ ผู้จัดเริ่มเกมไม่ตรงเวลา การบอกเวลาโดยประมาณจึงมีโอกาสผิดสูง">Organizers start games at irregular moments when the hall is busy, so any time estimate would be wrong.</p>
+      <div class="cs-empathy-row is-two">
+        <div class="cs-empathy-card is-gain">
+          <p class="cs-empathy-label" data-en="Upside" data-th="ข้อดี">Upside</p>
+          <p class="cs-decision-point" data-en="The screen never makes a promise the session cannot keep." data-th="หน้าจอไม่ให้สัญญาที่หน้างานทำไม่ได้">The screen never makes a promise the session cannot keep.</p>
+        </div>
+        <div class="cs-empathy-card is-pain">
+          <p class="cs-empathy-label" data-en="Cost" data-th="ข้อแลกเปลี่ยน">Cost</p>
+          <p class="cs-decision-point" data-en="Players cannot tell how many minutes they have, for example to step out." data-th="ผู้เล่นกะไม่ได้ว่าเหลือกี่นาที เช่น เมื่ออยากออกไปทำธุระ">Players cannot tell how many minutes they have, for example to step out.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-decision">
+      <h3 class="cs-decision-title" data-en="2. Put the court at the top of the player's screen" data-th="2. วางสนามไว้บนสุดของหน้าจอผู้เล่น">2. Put the court at the top of the player's screen</h3>
+      <p class="cs-decision-text" data-en="Partners and opponents appear in the positions they will stand in." data-th="ตำแหน่งของเพื่อนร่วมทีมและคู่แข่งบนจอ ตรงกับฝั่งที่จะยืนจริง">Partners and opponents appear in the positions they will stand in.</p>
+      <div class="cs-empathy-row is-two">
+        <div class="cs-empathy-card is-gain">
+          <p class="cs-empathy-label" data-en="Upside" data-th="ข้อดี">Upside</p>
+          <p class="cs-decision-point" data-en="The match can be read in one glance, without reading a list." data-th="เห็นคู่แข่งขันได้ในพริบตา โดยไม่ต้องอ่านรายการ">The match can be read in one glance, without reading a list.</p>
+        </div>
+        <div class="cs-empathy-card is-pain">
+          <p class="cs-empathy-label" data-en="Cost" data-th="ข้อแลกเปลี่ยน">Cost</p>
+          <p class="cs-decision-point" data-en="The court takes up much of the first screen and pushes the queue further down." data-th="สนามกินพื้นที่จอแรกมาก คิวจึงถูกดันลงไปด้านล่าง">The court takes up much of the first screen and pushes the queue further down.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-decision">
+      <h3 class="cs-decision-title" data-en="3. Give each court card one main button" data-th="3. ให้การ์ดสนามมีปุ่มหลักปุ่มเดียว">3. Give each court card one main button</h3>
+      <p class="cs-decision-text" data-en="The button follows the court's state: send a group, start the game, or end it. Everything else moves into a ⋯ menu." data-th="ปุ่มเปลี่ยนตามสถานะของสนาม ทั้งส่งกลุ่มลงสนาม เริ่มเกม และจบเกม ส่วนคำสั่งอื่นย้ายไปอยู่ในเมนู ⋯">The button follows the court's state: send a group, start the game, or end it. Everything else moves into a ⋯ menu.</p>
+      <div class="cs-empathy-row is-two">
+        <div class="cs-empathy-card is-gain">
+          <p class="cs-empathy-label" data-en="Upside" data-th="ข้อดี">Upside</p>
+          <p class="cs-decision-point" data-en="Sending a group to a free court went from three steps to one tap." data-th="การส่งกลุ่มลงสนามว่างลดจาก 3 ขั้นเหลือกดครั้งเดียว">Sending a group to a free court went from three steps to one tap.</p>
+        </div>
+        <div class="cs-empathy-card is-pain">
+          <p class="cs-empathy-label" data-en="Cost" data-th="ข้อแลกเปลี่ยน">Cost</p>
+          <p class="cs-decision-point" data-en="Less common actions take an extra tap and are harder to discover." data-th="คำสั่งที่ใช้น้อยต้องกดเพิ่มอีกครั้ง และหาเจอยากขึ้น">Less common actions take an extra tap and are harder to discover.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-decision">
+      <h3 class="cs-decision-title" data-en="4. Replace the shuttle field with − and + buttons" data-th="4. เปลี่ยนช่องจำนวนลูกแบดเป็นปุ่ม − และ +">4. Replace the shuttle field with − and + buttons</h3>
+      <p class="cs-decision-text" data-en="The count now starts at 1 when a game ends, instead of an empty-feeling 0 in a text field." data-th="ตอนจบเกม จำนวนลูกเริ่มที่ 1 แทนช่องพิมพ์ที่เริ่มจาก 0">The count now starts at 1 when a game ends, instead of an empty-feeling 0 in a text field.</p>
+      <div class="cs-empathy-row is-two">
+        <div class="cs-empathy-card is-gain">
+          <p class="cs-empathy-label" data-en="Upside" data-th="ข้อดี">Upside</p>
+          <p class="cs-decision-point" data-en="Faster with one hand, and forgetting no longer means a free shuttle." data-th="กดด้วยมือเดียวได้เร็วขึ้น และลืมกรอกแล้วไม่กลายเป็นค่าลูก 0 บาท">Faster with one hand, and forgetting no longer means a free shuttle.</p>
+        </div>
+        <div class="cs-empathy-card is-pain">
+          <p class="cs-empathy-label" data-en="Cost" data-th="ข้อแลกเปลี่ยน">Cost</p>
+          <p class="cs-decision-point" data-en="A default can still be wrong: if a game used more shuttles and nobody adjusts it, the bill is too low." data-th="ค่าเริ่มต้นก็ยังผิดได้ ถ้าเกมนั้นใช้หลายลูกแล้วไม่มีใครปรับ ยอดเงินจะต่ำกว่าจริง">A default can still be wrong: if a game used more shuttles and nobody adjusts it, the bill is too low.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-decision">
+      <h3 class="cs-decision-title" data-en="5. Warn about pairings instead of pairing automatically" data-th="5. เตือนเรื่องการจับคู่ แทนการจับคู่ให้อัตโนมัติ">5. Warn about pairings instead of pairing automatically</h3>
+      <p class="cs-decision-text" data-en="Organizers still build the groups. The app points out repeat partners, repeat opponents, uneven skill, and anyone who was moved back." data-th="ผู้จัดยังจับคู่เองเหมือนเดิม ส่วนระบบช่วยเตือนเมื่อเจอคู่ซ้ำ เจอคู่แข่งซ้ำ ฝีมือสองฝั่งต่างกัน หรือมีคนถูกเลื่อนคิว">Organizers still build the groups. The app points out repeat partners, repeat opponents, uneven skill, and anyone who was moved back.</p>
+      <div class="cs-empathy-row is-two">
+        <div class="cs-empathy-card is-gain">
+          <p class="cs-empathy-label" data-en="Upside" data-th="ข้อดี">Upside</p>
+          <p class="cs-decision-point" data-en="Organizers keep their judgment about people, which an algorithm cannot see." data-th="ผู้จัดยังใช้วิจารณญาณเรื่องคนได้ ซึ่งเป็นสิ่งที่ระบบมองไม่เห็น">Organizers keep their judgment about people, which an algorithm cannot see.</p>
+        </div>
+        <div class="cs-empathy-card is-pain">
+          <p class="cs-empathy-label" data-en="Cost" data-th="ข้อแลกเปลี่ยน">Cost</p>
+          <p class="cs-decision-point" data-en="The mental work stays with the organizer, even on the busiest nights." data-th="ภาระการคิดยังอยู่กับผู้จัด แม้ในวันที่คนเยอะที่สุด">The mental work stays with the organizer, even on the busiest nights.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-decision">
+      <h3 class="cs-decision-title" data-en="6. Use one login page for everyone" data-th="6. ใช้หน้าล็อกอินเดียวสำหรับทุกคน">6. Use one login page for everyone</h3>
+      <p class="cs-decision-text" data-en="A separate organizer entrance was tried first, but it was hard to find from the home-screen app. Now the app routes people by their permissions after login." data-th="ตอนแรกแยกทางเข้าของผู้จัด แต่หาทางเข้าจากแอปบนหน้าจอโฮมไม่เจอ ตอนนี้ระบบจึงพาแต่ละคนไปหน้าที่ถูกต้องตามสิทธิ์หลังล็อกอิน">A separate organizer entrance was tried first, but it was hard to find from the home-screen app. Now the app routes people by their permissions after login.</p>
+      <div class="cs-empathy-row is-two">
+        <div class="cs-empathy-card is-gain">
+          <p class="cs-empathy-label" data-en="Upside" data-th="ข้อดี">Upside</p>
+          <p class="cs-decision-point" data-en="Nobody has to know which door is theirs." data-th="ไม่มีใครต้องจำว่าตัวเองต้องเข้าทางไหน">Nobody has to know which door is theirs.</p>
+        </div>
+        <div class="cs-empathy-card is-pain">
+          <p class="cs-empathy-label" data-en="Cost" data-th="ข้อแลกเปลี่ยน">Cost</p>
+          <p class="cs-decision-point" data-en="The page needs an extra line telling organizers they are in the right place." data-th="หน้านี้ต้องมีข้อความเพิ่ม เพื่อบอกผู้จัดว่าเข้าสู่ระบบที่นี่ได้">The page needs an extra line telling organizers they are in the right place.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 SCREENS -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="09 — Product Walkthrough" data-th="09 — ตัวอย่างหน้าจอ">09 — Product Walkthrough</p>
+    <h2 class="cs-h2" data-en="From your turn to paying, and from court to end of game" data-th="ตั้งแต่ถึงตาเล่นจนจ่ายเงิน และตั้งแต่จัดสนามจนจบเกม">From your turn to paying, and from court to end of game</h2>
+    <div class="cs-shot-row">
+      <div class="cs-shot">
+        <img src="../assets/case-studies/tbg-player-flow.jpg" alt="Player screens: a yellow your-turn alert naming the court, and a payment summary with QR steps" loading="lazy" />
+        <p class="cs-shot-caption" data-en="Player: the whole screen turns yellow when it is your turn, then payment walks through three steps." data-th="ฝั่งผู้เล่น: เมื่อถึงตา หน้าจอจะเปลี่ยนเป็นสีเหลืองทั้งจอ และการจ่ายเงินมี 3 ขั้นตอนชัดเจน">Player: the whole screen turns yellow when it is your turn, then payment walks through three steps.</p>
+      </div>
+      <div class="cs-shot">
+        <img src="../assets/case-studies/tbg-admin-endgame.jpg" alt="Organizer screens: court cards with one main action, and a bottom sheet for ending a game" loading="lazy" />
+        <p class="cs-shot-caption" data-en="Organizer: a free court is marked in yellow, and ending a game can send the next group in the same tap." data-th="ฝั่งผู้จัด: สนามว่างมีสีเหลืองเด่นชัด และการจบเกมสามารถส่งกลุ่มถัดไปลงสนามได้ในการกดครั้งเดียว">Organizer: a free court is marked in yellow, and ending a game can send the next group in the same tap.</p>
+      </div>
+    </div>
+    <div class="cs-shot cs-shot-full" style="margin-top:24px;">
+      <img src="../assets/case-studies/tbg-admin-court.jpg" alt="Three organizer screens: courts, queue, and payments, with a floating five-button menu" loading="lazy" />
+      <p class="cs-shot-caption" data-en="Organizer tabs: courts, queue, and money, with a labeled five-button menu replacing the crowded top bar." data-th="แท็บของผู้จัด: สนาม คิว และเงิน โดยใช้เมนูล่าง 5 ปุ่มที่มีชื่อกำกับ แทนแถบบนที่แน่นเกินไป">Organizer tabs: courts, queue, and money, with a labeled five-button menu replacing the crowded top bar.</p>
+    </div>
+    <p class="cs-note" data-en="These are design-stage mockups, so some details differ from the build. For example, the &quot;auto-group&quot; button seen here was later dropped in favor of decision 5." data-th="ภาพเหล่านี้เป็น mockup ช่วงออกแบบ รายละเอียดบางส่วนจึงต่างจากของจริง เช่น ปุ่มจัดอัตโนมัติในภาพ ถูกเปลี่ยนเป็นแนวทางในข้อ 5 ภายหลัง">These are design-stage mockups, so some details differ from the build. For example, the "auto-group" button seen here was later dropped in favor of decision 5.</p>
+  </section>
+
+  <!-- 10 DESIGN SYSTEM -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="10 — Design System" data-th="10 — DESIGN SYSTEM">10 — Design System</p>
+    <h2 class="cs-h2" data-en="A sporty identity taken from the club's logo" data-th="บุคลิกแบบกีฬาที่ต่อยอดจากโลโก้ก๊วน">A sporty identity taken from the club's logo</h2>
+    <div class="cs-swatch-row" style="grid-template-columns:repeat(3,1fr); max-width:520px;">
+      <div class="cs-swatch"><div class="cs-swatch-color" style="background:#2169D7;"></div><span class="cs-swatch-name">Court Blue</span><span class="cs-swatch-hex">#2169D7</span></div>
+      <div class="cs-swatch"><div class="cs-swatch-color" style="background:#FFD23F;"></div><span class="cs-swatch-name">Signal Yellow</span><span class="cs-swatch-hex">#FFD23F</span></div>
+      <div class="cs-swatch"><div class="cs-swatch-color" style="background:#060B18;"></div><span class="cs-swatch-name">Night Navy</span><span class="cs-swatch-hex">#060B18</span></div>
+    </div>
+    <p class="cs-type-sample" style="font-family:'Bebas Neue',sans-serif; font-weight:400;">NEXT UP 2</p>
+    <p class="cs-type-sample" style="font-family:'Kanit',sans-serif; font-weight:600; font-size:40px;">ถึงตาคุณแล้ว</p>
+    <p class="cs-type-caption" data-en="Bebas Neue for numbers and English, Kanit for Thai. The same court component is reused across organizer screens and the TV board." data-th="Bebas Neue สำหรับตัวเลขและภาษาอังกฤษ และ Kanit สำหรับภาษาไทย ส่วนสนามจำลองใช้ component เดียวกันทั้งหน้าผู้จัดและบอร์ดทีวี">Bebas Neue for numbers and English, Kanit for Thai. The same court component is reused across organizer screens and the TV board.</p>
+  </section>
+
+  <!-- 11 STATUS -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="11 — Where It Stands" data-th="11 — สถานะของงาน">11 — Where It Stands</p>
+    <h2 class="cs-h2" data-en="What is proven, and what still is not" data-th="สิ่งที่พิสูจน์แล้ว และสิ่งที่ยังต้องพิสูจน์">What is proven, and what still is not</h2>
+    <div class="cs-results">
+      <div class="cs-result">
+        <p class="cs-result-num">01</p>
+        <h4 data-en="Built and tested on staging" data-th="ลงโค้ดและทดสอบบนตัวเทสแล้ว">Built and tested on staging</h4>
+        <p data-en="At the time of writing, the redesign runs on a test build with sample data, ahead of its release to the club." data-th="ขณะที่เขียนเคสนี้ งานรีดีไซน์อยู่บนตัวเทสที่ใช้ข้อมูลสมมติ ก่อนปล่อยให้ก๊วนใช้จริง">At the time of writing, the redesign runs on a test build with sample data, ahead of its release to the club.</p>
+      </div>
+      <div class="cs-result">
+        <p class="cs-result-num">02</p>
+        <h4 data-en="No impact numbers yet" data-th="ยังไม่มีตัวเลขผลลัพธ์">No impact numbers yet</h4>
+        <p data-en="The tap counts above come from the design itself. Whether sessions really run faster needs measuring once real clubs use it." data-th="จำนวนขั้นตอนที่เล่าด้านบนมาจากตัวงานออกแบบ ส่วนการจัดก๊วนเร็วขึ้นจริงหรือไม่ ต้องวัดหลังเปิดใช้งานจริง">The tap counts above come from the design itself. Whether sessions really run faster needs measuring once real clubs use it.</p>
+      </div>
+      <div class="cs-result">
+        <p class="cs-result-num">03</p>
+        <h4 data-en="Three languages, not everywhere" data-th="รองรับ 3 ภาษา แต่ยังไม่ครบทุกจุด">Three languages, not everywhere</h4>
+        <p data-en="Player screens come in Thai, English, and Simplified Chinese, but organizer screens and server messages are still Thai." data-th="หน้าผู้เล่นมีภาษาไทย อังกฤษ และจีนตัวย่อ แต่หน้าผู้จัดและข้อความจากเซิร์ฟเวอร์ยังเป็นภาษาไทย">Player screens come in Thai, English, and Simplified Chinese, but organizer screens and server messages are still Thai.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="section reveal">
+    <div class="card cs-cta-card">
+      <h2 class="cs-cta-title" data-en="Interested in working together?" data-th="สนใจร่วมงาน หรืออยากคุยเรื่องดีไซน์?">Interested in working together?</h2>
+      <p class="cs-cta-sub" data-en="Open to UX/UI design work on products used in real, messy situations. Feel free to reach out." data-th="เปิดรับงานออกแบบ UX/UI สำหรับผลิตภัณฑ์ที่ใช้งานในสถานการณ์จริง ทักมาคุยกันได้เลย">Open to UX/UI design work on products used in real, messy situations. Feel free to reach out.</p>
+      <div class="cs-cta-actions">
+        <a href="mailto:jeenosupalerk@gmail.com" class="btn btn-dark">
+          <span data-en="Get in Touch" data-th="ติดต่อฉัน">Get in Touch</span>
+          <span class="arrow">&#8599;</span>
+        </a>
+        <a href="../index.html#work" class="btn btn-outline">
+          <span data-en="Back to Portfolio" data-th="กลับหน้าพอร์ตโฟลิโอ">Back to Portfolio</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> Supalerk Chaonchom. <span data-en="All rights reserved." data-th="สงวนลิขสิทธิ์">All rights reserved.</span></p>
+</footer>
+
+<script src="../js/main.js?v=11"></script>
+</body>
+</html>

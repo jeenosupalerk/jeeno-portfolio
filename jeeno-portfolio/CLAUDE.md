@@ -23,11 +23,12 @@ conventions to keep, and what is still open.
 ## 2. File map
 
 ```
-index.html                 home: hero, photo marquee, about, skills, work grid, experience, contact
+index.html                 home: hero, photo marquee, about, skills, AI workflow, work grid, experience, contact
 work/pos.html              case study 01 — Canteen & Restaurant POS
 work/design-system.html    case study 02 — Design System / token architecture
 work/insurance.html        case study 03 — HR Insurance Lookup System
 work/easy-parking.html     case study 05 — Easy Parking (the most developed one)
+work/teebadgun.html        case study 06 — Teebadgun redesign (built around decisions and trade-offs, see §4)
 css/style.css              base tokens + home page
 css/case-study.css         everything prefixed .cs-* (case-study pages)
 js/main.js                 all behaviour, one IIFE, six init functions
@@ -103,6 +104,24 @@ Component classes worth knowing (all in `css/case-study.css`):
 | `.cs-empathy-row` `.is-two` | empathy map; `.is-pain` red, `.is-gain` green |
 | `.cs-results` `.is-four` | outcome stat cards |
 | `.cs-quote-row` | dark quote cards |
+| `.cs-decision` | one decision: title, reason, then a `.cs-empathy-row.is-two` of upside and cost |
+| `.cs-ba` / `.cs-phone` | before-and-after pair of phone screens with notes |
+| `.lanes` | two-lane user flow with hand-offs (`.lane-link`) between lanes |
+| `.ring` | one percentage in a ring, only for real research numbers (`.cs-results.has-rings`) |
+| `.jm` | journey matrix: stages across, rows down, optional `.jm-emo` emotion curve. Scrolls sideways on phones |
+| `.vs` | old system versus new design, yes and no per feature. Only list what the page already states |
+| `.cs-process.is-stagger` | process steps as staggered bars, add `.cs-stagger-note` because it shows order, not duration |
+| `.persona-head` / `.is-hero` | persona with an icon tile, no stock photos of people |
+| `.annot` | phone screen with numbered notes |
+| `.map` (style.css) | mind map: `.map-side` x2 of three `.map-node`, `.map-core` in the middle |
+| `.flow` / `.flow-step` (style.css) | connected steps; `.is-key` highlights, `.is-end` drops the arrow, `.flow-loop` marks a retry |
+
+`work/teebadgun.html` leaves out persona, quotes and journey because that project
+has no such research: its spine is Overview, What Testing Found, Needs Map, User
+Flow, Direction, Before & After, Decisions & Trade-offs, Walkthrough, Design
+System, Where It Stands. Its before screens were rendered from the older code with
+sample data, never from the live site. Do not invent
+research or impact numbers to fill the standard spine.
 
 ## 5. Home page work cards
 
@@ -231,8 +250,8 @@ is done from the Cowork session that owns it, not from here.
   warm `--paper` background. Layout style follows a Framer reference the owner
   picked (chonladda-portfolio.framer.website): pill labels, big tight headings,
   soft rounded cards, a snapshot marquee, a black footer. Use those tokens —
-  don't invent new hues. Case-study pages still keep monochrome content cards;
-  only the shared background changed there.
+  don't invent new hues. Case-study text cards stay monochrome; graphics (rings, journey, staggered
+  process, annotations) may use these tokens at the owner's request (2026-11-03).
 - Owner photos live in `assets/photos/` (resized to 1600px, q80): used in the
   hero marquee, the About polaroid stack (`initPhotoStack()`), and as the
   Contact card background.
