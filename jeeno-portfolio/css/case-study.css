@@ -1169,3 +1169,26 @@
   .annot-note[style] { top: auto !important; }
   .cs-persona-grid.is-single .cs-persona-card.is-hero { grid-template-columns: 1fr; }
 }
+
+/* ------------------------------------------------------------------ */
+/* Phone row: three captioned phone screens                            */
+/* ------------------------------------------------------------------ */
+.phone-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+.phone-row figure { margin: 0; }
+.phone-row .cs-phone { max-width: 260px; margin: 0 auto 16px; }
+.phone-row h4 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+.phone-row p { font-size: 14px; line-height: 1.6; color: var(--ink-soft); margin: 0; }
+@media (max-width: 760px) {
+  .phone-row { grid-template-columns: 1fr; gap: 36px; }
+  .phone-row .cs-phone { max-width: 240px; }
+}

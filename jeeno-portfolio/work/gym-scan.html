@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yim Ngai Gym App — Case Study | Supalerk Chaonchom</title>
+<meta name="description" content="A gym web app designed so people can start from one photo of a machine, and so each visit sets up the next." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23111111'/%3E%3Ctext x='50' y='68' font-size='60' font-family='Arial, sans-serif' font-weight='700' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&family=Kanit:wght@400;600&family=Mali:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=13" />
+<link rel="stylesheet" href="../css/case-study.css?v=13" />
+</head>
+<body class="cs-body">
+
+<div class="grain-layer" aria-hidden="true"></div>
+
+<nav class="cs-nav">
+  <div class="cs-nav-inner">
+    <a href="../index.html#work" class="cs-back">
+      <span class="arrow-left">&#8592;</span>
+      <span data-en="Back to portfolio" data-th="กลับหน้าพอร์ตโฟลิโอ">Back to portfolio</span>
+    </a>
+    <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+      <span class="lang-opt active" data-lang-btn="en">EN</span>
+      <span class="lang-sep">/</span>
+      <span class="lang-opt" data-lang-btn="th">TH</span>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="section cs-hero">
+    <div class="card cs-hero-card has-media reveal">
+      <div>
+        <p class="cs-eyebrow" data-en="Yim Ngai · Design Concept Case Study" data-th="ยิมง่าย · เคสสตัดี้แนวคิดการออกแบบ">Yim Ngai · Design Concept Case Study</p>
+
+        <h1 class="cs-title" data-en="A Gym App That Starts With One Photo and Sets Up Your Next Visit" data-th="แอปยิมที่เริ่มจากรูปเดียว และเตรียมครั้งต่อไปไว้ให้">A Gym App That Starts With One Photo and Sets Up Your Next Visit</h1>
+
+        <p class="cs-tagline" data-en="Photograph a machine and the app says what it is and how to use it. The design goal goes further than that first answer: every visit should leave something that makes the next one easier to start." data-th="ถ่ายรูปเครื่องแล้วแอปจะบอกว่าคือเครื่องอะไรและเล่นอย่างไร แต่เป้าหมายของการออกแบบไปไกลกว่าคำตอบแรก คือทุกครั้งที่มาเล่นต้องเหลือบางอย่างไว้ ให้ครั้งต่อไปเริ่มได้ง่ายขึ้น">Photograph a machine and the app says what it is and how to use it. The design goal goes further than that first answer: every visit should leave something that makes the next one easier to start.</p>
+
+        <div class="cs-meta-grid">
+          <div class="cs-meta-item">
+            <span class="cs-meta-label" data-en="Role" data-th="บทบาท">Role</span>
+            <span class="cs-meta-value" data-en="Product Designer, from design to build" data-th="Product Designer ตั้งแต่ออกแบบถึงลงโค้ด">Product Designer, from design to build</span>
+          </div>
+          <div class="cs-meta-item">
+            <span class="cs-meta-label" data-en="Tool" data-th="เครื่องมือ">Tool</span>
+            <span class="cs-meta-value" data-en="Next.js, Gemini" data-th="Next.js, Gemini">Next.js, Gemini</span>
+          </div>
+          <div class="cs-meta-item">
+            <span class="cs-meta-label" data-en="Platform" data-th="แพลตฟอร์ม">Platform</span>
+            <span class="cs-meta-value" data-en="Mobile-first web app" data-th="เว็บแอปที่เน้นมือถือ">Mobile-first web app</span>
+          </div>
+          <div class="cs-meta-item">
+            <span class="cs-meta-label" data-en="Type" data-th="ประเภทงาน">Type</span>
+            <span class="cs-meta-value" data-en="Personal project" data-th="โปรเจกต์ส่วนตัว">Personal project</span>
+          </div>
+        </div>
+
+        <p class="cs-note" data-en="Screens are captured from the working app using sample data. The scan answers shown are simulated, so they say nothing about real AI accuracy." data-th="ภาพหน้าจอถ่ายจากแอปที่ใช้งานได้จริงโดยใช้ข้อมูลสมมติ ส่วนผลสแกนในภาพเป็นการจำลอง จึงไม่ได้สะท้อนความแม่นยำจริงของ AI">Screens are captured from the working app using sample data. The scan answers shown are simulated, so they say nothing about real AI accuracy.</p>
+      </div>
+      <div class="cs-hero-media">
+        <div class="cs-phone"><img src="../assets/case-studies/gym-home.jpg" alt="App home screen: a gym photo with a machine circled by a hand-drawn line, a heading inviting you to photograph it, and a large camera button" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 OVERVIEW -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="01 — Overview" data-th="01 — ภาพรวมโปรเจกต์">01 — Overview</p>
+    <h2 class="cs-h2" data-en="Two problems: getting started and keeping going" data-th="สองโจทย์ คือเริ่มให้ได้ และเล่นต่อให้ได้">Two problems: getting started and keeping going</h2>
+    <p class="cs-overview-text" data-en="Yim Ngai, Thai for &quot;easy gym&quot;, began as an app for personal use. Knowing a machine's name is a small barrier, but it is only the first one. Someone who gets past it still has to know what weight to use, what to do when something hurts, and whether any of this is working. So the concept has two halves: remove the need for prior knowledge, then turn each visit into the starting point of the next." data-th="ยิมง่ายเริ่มจากแอปที่ทำไว้ใช้เอง การไม่รู้ชื่อเครื่องเป็นอุปสรรคเล็ก ๆ แต่เป็นแค่ด่านแรก เพราะพอผ่านไปได้แล้ว ก็ยังต้องรู้ว่าควรใช้น้ำหนักเท่าไร เจ็บแล้วทำอย่างไร และที่เล่นอยู่ได้ผลไหม แนวคิดจึงมีสองส่วน คือไม่ต้องมีความรู้มาก่อนก็เริ่มได้ และทำให้ทุกครั้งที่มาเล่นเป็นจุดเริ่มของครั้งต่อไป">Yim Ngai, Thai for "easy gym", began as an app for personal use. Knowing a machine's name is a small barrier, but it is only the first one. Someone who gets past it still has to know what weight to use, what to do when something hurts, and whether any of this is working. So the concept has two halves: remove the need for prior knowledge, then turn each visit into the starting point of the next.</p>
+  </section>
+
+  <!-- 02 CONCEPT MAP -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="02 — Concept Map" data-th="02 — แผนผังแนวคิด">02 — Concept Map</p>
+    <h2 class="cs-h2" data-en="Six questions the app has to answer" data-th="หกคำถามที่แอปต้องตอบให้ได้">Six questions the app has to answer</h2>
+    <div class="map is-labeled">
+      <div class="map-side">
+        <p class="map-label" data-en="Getting started" data-th="เริ่มให้ได้">Getting started</p>
+        <div class="map-node">
+          <h3 data-en="What is this machine?" data-th="เครื่องนี้คืออะไร">What is this machine?</h3>
+          <p data-en="Take a photo instead of searching for a name you do not know." data-th="ถ่ายรูปแทนการค้นหาชื่อที่ไม่รู้จัก">Take a photo instead of searching for a name you do not know.</p>
+        </div>
+        <div class="map-node">
+          <h3 data-en="How do I use it?" data-th="เล่นอย่างไร">How do I use it?</h3>
+          <p data-en="Moves grouped by muscle, with a demo and starting sets." data-th="ท่าแยกตามกล้ามเนื้อ พร้อมตัวอย่างและเซ็ตเริ่มต้น">Moves grouped by muscle, with a demo and starting sets.</p>
+        </div>
+        <div class="map-node">
+          <h3 data-en="What should I do today?" data-th="วันนี้ควรเล่นอะไร">What should I do today?</h3>
+          <p data-en="A program built around your goal." data-th="โปรแกรมที่จัดตามเป้าหมาย">A program built around your goal.</p>
+        </div>
+      </div>
+      <div class="map-core">
+        <strong data-en="Each visit sets up the next" data-th="ครั้งนี้เตรียมครั้งหน้า">Each visit sets up the next</strong>
+        <span data-en="No prior knowledge needed" data-th="ไม่ต้องรู้มาก่อนก็เริ่มได้">No prior knowledge needed</span>
+      </div>
+      <div class="map-side is-right">
+        <p class="map-label" data-en="Keeping going" data-th="เล่นต่อให้ได้">Keeping going</p>
+        <div class="map-node">
+          <h3 data-en="What weight this time?" data-th="ครั้งนี้ใช้น้ำหนักเท่าไร">What weight this time?</h3>
+          <p data-en="Your last result and a suggested next step." data-th="ผลครั้งก่อนและคำแนะนำขั้นต่อไป">Your last result and a suggested next step.</p>
+        </div>
+        <div class="map-node">
+          <h3 data-en="What if it hurts?" data-th="เจ็บแล้วทำอย่างไร">What if it hurts?</h3>
+          <p data-en="A button in every move that offers alternatives." data-th="ทุกท่ามีปุ่มเจ็บหรือตึงที่เสนอทางเลือกอื่น">A button in every move that offers alternatives.</p>
+        </div>
+        <div class="map-node">
+          <h3 data-en="Is it working?" data-th="ที่เล่นอยู่ได้ผลไหม">Is it working?</h3>
+          <p data-en="Body readings over time, which feed back into the program." data-th="ผลตรวจร่างกายตามเวลา ที่ย้อนกลับไปปรับโปรแกรม">Body readings over time, which feed back into the program.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 CONTINUITY LOOP -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="03 — The Continuity Loop" data-th="03 — วงจรการใช้งานต่อเนื่อง">03 — The Continuity Loop</p>
+    <h2 class="cs-h2" data-en="Scanning is how you arrive, not why you return" data-th="การสแกนพาให้เริ่ม แต่สิ่งที่ทำให้กลับมาคือวงจรหลังจากนั้น">Scanning is how you arrive, not why you return</h2>
+    <div class="card ai-flow-card">
+      <p class="ai-flow-title" data-en="From the first photo to a repeating habit" data-th="จากรูปแรก ไปสู่การเล่นซ้ำเป็นประจำ">From the first photo to a repeating habit</p>
+      <div class="flow">
+        <div class="flow-step"><b>01</b><span data-en="Scan a machine" data-th="สแกนเครื่อง">Scan a machine</span></div>
+        <div class="flow-step"><b>02</b><span data-en="Learn the move" data-th="ดูวิธีเล่น">Learn the move</span></div>
+        <div class="flow-step is-key"><b>03</b><span data-en="Log weight and reps" data-th="บันทึกน้ำหนักและจำนวนครั้ง">Log weight and reps</span></div>
+        <div class="flow-step is-key"><b>04</b><span data-en="Get next-time advice" data-th="รับคำแนะนำสำหรับครั้งหน้า">Get next-time advice</span></div>
+        <div class="flow-step is-end"><b>05</b><span data-en="Body reading adjusts the program" data-th="ผลตรวจร่างกายช่วยปรับโปรแกรม">Body reading adjusts the program</span></div>
+        <div class="flow-loop"><span data-en="Next visit: back to 03 with these numbers" data-th="ครั้งหน้ากลับมาที่ขั้น 03 พร้อมตัวเลขนี้">Next visit: back to 03 with these numbers</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 WHERE A VISIT COULD STOP -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="04 — Where a Visit Could Stop" data-th="04 — จุดที่อาจเลิกกลางทาง">04 — Where a Visit Could Stop</p>
+    <h2 class="cs-h2" data-en="Every stage has a way to keep going" data-th="ทุกช่วงต้องมีทางไปต่อ">Every stage has a way to keep going</h2>
+    <div class="card jm-card">
+      <div class="jm-scroll">
+      <div class="jm" style="--n:5;">
+        <div class="jm-corner"></div>
+        <div class="jm-stage"><b>01</b><span data-en="At the machine" data-th="อยู่หน้าเครื่อง">At the machine</span></div>
+        <div class="jm-stage"><b>02</b><span data-en="Before the first set" data-th="ก่อนเริ่มเซ็ตแรก">Before the first set</span></div>
+        <div class="jm-stage"><b>03</b><span data-en="During the workout" data-th="ระหว่างเล่น">During the workout</span></div>
+        <div class="jm-stage"><b>04</b><span data-en="Finishing" data-th="เล่นจบ">Finishing</span></div>
+        <div class="jm-stage"><b>05</b><span data-en="Next visit" data-th="ครั้งถัดไป">Next visit</span></div>
+        <p class="jm-row-label" data-en="What could stop them" data-th="สิ่งที่อาจทำให้เลิก">What could stop them</p>
+        <div class="jm-cell is-pain"><span data-en="The scan is wrong or fails" data-th="สแกนผิด หรือสแกนไม่สำเร็จ">The scan is wrong or fails</span></div>
+        <div class="jm-cell is-pain"><span data-en="Not sure how to sit or what weight to use" data-th="ไม่แน่ใจว่านั่งอย่างไรและใช้น้ำหนักเท่าไร">Not sure how to sit or what weight to use</span></div>
+        <div class="jm-cell is-pain"><span data-en="The tab closes, or a move starts to hurt" data-th="แท็บปิดไป หรือท่านี้เริ่มเจ็บ">The tab closes, or a move starts to hurt</span></div>
+        <div class="jm-cell is-pain"><span data-en="The session feels too small to count" data-th="รู้สึกว่าวันนี้เล่นน้อยจนไม่นับ">The session feels too small to count</span></div>
+        <div class="jm-cell is-pain"><span data-en="Cannot remember what was used last time" data-th="จำไม่ได้ว่าครั้งก่อนใช้น้ำหนักเท่าไร">Cannot remember what was used last time</span></div>
+        <p class="jm-row-label" data-en="Design answer" data-th="สิ่งที่ออกแบบ">Design answer</p>
+        <div class="jm-cell is-gain"><span data-en="Other likely machines, and a list to pick from" data-th="เสนอเครื่องอื่นที่ใกล้เคียง และมีรายการให้เลือกเอง">Other likely machines, and a list to pick from</span></div>
+        <div class="jm-cell is-gain"><span data-en="A demo, a muscle map, and a starter weight marked as an estimate" data-th="มีตัวอย่าง แผนภาพกล้ามเนื้อ และน้ำหนักเริ่มต้นที่บอกว่าเป็นค่าประมาณ">A demo, a muscle map, and a starter weight marked as an estimate</span></div>
+        <div class="jm-cell is-gain"><span data-en="The workout comes back on reopening, with alternatives for pain" data-th="เปิดกลับมาแล้วเล่นต่อได้ทันที และมีทางเลือกเมื่อเจ็บ">The workout comes back on reopening, with alternatives for pain</span></div>
+        <div class="jm-cell is-gain"><span data-en="A summary that praises showing up" data-th="หน้าสรุปที่ชมว่าแค่มาได้ก็เก่งแล้ว">A summary that praises showing up</span></div>
+        <div class="jm-cell is-gain"><span data-en="Last result and suggested weight are already there" data-th="มีผลครั้งก่อนและน้ำหนักแนะนำรออยู่แล้ว">Last result and suggested weight are already there</span></div>
+      </div>
+    </div>
+    </div>
+    <p class="cs-note" data-en="The stop points are design assumptions from building the app for personal use. They have not been tested with other users." data-th="จุดที่อาจเลิกเหล่านี้เป็นสมมติฐานของการออกแบบจากการทำแอปไว้ใช้เอง ยังไม่ได้ทดสอบกับผู้ใช้คนอื่น">The stop points are design assumptions from building the app for personal use. They have not been tested with other users.</p>
+  </section>
+
+  <!-- 05 CONCEPT ON SCREEN -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="05 — Getting Started" data-th="05 — เริ่มให้ได้">05 — Getting Started</p>
+    <h2 class="cs-h2" data-en="“You don't need to know the name”" data-th="“ไม่ต้องรู้จักชื่อเครื่อง”">“You don't need to know the name”</h2>
+    <div class="annot">
+      <div class="annot-phone">
+        <div class="cs-phone"><img src="../assets/case-studies/gym-home.jpg" alt="Home screen with a circled machine, a heading, stat chips, and camera buttons" loading="lazy" /></div>
+        <span class="annot-pin is-left" style="top:15%;" aria-hidden="true">1</span><span class="annot-pin is-right" style="top:43%;" aria-hidden="true">2</span><span class="annot-pin is-left" style="top:60%;" aria-hidden="true">3</span><span class="annot-pin is-right" style="top:91%;" aria-hidden="true">4</span>
+      </div>
+      <div class="annot-note is-left" style="top:15%;">
+        <span class="annot-num" aria-hidden="true">1</span>
+        <div>
+          <h4 data-en="The picture shows the idea" data-th="ภาพบอกวิธีใช้แทนคำอธิบาย">The picture shows the idea</h4>
+          <p data-en="A hand-drawn circle on a real machine shows what to point the camera at." data-th="เส้นวาดมือวงรอบเครื่องจริง บอกว่าให้ถ่ายอะไร">A hand-drawn circle on a real machine shows what to point the camera at.</p>
+        </div>
+      </div>
+      <div class="annot-note is-right" style="top:43%;">
+        <span class="annot-num" aria-hidden="true">2</span>
+        <div>
+          <h4 data-en="The promise comes first" data-th="บอกสิ่งที่จะได้ตั้งแต่แรก">The promise comes first</h4>
+          <p data-en="The first lines say no machine name is needed." data-th="ข้อความแรกบอกเลยว่าไม่ต้องรู้จักชื่อเครื่อง">The first lines say no machine name is needed.</p>
+        </div>
+      </div>
+      <div class="annot-note is-left" style="top:60%;">
+        <span class="annot-num" aria-hidden="true">3</span>
+        <div>
+          <h4 data-en="One main action" data-th="มีปุ่มหลักปุ่มเดียว">One main action</h4>
+          <p data-en="Lime marks the camera button, with the photo library as a quieter option." data-th="สีเขียวมะนาวอยู่ที่ปุ่มถ่ายรูป ส่วนคลังภาพเป็นทางเลือกรอง">Lime marks the camera button, with the photo library as a quieter option.</p>
+        </div>
+      </div>
+      <div class="annot-note is-right" style="top:91%;">
+        <span class="annot-num" aria-hidden="true">4</span>
+        <div>
+          <h4 data-en="Scan from any tab" data-th="สแกนได้จากทุกแท็บ">Scan from any tab</h4>
+          <p data-en="The scan button sits in the middle of a floating menu." data-th="ปุ่มสแกนอยู่กลางเมนูลอยตลอด">The scan button sits in the middle of a floating menu.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cs-ba" style="margin-top:48px;">
+      <div class="cs-ba-phones">
+        <figure>
+          <figcaption data-en="Scan result" data-th="ผลการสแกน">Scan result</figcaption>
+          <div class="cs-phone"><img src="../assets/case-studies/gym-result.jpg" alt="Scan result naming the machine, offering another likely machine, and listing moves by muscle" loading="lazy" /></div>
+        </figure>
+        <span class="cs-ba-arrow" aria-hidden="true">&#8594;</span>
+        <figure>
+          <figcaption data-en="Move detail" data-th="รายละเอียดท่า">Move detail</figcaption>
+          <div class="cs-phone"><img src="../assets/case-studies/gym-sheet.jpg" alt="Move sheet with a 3D figure on a chest press machine, the chest highlighted in lime, and a start button" loading="lazy" /></div>
+        </figure>
+      </div>
+      <div class="cs-ba-body">
+        <h3 data-en="From a photo to the first set" data-th="จากรูปถ่ายถึงเซ็ตแรก">From a photo to the first set</h3>
+        <ul>
+          <li data-en="The answer gives a plain Thai name, and asks &quot;Not this machine?&quot; right below it." data-th="คำตอบใช้ชื่อไทยที่เข้าใจง่าย และถาม &quot;ไม่ใช่เครื่องนี้?&quot; ไว้ตรงด้านล่าง">The answer gives a plain Thai name, and asks "Not this machine?" right below it.</li>
+          <li data-en="Moves are grouped by muscle, each with its own colored icon." data-th="ท่าแยกตามกล้ามเนื้อ และแต่ละส่วนมีไอคอนสีของตัวเอง">Moves are grouped by muscle, each with its own colored icon.</li>
+          <li data-en="The move sheet shows the worked muscle on the figure and offers sets to start with." data-th="หน้ารายละเอียดไฮไลต์กล้ามเนื้อบนหุ่น และบอกเซ็ตเริ่มต้นให้เลย">The move sheet shows the worked muscle on the figure and offers sets to start with.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 DURING THE WORKOUT -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="06 — During the Workout" data-th="06 — ระหว่างเล่น">06 — During the Workout</p>
+    <h2 class="cs-h2" data-en="The screen remembers, so you do not have to" data-th="หน้าจอจำให้ คนเล่นจะได้ไม่ต้องจำเอง">The screen remembers, so you do not have to</h2>
+    <div class="annot">
+      <div class="annot-phone">
+        <div class="cs-phone"><img src="../assets/case-studies/gym-workout.jpg" alt="Workout screen with last result, weight advice, three sets filled in, and a pain button" loading="lazy" /></div>
+        <span class="annot-pin is-left" style="top:57%;" aria-hidden="true">1</span><span class="annot-pin is-right" style="top:63%;" aria-hidden="true">2</span><span class="annot-pin is-left" style="top:82%;" aria-hidden="true">3</span><span class="annot-pin is-right" style="top:94%;" aria-hidden="true">4</span>
+      </div>
+      <div class="annot-note is-left" style="top:57%;">
+        <span class="annot-num" aria-hidden="true">1</span>
+        <div>
+          <h4 data-en="Last time is on screen" data-th="ผลครั้งก่อนอยู่บนจอ">Last time is on screen</h4>
+          <p data-en="&quot;Last time: 25 kg, 12 reps&quot; appears beside your own details." data-th="&quot;ครั้งก่อน: 25 กก., 12 ครั้ง&quot; อยู่คู่กับข้อมูลของคุณ">"Last time: 25 kg, 12 reps" appears beside your own details.</p>
+        </div>
+      </div>
+      <div class="annot-note is-right" style="top:63%;">
+        <span class="annot-num" aria-hidden="true">2</span>
+        <div>
+          <h4 data-en="Advice in plain words" data-th="คำแนะนำเป็นภาษาคน">Advice in plain words</h4>
+          <p data-en="Reps left in reserve last time become &quot;go up to 30 kg&quot;." data-th="ครั้งก่อนยังเหลือแรง จึงแนะนำให้เพิ่มเป็น 30 กก.">Reps left in reserve last time become "go up to 30 kg".</p>
+        </div>
+      </div>
+      <div class="annot-note is-left" style="top:82%;">
+        <span class="annot-num" aria-hidden="true">3</span>
+        <div>
+          <h4 data-en="Sets are already filled in" data-th="เซ็ตกรอกไว้ให้แล้ว">Sets are already filled in</h4>
+          <p data-en="Press the check when a set is done, and only type if it differs." data-th="เล่นจบแล้วกดติ๊ก ค่อยพิมพ์เมื่อเล่นไม่ตรงกับที่กรอกไว้">Press the check when a set is done, and only type if it differs.</p>
+        </div>
+      </div>
+      <div class="annot-note is-right" style="top:94%;">
+        <span class="annot-num" aria-hidden="true">4</span>
+        <div>
+          <h4 data-en="A way out, not a dead end" data-th="มีทางออก ไม่ใช่ทางตัน">A way out, not a dead end</h4>
+          <p data-en="The pain or tightness button offers alternatives instead of ending the workout." data-th="ปุ่มเจ็บหรือตึงเสนอทางเลือกอื่น แทนที่จะทำให้ต้องเลิกเล่น">The pain or tightness button offers alternatives instead of ending the workout.</p>
+        </div>
+      </div>
+    </div>
+    <div class="phone-row">
+      <figure>
+        <div class="cs-phone"><img src="../assets/case-studies/gym-rest.jpg" alt="Rest timer with the mascot, the next move, and buttons to adjust time or move on" loading="lazy" /></div>
+        <h4 data-en="Rest with a next step" data-th="พักโดยรู้ว่าต่อไปคืออะไร">Rest with a next step</h4>
+        <p data-en="The clock names the next move, and you can change the time or move on." data-th="นาฬิกาบอกท่าถัดไป ปรับเวลาได้ หรือจะไปต่อเลยก็ได้">The clock names the next move, and you can change the time or move on.</p>
+      </figure>
+      <figure>
+        <div class="cs-phone"><img src="../assets/case-studies/gym-reserve.jpg" alt="Completed sets with a question about how many more reps were possible, and updated advice" loading="lazy" /></div>
+        <h4 data-en="One question for the future" data-th="คำถามเดียวเพื่อครั้งหน้า">One question for the future</h4>
+        <p data-en="How many more reps could you do? The answer sets the next weight." data-th="ยังยกต่อได้อีกกี่ครั้ง คำตอบนี้กำหนดน้ำหนักครั้งถัดไป">How many more reps could you do? The answer sets the next weight.</p>
+      </figure>
+      <figure>
+        <div class="cs-phone"><img src="../assets/case-studies/gym-summary.jpg" alt="Summary with a cheering mascot, the session totals, and advice for next time" loading="lazy" /></div>
+        <h4 data-en="An ending that points forward" data-th="จบแล้วชี้ไปครั้งหน้า">An ending that points forward</h4>
+        <p data-en="It celebrates showing up, then says where to start next time." data-th="ชื่นชมที่มาได้ แล้วบอกว่าครั้งหน้าเริ่มจากตรงไหน">It celebrates showing up, then says where to start next time.</p>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 07 OVER TIME -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="07 — Over Time" data-th="07 — ระยะยาว">07 — Over Time</p>
+    <h2 class="cs-h2" data-en="Body readings change what the app suggests" data-th="ผลตรวจร่างกายเปลี่ยนสิ่งที่แอปแนะนำ">Body readings change what the app suggests</h2>
+    <div class="cs-ba">
+      <div class="cs-ba-phones">
+        <figure>
+          <figcaption data-en="Body" data-th="ร่างกาย">Body</figcaption>
+          <div class="cs-phone"><img src="../assets/case-studies/gym-body.jpg" alt="Body tab with a weight trend chart, a recommended goal, and a note on direction" loading="lazy" /></div>
+        </figure>
+        <span class="cs-ba-arrow" aria-hidden="true">&#8594;</span>
+        <figure>
+          <figcaption data-en="Program" data-th="โปรแกรม">Program</figcaption>
+          <div class="cs-phone"><img src="../assets/case-studies/gym-program.jpg" alt="Three-day program with a note that leg moves were moved earlier because legs lag behind arms" loading="lazy" /></div>
+        </figure>
+      </div>
+      <div class="cs-ba-body">
+        <h3 data-en="From a reading to a changed program" data-th="จากผลตรวจ สู่โปรแกรมที่เปลี่ยนไป">From a reading to a changed program</h3>
+        <ul>
+          <li data-en="Each new reading is compared with the last one, and the app says which way things are heading." data-th="ผลตรวจใหม่ถูกเทียบกับครั้งก่อน และแอปบอกทิศทางที่กำลังไป">Each new reading is compared with the last one, and the app says which way things are heading.</li>
+          <li data-en="The app recommends a goal that fits the numbers, with a link to the program." data-th="แอปแนะนำเป้าหมายที่เหมาะกับตัวเลข พร้อมทางไปหน้าโปรแกรม">The app recommends a goal that fits the numbers, with a link to the program.</li>
+          <li data-en="If legs lag behind arms, leg moves come earlier, and the program says why." data-th="ถ้าขาตามหลังแขน ท่าขาจะถูกเลื่อนขึ้นมาก่อน และโปรแกรมบอกเหตุผลให้รู้">If legs lag behind arms, leg moves come earlier, and the program says why.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 DECISIONS -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="08 — Decisions &amp; Trade-offs" data-th="08 — การตัดสินใจและข้อแลกเปลี่ยน">08 — Decisions &amp; Trade-offs</p>
+    <h2 class="cs-h2" data-en="What each choice gave, and what it cost" data-th="แต่ละทางเลือกได้อะไร และแลกกับอะไร">What each choice gave, and what it cost</h2>
+
+    <div class="cs-decision">
+      <h3 class="cs-decision-title" data-en="1. Treat a failed scan as a detour" data-th="1. สแกนพลาดต้องมีทางอ้อม ไม่ใช่ทางตัน">1. Treat a failed scan as a detour</h3>
+      <p class="cs-decision-text" data-en="Every scan error leads to picking from a list, and an unsure answer offers other likely machines." data-th="สแกนผิดพลาดทุกกรณีจะพาไปเลือกจากรายการ และถ้าไม่มั่นใจ ระบบจะเสนอเครื่องอื่นที่ใกล้เคียง">Every scan error leads to picking from a list, and an unsure answer offers other likely machines.</p>
+      <div class="cs-empathy-row is-two">
+        <div class="cs-empathy-card is-gain">
+          <p class="cs-empathy-label" data-en="Upside" data-th="ข้อดี">Upside</p>
+          <p class="cs-decision-point" data-en="The AI being wrong never stops the workout." data-th="AI ตอบผิดก็ไม่ทำให้ต้องหยุดเล่น">The AI being wrong never stops the workout.</p>
+        </div>
+        <div class="cs-empathy-card is-pain">
+          <p class="cs-empathy-label" data-en="Cost" data-th="ข้อแลกเปลี่ยน">Cost</p>
+          <p class="cs-decision-point" data-en="The app only knows machines in its own catalog, which then has to be maintained." data-th="แอปรู้จักเฉพาะเครื่องในรายการของตัวเอง และต้องคอยดูแลรายการนี้">The app only knows machines in its own catalog, which then has to be maintained.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-decision">
+      <h3 class="cs-decision-title" data-en="2. Base weight advice on simple rules" data-th="2. ใช้กฎง่าย ๆ ในการแนะนำน้ำหนัก">2. Base weight advice on simple rules</h3>
+      <p class="cs-decision-text" data-en="Reps in reserve, missed reps, and sharp pain each change the next weight in a fixed way. The app says the advice is an estimate, not from a doctor or trainer." data-th="แรงที่เหลือ ครั้งที่ทำไม่ถึง และอาการเจ็บแปลบ จะปรับน้ำหนักครั้งหน้าตามกฎที่ตั้งไว้ และแอปบอกชัดว่าเป็นค่าประมาณ ไม่ใช่คำแนะนำจากแพทย์หรือเทรนเนอร์">Reps in reserve, missed reps, and sharp pain each change the next weight in a fixed way. The app says the advice is an estimate, not from a doctor or trainer.</p>
+      <div class="cs-empathy-row is-two">
+        <div class="cs-empathy-card is-gain">
+          <p class="cs-empathy-label" data-en="Upside" data-th="ข้อดี">Upside</p>
+          <p class="cs-decision-point" data-en="The same answers always give the same advice, and it can be explained in one line." data-th="ตอบเหมือนกันก็ได้คำแนะนำเหมือนกัน และอธิบายได้ในบรรทัดเดียว">The same answers always give the same advice, and it can be explained in one line.</p>
+        </div>
+        <div class="cs-empathy-card is-pain">
+          <p class="cs-empathy-label" data-en="Cost" data-th="ข้อแลกเปลี่ยน">Cost</p>
+          <p class="cs-decision-point" data-en="Rules cannot see form or fatigue, so they are less personal than a real coach." data-th="กฎมองไม่เห็นท่าทางและความล้า จึงเฉพาะตัวน้อยกว่าโค้ชจริง">Rules cannot see form or fatigue, so they are less personal than a real coach.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-decision">
+      <h3 class="cs-decision-title" data-en="3. No progress graphics without real data" data-th="3. ไม่มีกราฟิกความคืบหน้า ถ้าไม่มีข้อมูลจริง">3. No progress graphics without real data</h3>
+      <p class="cs-decision-text" data-en="Progress rings would have made the first screen look livelier, but there would be no real numbers behind them. Charts appear once real readings exist." data-th="วงแหวนความคืบหน้าจะทำให้หน้าแรกดูมีชีวิตชีวา แต่ไม่มีตัวเลขจริงรองรับ กราฟจึงปรากฏเมื่อมีผลตรวจจริงแล้วเท่านั้น">Progress rings would have made the first screen look livelier, but there would be no real numbers behind them. Charts appear once real readings exist.</p>
+      <div class="cs-empathy-row is-two">
+        <div class="cs-empathy-card is-gain">
+          <p class="cs-empathy-label" data-en="Upside" data-th="ข้อดี">Upside</p>
+          <p class="cs-decision-point" data-en="Every number on screen can be trusted, which matters when it decides a weight." data-th="ตัวเลขบนจอเชื่อถือได้ทุกตัว ซึ่งสำคัญเมื่อต้องใช้ตัดสินใจเรื่องน้ำหนัก">Every number on screen can be trusted, which matters when it decides a weight.</p>
+        </div>
+        <div class="cs-empathy-card is-pain">
+          <p class="cs-empathy-label" data-en="Cost" data-th="ข้อแลกเปลี่ยน">Cost</p>
+          <p class="cs-decision-point" data-en="New users see less on the first day, so the early screens feel less rewarding." data-th="ผู้ใช้ใหม่เห็นข้อมูลน้อยในวันแรก หน้าจอช่วงแรกจึงให้ความรู้สึกคุ้มค่าน้อยกว่า">New users see less on the first day, so the early screens feel less rewarding.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-decision">
+      <h3 class="cs-decision-title" data-en="4. Praise showing up, not only performance" data-th="4. ชมที่มาเล่น ไม่ใช่แค่ชมผลงาน">4. Praise showing up, not only performance</h3>
+      <p class="cs-decision-text" data-en="A dumbbell mascot and a friendly voice replace the usual fitness-app intensity: &quot;Just showing up is already great.&quot;" data-th="น้องดัมเบลและน้ำเสียงเป็นกันเอง เข้ามาแทนความเข้มข้นแบบแอปฟิตเนสทั่วไป เช่น &quot;แค่มาได้ก็เก่งแล้ว&quot;">A dumbbell mascot and a friendly voice replace the usual fitness-app intensity: "Just showing up is already great."</p>
+      <div class="cs-empathy-row is-two">
+        <div class="cs-empathy-card is-gain">
+          <p class="cs-empathy-label" data-en="Upside" data-th="ข้อดี">Upside</p>
+          <p class="cs-decision-point" data-en="A small session still ends on a good note, so it does not feel like a failure." data-th="วันที่เล่นน้อยก็ยังจบแบบรู้สึกดี ไม่กลายเป็นความล้มเหลว">A small session still ends on a good note, so it does not feel like a failure.</p>
+        </div>
+        <div class="cs-empathy-card is-pain">
+          <p class="cs-empathy-label" data-en="Cost" data-th="ข้อแลกเปลี่ยน">Cost</p>
+          <p class="cs-decision-point" data-en="The playful tone may feel too light for experienced lifters." data-th="น้ำเสียงขี้เล่นอาจดูเบาเกินไปสำหรับคนที่เล่นจริงจัง">The playful tone may feel too light for experienced lifters.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-decision">
+      <h3 class="cs-decision-title" data-en="5. Start without accounts" data-th="5. เริ่มโดยยังไม่มีบัญชีผู้ใช้">5. Start without accounts</h3>
+      <p class="cs-decision-text" data-en="Workouts and readings are saved in the browser, with no database. Closing the tab mid-workout is safe, because the session comes back on reopening." data-th="การเล่นและผลตรวจเก็บในเบราว์เซอร์ โดยไม่มีฐานข้อมูล ถ้าปิดแท็บกลางคันก็เปิดกลับมาเล่นต่อได้">Workouts and readings are saved in the browser, with no database. Closing the tab mid-workout is safe, because the session comes back on reopening.</p>
+      <div class="cs-empathy-row is-two">
+        <div class="cs-empathy-card is-gain">
+          <p class="cs-empathy-label" data-en="Upside" data-th="ข้อดี">Upside</p>
+          <p class="cs-decision-point" data-en="No sign-up stands between the first photo and the first set." data-th="ไม่มีการสมัครสมาชิกมาคั่นระหว่างรูปแรกกับเซ็ตแรก">No sign-up stands between the first photo and the first set.</p>
+        </div>
+        <div class="cs-empathy-card is-pain">
+          <p class="cs-empathy-label" data-en="Cost" data-th="ข้อแลกเปลี่ยน">Cost</p>
+          <p class="cs-decision-point" data-en="Changing phones or clearing the browser loses the history that continuity depends on. Accounts are planned for the next phase." data-th="ถ้าเปลี่ยนมือถือหรือล้างเบราว์เซอร์ ประวัติที่ใช้เล่นต่อจะหายไป จึงวางแผนเพิ่มบัญชีผู้ใช้ในเฟสถัดไป">Changing phones or clearing the browser loses the history that continuity depends on. Accounts are planned for the next phase.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-decision">
+      <h3 class="cs-decision-title" data-en="6. Make people check report values" data-th="6. ให้ผู้ใช้ตรวจค่าจากรายงานก่อนบันทึก">6. Make people check report values</h3>
+      <p class="cs-decision-text" data-en="The AI can read a photo of a body report, but values must be confirmed before saving. The screen also says images go to a free AI service, and offers typing by hand instead." data-th="AI อ่านค่าจากรูปรายงานผลตรวจได้ แต่ผู้ใช้ต้องตรวจก่อนบันทึก หน้าจอยังบอกด้วยว่ารูปจะถูกส่งไปยังบริการ AI แบบฟรี และเลือกกรอกเองแทนได้">The AI can read a photo of a body report, but values must be confirmed before saving. The screen also says images go to a free AI service, and offers typing by hand instead.</p>
+      <div class="cs-empathy-row is-two">
+        <div class="cs-empathy-card is-gain">
+          <p class="cs-empathy-label" data-en="Upside" data-th="ข้อดี">Upside</p>
+          <p class="cs-decision-point" data-en="A misread number does not quietly change the program, and people choose what they share." data-th="ค่าที่อ่านผิดจะไม่ไปเปลี่ยนโปรแกรมแบบเงียบ ๆ และผู้ใช้เลือกเองว่าจะส่งอะไร">A misread number does not quietly change the program, and people choose what they share.</p>
+        </div>
+        <div class="cs-empathy-card is-pain">
+          <p class="cs-empathy-label" data-en="Cost" data-th="ข้อแลกเปลี่ยน">Cost</p>
+          <p class="cs-decision-point" data-en="An extra step, at exactly the moment the photo was meant to save effort." data-th="เพิ่มอีกหนึ่งขั้น ในจังหวะที่รูปถ่ายควรจะช่วยลดงาน">An extra step, at exactly the moment the photo was meant to save effort.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 DESIGN SYSTEM -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="09 — Design System" data-th="09 — DESIGN SYSTEM">09 — Design System</p>
+    <h2 class="cs-h2" data-en="Lime means “do this next”" data-th="สีเขียวมะนาวหมายถึง “ทำสิ่งนี้ต่อ”">Lime means “do this next”</h2>
+    <div class="cs-swatch-row" style="grid-template-columns:repeat(3,1fr); max-width:520px;">
+      <div class="cs-swatch"><div class="cs-swatch-color" style="background:#B9F24A;"></div><span class="cs-swatch-name">Lime</span><span class="cs-swatch-hex">#B9F24A</span></div>
+      <div class="cs-swatch"><div class="cs-swatch-color" style="background:#0A0F0B;"></div><span class="cs-swatch-name">Background</span><span class="cs-swatch-hex">#0A0F0B</span></div>
+      <div class="cs-swatch"><div class="cs-swatch-color" style="background:#171E18;"></div><span class="cs-swatch-name">Surface</span><span class="cs-swatch-hex">#171E18</span></div>
+    </div>
+    <p class="cs-type-sample" style="font-family:'Mali',sans-serif; font-size:44px;">เจอเครื่องไหน ถ่ายมาเลย!</p>
+    <p class="cs-type-sample" style="font-family:'Kanit',sans-serif; font-weight:600; font-size:32px;">3 เซ็ต เซ็ตละ 12 ครั้ง พัก 60 วินาที</p>
+    <p class="cs-type-caption" data-en="Lime is kept for main buttons and selected states, with a separate colored icon for each muscle and zone. Mali sets the name and big headings, and Kanit sets numbers and content." data-th="สีเขียวมะนาวใช้เฉพาะปุ่มหลักและสถานะที่เลือก ส่วนกล้ามเนื้อและโซนต่าง ๆ มีไอคอนสีของตัวเอง ฟอนต์ Mali ใช้กับชื่อแอปและหัวข้อใหญ่ ส่วน Kanit ใช้กับตัวเลขและเนื้อหา">Lime is kept for main buttons and selected states, with a separate colored icon for each muscle and zone. Mali sets the name and big headings, and Kanit sets numbers and content.</p>
+    <p class="cs-note" data-en="Credits: 3D figure from Quaternius (CC0), body map from react-body-highlighter (MIT), exercise photos from the open free-exercise-db dataset." data-th="ที่มาของภาพ: หุ่น 3D จาก Quaternius (CC0) แผนภาพกล้ามเนื้อจาก react-body-highlighter (MIT) และภาพท่าออกกำลังกายจากชุดข้อมูลเปิด free-exercise-db">Credits: 3D figure from Quaternius (CC0), body map from react-body-highlighter (MIT), exercise photos from the open free-exercise-db dataset.</p>
+  </section>
+
+  <!-- 10 STATUS -->
+  <section class="section reveal">
+    <p class="cs-section-label" data-en="10 — Where It Stands" data-th="10 — สถานะของงาน">10 — Where It Stands</p>
+    <h2 class="cs-h2" data-en="What is built, and what still is not proven" data-th="สิ่งที่สร้างแล้ว และสิ่งที่ยังต้องพิสูจน์">What is built, and what still is not proven</h2>
+    <div class="cs-results">
+      <div class="cs-result">
+        <p class="cs-result-num">01</p>
+        <h4 data-en="22 machines, 52 moves, 7 muscle groups" data-th="22 เครื่อง 52 ท่า 7 กลุ่มกล้ามเนื้อ">22 machines, 52 moves, 7 muscle groups</h4>
+        <p data-en="The whole loop works in the app. So far, only the chest press has a 3D clip, and 9 machines are not yet confirmed." data-th="วงจรทั้งหมดใช้งานได้ในแอปแล้ว แต่ตอนนี้มีคลิป 3D เฉพาะท่านั่งดันอก และยังมี 9 เครื่องที่ต้องยืนยัน">The whole loop works in the app. So far, only the chest press has a 3D clip, and 9 machines are not yet confirmed.</p>
+      </div>
+      <div class="cs-result">
+        <p class="cs-result-num">02</p>
+        <h4 data-en="Scan accuracy not measured yet" data-th="ยังไม่ได้วัดความแม่นยำของการสแกน">Scan accuracy not measured yet</h4>
+        <p data-en="The aim is 8 correct out of 10 images on a real phone. Reading report photos has only been tested with mock answers." data-th="ตั้งเป้าสแกนถูก 8 จาก 10 ภาพบนมือถือจริง ส่วนการอ่านรูปผลตรวจเพิ่งทดสอบด้วยคำตอบจำลอง">The aim is 8 correct out of 10 images on a real phone. Reading report photos has only been tested with mock answers.</p>
+      </div>
+      <div class="cs-result">
+        <p class="cs-result-num">03</p>
+        <h4 data-en="No retention numbers yet" data-th="ยังไม่มีตัวเลขการกลับมาใช้ซ้ำ">No retention numbers yet</h4>
+        <p data-en="Continuity is the design intent, not a measured result. Proving it means watching whether people come back over several weeks." data-th="การใช้งานต่อเนื่องเป็นเป้าหมายของการออกแบบ ยังไม่ใช่ผลที่วัดได้ การพิสูจน์ต้องดูว่าผู้ใช้กลับมาเล่นซ้ำตลอดหลายสัปดาห์หรือไม่">Continuity is the design intent, not a measured result. Proving it means watching whether people come back over several weeks.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="section reveal">
+    <div class="card cs-cta-card">
+      <h2 class="cs-cta-title" data-en="Interested in working together?" data-th="สนใจร่วมงาน หรืออยากคุยเรื่องดีไซน์?">Interested in working together?</h2>
+      <p class="cs-cta-sub" data-en="Open to UX/UI design work on products people return to. Feel free to reach out." data-th="เปิดรับงานออกแบบ UX/UI สำหรับผลิตภัณฑ์ที่ผู้ใช้กลับมาใช้ซ้ำ ทักมาคุยกันได้เลย">Open to UX/UI design work on products people return to. Feel free to reach out.</p>
+      <div class="cs-cta-actions">
+        <a href="mailto:jeenosupalerk@gmail.com" class="btn btn-dark">
+          <span data-en="Get in Touch" data-th="ติดต่อฉัน">Get in Touch</span>
+          <span class="arrow">&#8599;</span>
+        </a>
+        <a href="../index.html#work" class="btn btn-outline">
+          <span data-en="Back to Portfolio" data-th="กลับหน้าพอร์ตโฟลิโอ">Back to Portfolio</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> Supalerk Chaonchom. <span data-en="All rights reserved." data-th="สงวนลิขสิทธิ์">All rights reserved.</span></p>
+</footer>
+
+<script src="../js/main.js?v=13"></script>
+</body>
+</html>

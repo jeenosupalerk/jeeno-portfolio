@@ -29,6 +29,7 @@ work/design-system.html    case study 02 — Design System / token architecture
 work/insurance.html        case study 03 — HR Insurance Lookup System
 work/easy-parking.html     case study 05 — Easy Parking (the most developed one)
 work/teebadgun.html        case study 06 — Teebadgun redesign (built around decisions and trade-offs, see §4)
+work/gym-scan.html         case study 07 — Yim Ngai gym scan app (design concept and continuity, see §4)
 css/style.css              base tokens + home page
 css/case-study.css         everything prefixed .cs-* (case-study pages)
 js/main.js                 all behaviour, one IIFE, six init functions
@@ -113,6 +114,7 @@ Component classes worth knowing (all in `css/case-study.css`):
 | `.cs-process.is-stagger` | process steps as staggered bars, add `.cs-stagger-note` because it shows order, not duration |
 | `.persona-head` / `.is-hero` | persona with an icon tile, no stock photos of people |
 | `.annot` | phone screen with numbered notes |
+| `.phone-row` | three phone screens, each with a heading and a line of text |
 | `.map` (style.css) | mind map: `.map-side` x2 of three `.map-node`, `.map-core` in the middle |
 | `.flow` / `.flow-step` (style.css) | connected steps; `.is-key` highlights, `.is-end` drops the arrow, `.flow-loop` marks a retry |
 
@@ -122,6 +124,13 @@ Flow, Direction, Before & After, Decisions & Trade-offs, Walkthrough, Design
 System, Where It Stands. Its before screens were rendered from the older code with
 sample data, never from the live site. Do not invent
 research or impact numbers to fill the standard spine.
+
+`work/gym-scan.html` also has no research: its spine is Overview, Concept Map,
+The Continuity Loop, Where a Visit Could Stop, Getting Started, During the
+Workout, Over Time, Decisions & Trade-offs, Design System, Where It Stands. Its
+screens come from the deployed app with seeded sample data and a stubbed scan
+reply, and the page says so. Do not mention the source of the fat-loss program,
+and do not add a live link until the owner clears the name and content for public use.
 
 ## 5. Home page work cards
 
